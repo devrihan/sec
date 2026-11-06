@@ -15,11 +15,11 @@ interface OptionsProps {
 }
 
 const ROW: Record<string, string> = {
-  idle: 'border-border bg-white hover:bg-muted/30',
+  idle: 'border-border bg-background hover:bg-muted/30',
   selected: 'border-primary bg-secondary',
-  correct: 'border-[#d3fde5] bg-[#ecfdf2] text-[#008a2e]',
-  incorrect: 'border-[#e60000]/30 bg-[#fff0f0] text-[#e60000]',
-  locked: 'border-border bg-white text-muted-foreground',
+  correct: 'border-good-edge bg-good-soft text-good',
+  incorrect: 'border-bad/30 bg-bad-soft text-bad',
+  locked: 'border-border bg-background text-muted-foreground',
 };
 
 const LETTER: Record<string, string> = {

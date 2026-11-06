@@ -5,6 +5,7 @@ import { useCoins, useStudent } from '../services/studentService';
 import { AvatarImage } from './AvatarImage';
 import { CoinBalance } from './CoinBalance';
 import { NotificationBell } from './NotificationBell';
+import { ThemeToggle } from './ThemeToggle';
 
 const SECTIONS: [string, string][] = [
   ['/preparation', 'Preparation'],
@@ -39,6 +40,7 @@ export function AppHeader({ onToggleSidebar }: { onToggleSidebar: () => void }) 
       </div>
       <div className="min-w-0 flex-1 truncate text-[18px] leading-7 font-normal tracking-[-0.108px] text-foreground">{crumb}</div>
       <CoinBalance coins={coins} />
+      <ThemeToggle />
       <NotificationBell />
       <Button asChild variant="outline" size="sm" className="hidden lg:inline-flex">
         <Link to="/settings"><Settings2 className="size-4" />Demo settings</Link>

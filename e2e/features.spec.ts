@@ -293,3 +293,28 @@ for (const width of [375, 768]) {
     }
   });
 }
+
+test('Dark mode is off by default, and stays on through a refresh and a demo reset', async ({ page }) => {
+  const html = page.locator('html');
+  const toggle = page.getByTestId('theme-toggle');
+  await page.goto('/');
+  await expect(toggle).toHaveAttribute('aria-checked', 'false');
+  await expect(html).not.toHaveClass(/dark/);
+
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-checked', 'true');
+  await expect(html).toHaveClass(/dark/);
+
+  await page.goto('/settings');
+  await expect(html).toHaveClass(/dark/);
+  await page.getByTestId('reset-demo').click();
+  await page.getByTestId('reset-confirm').click();
+  await expect(page.getByText('Demo data reset.')).toBeVisible();
+  await page.reload();
+  await expect(html).toHaveClass(/dark/);
+
+  await toggle.click();
+  await expect(html).not.toHaveClass(/dark/);
+  await page.reload();
+  await expect(html).not.toHaveClass(/dark/);
+});

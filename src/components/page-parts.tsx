@@ -11,6 +11,11 @@ export const HERO_CTA = 'bg-[var(--inferentics-brand-primary)] text-white hover:
 
 export const WHITE_PANEL = 'rounded-2xl border bg-background p-6';
 
+const FLASHCARD_TONES = 6;
+
+/** Colours a card from the flashcard pack by its position, so neighbours always differ. */
+export const flashcardTone = (index: number) => `flashcard fc-${index % FLASHCARD_TONES}`;
+
 export function BackLink({ to, children }: { to: string; children: ReactNode }) {
   return (
     <Link to={to} className="inline-flex items-center gap-1 text-[14px] leading-5 font-medium tracking-[-0.084px] text-muted-foreground hover:text-foreground">
@@ -51,7 +56,7 @@ export function CardGrid({ children }: { children: ReactNode }) {
 /** Sample-data and demo-mode notes use Loam's warning tint. */
 export function Note({ children, testId }: { children: ReactNode; testId?: string }) {
   return (
-    <p className="rounded-lg border border-[#ad4e00]/20 bg-[#fffcf0] px-4 py-2 text-[14px] leading-5 text-[#ad4e00]" data-testid={testId}>
+    <p className="rounded-lg border border-warn/20 bg-warn-soft px-4 py-2 text-[14px] leading-5 text-warn" data-testid={testId}>
       {children}
     </p>
   );
@@ -64,7 +69,7 @@ export function Notice({ children, tone = 'good', testId }: { children: ReactNod
       data-testid={testId}
       className={cn(
         'rounded-lg border px-4 py-3 text-[14px] leading-5',
-        tone === 'good' ? 'border-[#d3fde5] bg-[#ecfdf2] text-[#008a2e]' : 'border-destructive/30 bg-destructive/5 text-destructive',
+        tone === 'good' ? 'border-good-edge bg-good-soft text-good' : 'border-destructive/30 bg-destructive/5 text-destructive',
       )}
     >
       {children}
@@ -96,7 +101,7 @@ export function Pick({
     <div className={cn('flex flex-col gap-1.5', className)}>
       <span className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-foreground">{label}</span>
       <Select value={value} onValueChange={onChange}>
-        <SelectTrigger aria-label={label} data-testid={testId} className="w-full bg-white">
+        <SelectTrigger aria-label={label} data-testid={testId} className="w-full bg-background">
           <SelectValue placeholder="Select" />
         </SelectTrigger>
         <SelectContent>

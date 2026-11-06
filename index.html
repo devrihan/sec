@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Student Learning Platform</title>
+    <!-- Runs before first paint so dark mode doesn't flash white. Key: THEME_KEY in storageService.ts. -->
+    <script>
+      try {
+        if (localStorage.getItem('slp.theme') === 'dark') document.documentElement.classList.add('dark');
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

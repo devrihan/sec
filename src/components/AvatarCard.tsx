@@ -42,12 +42,12 @@ export function AvatarCard({ item, status, shortBy, previewConfig, previewing, o
         {status === 'insufficient' && (
           <>
             <Button size="sm" disabled>Purchase</Button>
-            <p className="text-[12px] leading-4 tracking-[-0.072px] text-[#e60000]">{shortBy.toLocaleString('en-IN')} more coins needed</p>
+            <p className="text-[12px] leading-4 tracking-[-0.072px] text-bad">{shortBy.toLocaleString('en-IN')} more coins needed</p>
           </>
         )}
         {status === 'owned' && <Button variant="outline" size="sm" onClick={onEquip}>Equip</Button>}
         {status === 'equipped' && (
-          <span className="flex h-8 items-center gap-1 text-[14px] leading-5 font-medium tracking-[-0.084px] text-[#008a2e]"><Check className="size-4" />Equipped</span>
+          <span className="flex h-8 items-center gap-1 text-[14px] leading-5 font-medium tracking-[-0.084px] text-good"><Check className="size-4" />Equipped</span>
         )}
         {removable && <Button variant="ghost" size="xs" onClick={onRemove}>Remove</Button>}
       </div>

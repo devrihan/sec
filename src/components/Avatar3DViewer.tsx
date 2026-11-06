@@ -126,7 +126,7 @@ export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
         data-testid="avatar-3d"
         data-status={status}
         data-config={key}
-        className="h-[440px] w-full cursor-grab touch-none rounded-xl bg-gradient-to-b from-slate-50 to-slate-100 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 active:cursor-grabbing"
+        className="h-[440px] w-full cursor-grab touch-none rounded-xl bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 active:cursor-grabbing"
         onPointerDown={(e) => {
           drag.current = e.clientX;
           e.currentTarget.setPointerCapture(e.pointerId);

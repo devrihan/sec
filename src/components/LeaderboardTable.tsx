@@ -9,10 +9,10 @@ const HEAD = 'h-auto px-4 py-3 text-[14px] leading-5 font-medium tracking-[-0.08
 
 export function LeaderboardTable({ rows }: { rows: LeaderboardEntry[] }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-sidebar-border bg-white">
+    <div className="overflow-hidden rounded-xl border border-sidebar-border bg-background">
       <Table data-testid="leaderboard">
         <TableHeader>
-          <TableRow className="border-sidebar-border bg-green-50 hover:bg-green-50">
+          <TableRow className="border-sidebar-border bg-table-head hover:bg-table-head">
             <TableHead className={cn(HEAD, 'w-[72px]')}>Rank</TableHead>
             <TableHead className={HEAD}>Student</TableHead>
             <TableHead className={cn(HEAD, 'hidden sm:table-cell')}>Latest badge</TableHead>
@@ -26,7 +26,7 @@ export function LeaderboardTable({ rows }: { rows: LeaderboardEntry[] }) {
                 key={r.studentId}
                 data-testid="board-row"
                 aria-current={r.isCurrent ? 'true' : undefined}
-                className={cn('border-sidebar-border', r.isCurrent ? 'is-me bg-secondary hover:bg-secondary' : 'bg-white hover:bg-muted/30')}
+                className={cn('border-sidebar-border', r.isCurrent ? 'is-me bg-secondary hover:bg-secondary' : 'bg-background hover:bg-muted/30')}
               >
                 <TableCell className="px-4 py-2.5 text-[14px] leading-5 font-medium tabular-nums">#{r.rank}</TableCell>
                 <TableCell className="px-4 py-2.5">

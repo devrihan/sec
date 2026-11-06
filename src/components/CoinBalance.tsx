@@ -9,8 +9,8 @@ export function CoinIcon({ className }: { className?: string }) {
 
 const STYLE = {
   normal: 'border-input bg-background text-foreground',
-  low: 'border-[#ad4e00]/30 bg-[#fffcf0] text-[#ad4e00]',
-  insufficient: 'border-[#e60000]/30 bg-[#fff0f0] text-[#e60000]',
+  low: 'border-warn/30 bg-warn-soft text-warn',
+  insufficient: 'border-bad/30 bg-bad-soft text-bad',
 };
 const LABEL = { normal: '', low: 'Low balance', insufficient: 'Too low for hints' };
 

@@ -57,7 +57,7 @@ export function StatCardGridSkeleton({ count = 6 }: { count?: number }) {
 export function TableSkeleton({
   rows = 8,
   columns = 5,
-  headerClassName = 'bg-green-50',
+  headerClassName = 'bg-table-head',
 }: {
   rows?: number
   columns?: number
@@ -68,7 +68,7 @@ export function TableSkeleton({
   const widths = ['55%', '70%', '45%', '60%', '50%', '65%']
 
   return (
-    <div className="border border-sidebar-border rounded-xl overflow-hidden bg-white">
+    <div className="border border-sidebar-border rounded-xl overflow-hidden bg-background">
       <div className={`flex items-center border-b border-sidebar-border ${headerClassName}`}>
         {Array.from({ length: columns }, (_, c) => (
           <div key={c} className="flex-1 px-4 py-3">
