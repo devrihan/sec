@@ -1,0 +1,5 @@
+[
+  { "id": "TT-SEED-1", "daysFromSeed": 1, "startTime": "15:00", "endTime": "17:00", "subjectId": "c12-math", "chapterId": "c12-math-03", "topic": "Matrix multiplication" },
+  { "id": "TT-SEED-2", "daysFromSeed": 1, "startTime": "17:00", "endTime": "18:00", "subjectId": "c12-chem", "chapterId": "c12-chem-01", "topic": "" },
+  { "id": "TT-SEED-3", "daysFromSeed": 1, "startTime": "18:00", "endTime": "19:00", "subjectId": "c12-phys", "chapterId": "c12-phys-03", "topic": "" }
+]

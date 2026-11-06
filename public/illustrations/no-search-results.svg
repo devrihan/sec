@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Illustration &#194;&#183; search">
+<circle id="Ellipse" cx="60" cy="48" r="46" fill="#F1F5F9"/>
+<path id="Rectangle" d="M36 18.75H74C76.8995 18.75 79.25 21.1005 79.25 24V74C79.25 76.8995 76.8995 79.25 74 79.25H36C33.1005 79.25 30.75 76.8995 30.75 74V24C30.75 21.1005 33.1005 18.75 36 18.75Z" fill="white" stroke-width="1.5" stroke="#CBD5E1"/>
+<rect id="Rectangle_2" x="39" y="32" width="32" height="4" rx="2" fill="#E2E8F0"/>
+<rect id="Rectangle_3" x="39" y="42" width="32" height="4" rx="2" fill="#E2E8F0"/>
+<rect id="Rectangle_4" x="39" y="52" width="20" height="4" rx="2" fill="#E2E8F0"/>
+<path id="Ellipse_2" d="M86.5 59C86.5 66.4558 80.4558 72.5 73 72.5C65.5442 72.5 59.5 66.4558 59.5 59C59.5 51.5442 65.5442 45.5 73 45.5C80.4558 45.5 86.5 51.5442 86.5 59Z" fill="white" stroke-width="3" stroke="#299E8E"/>
+<rect id="Rectangle_5" x="82" y="72" width="16" height="5" rx="2.5" transform="rotate(45 82 72)" fill="#299E8E"/>
+<path id="Vector" d="M68 56C68 53 70 52 73 52C76 52 78 54 78 56C78 59 73 59 73 62M73 66V66.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#299E8E"/>
+</g>
+</svg>

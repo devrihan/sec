@@ -1,0 +1,7 @@
+[
+  { "id": "SCH-MATH", "name": "Term 2 Examination", "subjectName": "Mathematics", "daysFromSeed": 6, "startTime": "09:30", "endTime": "12:30" },
+  { "id": "SCH-PHYS", "name": "Term 2 Examination", "subjectName": "Physics", "daysFromSeed": 9, "startTime": "09:30", "endTime": "12:30" },
+  { "id": "SCH-SCI", "name": "Term 2 Examination", "subjectName": "Science", "daysFromSeed": 9, "startTime": "09:30", "endTime": "12:30" },
+  { "id": "SCH-CHEM", "name": "Term 2 Examination", "subjectName": "Chemistry", "daysFromSeed": 12, "startTime": "09:30", "endTime": "12:30" },
+  { "id": "SCH-BIO", "name": "Term 2 Examination", "subjectName": "Biology", "daysFromSeed": 15, "startTime": "09:30", "endTime": "12:30" }
+]

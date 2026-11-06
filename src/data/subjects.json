@@ -1,0 +1,74 @@
+[
+  {
+    "id": "c9-math",
+    "class": 9,
+    "name": "Mathematics",
+    "displayOrder": 1
+  },
+  {
+    "id": "c9-sci",
+    "class": 9,
+    "name": "Science",
+    "displayOrder": 2
+  },
+  {
+    "id": "c10-math",
+    "class": 10,
+    "name": "Mathematics",
+    "displayOrder": 1
+  },
+  {
+    "id": "c10-sci",
+    "class": 10,
+    "name": "Science",
+    "displayOrder": 2
+  },
+  {
+    "id": "c11-math",
+    "class": 11,
+    "name": "Mathematics",
+    "displayOrder": 1
+  },
+  {
+    "id": "c11-phys",
+    "class": 11,
+    "name": "Physics",
+    "displayOrder": 2
+  },
+  {
+    "id": "c11-chem",
+    "class": 11,
+    "name": "Chemistry",
+    "displayOrder": 3
+  },
+  {
+    "id": "c11-bio",
+    "class": 11,
+    "name": "Biology",
+    "displayOrder": 4
+  },
+  {
+    "id": "c12-math",
+    "class": 12,
+    "name": "Mathematics",
+    "displayOrder": 1
+  },
+  {
+    "id": "c12-phys",
+    "class": 12,
+    "name": "Physics",
+    "displayOrder": 2
+  },
+  {
+    "id": "c12-chem",
+    "class": 12,
+    "name": "Chemistry",
+    "displayOrder": 3
+  },
+  {
+    "id": "c12-bio",
+    "class": 12,
+    "name": "Biology",
+    "displayOrder": 4
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "ROOM-SEED-1",
+    "code": "CHEM12M",
+    "hostStudentId": "STU-12M-002",
+    "status": "open",
+    "subjectId": "c12-chem",
+    "chapterId": "c12-chem-02",
+    "class": 12,
+    "questionIds": [],
+    "participants": [
+      {
+        "studentId": "STU-12M-002",
+        "state": "ready",
+        "isHost": true,
+        "simulatedScore": null
+      }
+    ],
+    "pendingStudentIds": [
+      "STU-12M-003",
+      "STU-12M-005"
+    ],
+    "nextSimEventAt": null,
+    "hostStartAt": null,
+    "attemptId": null
+  },
+  {
+    "id": "ROOM-SEED-2",
+    "code": "MATH12M",
+    "hostStudentId": "STU-12M-003",
+    "status": "open",
+    "subjectId": "c12-math",
+    "chapterId": "c12-math-03",
+    "class": 12,
+    "questionIds": [],
+    "participants": [
+      {
+        "studentId": "STU-12M-003",
+        "state": "ready",
+        "isHost": true,
+        "simulatedScore": null
+      }
+    ],
+    "pendingStudentIds": [
+      "STU-12M-004"
+    ],
+    "nextSimEventAt": null,
+    "hostStartAt": null,
+    "attemptId": null
+  },
+  {
+    "id": "ROOM-SEED-3",
+    "code": "PHYS12M",
+    "hostStudentId": "STU-12M-004",
+    "status": "finished",
+    "subjectId": "c12-phys",
+    "chapterId": "c12-phys-03",
+    "class": 12,
+    "questionIds": [],
+    "participants": [
+      {
+        "studentId": "STU-12M-004",
+        "state": "ready",
+        "isHost": true,
+        "simulatedScore": null
+      }
+    ],
+    "pendingStudentIds": [],
+    "nextSimEventAt": null,
+    "hostStartAt": null,
+    "attemptId": null
+  }
+]

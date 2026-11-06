@@ -1,0 +1,12 @@
+[
+  {
+    "id": "RP-STU-12M-001-EX-MIDTERM-c12-math-01",
+    "studentId": "STU-12M-001",
+    "examId": "EX-MIDTERM",
+    "subjectId": "c12-math",
+    "chapterId": "c12-math-01",
+    "status": "completed",
+    "bestScore": 80,
+    "completedAt": "2026-09-20T10:00:00.000Z"
+  }
+]

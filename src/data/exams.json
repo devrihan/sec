@@ -1,0 +1,20 @@
+[
+  {
+    "id": "EX-PREBOARD",
+    "studentId": "STU-12M-001",
+    "name": "Pre-board",
+    "examDate": "2026-10-12"
+  },
+  {
+    "id": "EX-MIDTERM",
+    "studentId": "STU-12M-001",
+    "name": "Mid-term",
+    "examDate": "2026-09-07"
+  },
+  {
+    "id": "EX-UT1",
+    "studentId": "STU-12M-001",
+    "name": "Unit Test 1",
+    "examDate": "2026-07-20"
+  }
+]

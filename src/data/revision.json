@@ -1,0 +1,2070 @@
+[
+  {
+    "id": "REV-c12-chem-01-01",
+    "chapterId": "c12-chem-01",
+    "title": "Concentration terms",
+    "content": null,
+    "bullets": [
+      "Molarity (M): moles of solute per litre of solution; changes with temperature.",
+      "Molality (m): moles of solute per kg of solvent; independent of temperature.",
+      "Mole fraction (x): moles of a component ÷ total moles; all mole fractions add up to 1."
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-01-02",
+    "chapterId": "c12-chem-01",
+    "title": "Henry's law",
+    "content": "Partial pressure of a gas over a solution is proportional to its mole fraction in the solution. A higher K_H means lower solubility at the same pressure and temperature.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "p = K_H · x",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-01-03",
+    "chapterId": "c12-chem-01",
+    "title": "Raoult's law",
+    "content": "For volatile components, each partial pressure is proportional to its mole fraction. For a non-volatile solute, relative lowering of vapour pressure equals the solute's mole fraction.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "p_total = p₁°x₁ + p₂°x₂ ; (p₁° − p₁)/p₁° = x₂",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-01-04",
+    "chapterId": "c12-chem-01",
+    "title": "Colligative properties",
+    "content": "These depend on the number of solute particles, not their nature. The van't Hoff factor i corrects for dissociation (i > 1) or association (i < 1).",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "ΔTb = iKb·m ; ΔTf = iKf·m ; π = iCRT",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-01-05",
+    "chapterId": "c12-chem-01",
+    "title": "Non-ideal solutions and azeotropes",
+    "content": null,
+    "bullets": [
+      "Positive deviation: ethanol + acetone, CS₂ + acetone; A–B attractions are weaker; can form minimum boiling azeotropes.",
+      "Negative deviation: phenol + aniline, chloroform + acetone; A–B attractions are stronger; can form maximum boiling azeotropes.",
+      "Azeotropes boil at constant composition and cannot be separated by fractional distillation."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-chem-02-01",
+    "chapterId": "c12-chem-02",
+    "title": "Galvanic and electrolytic cells",
+    "content": null,
+    "bullets": [
+      "Oxidation occurs at the anode and reduction at the cathode in both cells.",
+      "Galvanic cell: chemical energy to electrical energy; anode is negative.",
+      "Electrolytic cell: electrical energy drives a non-spontaneous reaction; anode is positive.",
+      "Daniell cell: Zn(s)|Zn²⁺(aq)||Cu²⁺(aq)|Cu(s), E°cell = 1.10 V."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-02-02",
+    "chapterId": "c12-chem-02",
+    "title": "Standard cell potential",
+    "content": "Use standard reduction potentials for both electrodes. E° is an intensive property, so it is never multiplied by the stoichiometric coefficient.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "E°cell = E°cathode − E°anode",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-02-03",
+    "chapterId": "c12-chem-02",
+    "title": "Nernst equation at 298 K",
+    "content": "Q contains product ion concentrations over reactant ion concentrations, each raised to its stoichiometric coefficient. Pure solids are left out.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Ecell = E°cell − (0.059 V/n) log Q",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-02-04",
+    "chapterId": "c12-chem-02",
+    "title": "Gibbs energy and equilibrium",
+    "content": "A positive E°cell means a negative ΔrG°, so the reaction is spontaneous.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "ΔrG° = −nFE°cell = −RT ln K ; log K = nE°cell/0.059 (298 K)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-02-05",
+    "chapterId": "c12-chem-02",
+    "title": "Molar conductivity and Kohlrausch's law",
+    "content": "Molar conductivity rises on dilution while conductivity falls. Each ion makes an independent contribution at infinite dilution.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Λm = (κ × 1000)/C ; Λ°m = ν₊λ°₊ + ν₋λ°₋ ; α = Λm/Λ°m",
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-chem-03-01",
+    "chapterId": "c12-chem-03",
+    "title": "Order and molecularity",
+    "content": null,
+    "bullets": [
+      "Order: sum of the powers of concentration in the experimental rate law; can be zero or fractional.",
+      "Molecularity: number of species colliding in an elementary step; always a whole number.",
+      "Units of k: (mol L⁻¹)^(1−n) s⁻¹ for overall order n."
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-03-02",
+    "chapterId": "c12-chem-03",
+    "title": "First order reaction",
+    "content": "The half-life does not depend on initial concentration.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "k = (2.303/t) log([R]₀/[R]) ; t½ = 0.693/k",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-03-03",
+    "chapterId": "c12-chem-03",
+    "title": "Zero order reaction",
+    "content": "Concentration falls linearly with time, and half-life is proportional to initial concentration.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "[R] = [R]₀ − kt ; t½ = [R]₀/2k",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-03-04",
+    "chapterId": "c12-chem-03",
+    "title": "Arrhenius equation",
+    "content": "Rate constants rise with temperature because more molecules have energy equal to or above Ea.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "k = A e^(−Ea/RT) ; log(k₂/k₁) = (Ea/2.303R)[(T₂ − T₁)/(T₁T₂)]",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-03-05",
+    "chapterId": "c12-chem-03",
+    "title": "Pseudo first order reactions",
+    "content": "These have higher molecularity but behave as first order because one reactant is in large excess.",
+    "bullets": [
+      "Acid hydrolysis of ethyl acetate.",
+      "Inversion of cane sugar."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-chem-04-01",
+    "chapterId": "c12-chem-04",
+    "title": "Transition elements",
+    "content": "These have partly filled d orbitals in the atom or a common ion. General configuration: (n−1)d¹⁻¹⁰ ns¹⁻².",
+    "bullets": [
+      "Zn, Cd and Hg have d¹⁰ in the ground state and common ions, so they are not regarded as transition elements.",
+      "They show variable oxidation states, colour, paramagnetism and catalytic activity."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-04-02",
+    "chapterId": "c12-chem-04",
+    "title": "Spin-only magnetic moment",
+    "content": "n is the number of unpaired electrons. Remove 4s electrons before 3d when forming the ion.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "μ = √[n(n + 2)] BM",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-04-03",
+    "chapterId": "c12-chem-04",
+    "title": "Lanthanoid contraction",
+    "content": "Size falls steadily across the lanthanoids because 4f electrons shield poorly.",
+    "bullets": [
+      "Zr and Hf have almost identical radii.",
+      "Basic strength of Ln(OH)₃ decreases from La to Lu.",
+      "The common oxidation state is +3."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-04-04",
+    "chapterId": "c12-chem-04",
+    "title": "Stability patterns in the 3d series",
+    "content": null,
+    "bullets": [
+      "Mn shows the highest oxidation state, +7.",
+      "Cr²⁺ is reducing and Mn³⁺ is oxidising, though both are d⁴.",
+      "Cu⁺ disproportionates in water because of the high hydration enthalpy of Cu²⁺.",
+      "Zn has the lowest enthalpy of atomisation because no d electrons take part in metallic bonding."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-05-01",
+    "chapterId": "c12-chem-05",
+    "title": "Werner's theory",
+    "content": null,
+    "bullets": [
+      "Primary valency is ionisable and matches the oxidation state.",
+      "Secondary valency is non-ionisable and equals the coordination number.",
+      "Secondary valencies are directional and fix the geometry."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-05-02",
+    "chapterId": "c12-chem-05",
+    "title": "Isomerism",
+    "content": null,
+    "bullets": [
+      "Stereoisomerism: geometrical and optical.",
+      "Structural isomerism: linkage, coordination, ionisation and solvate.",
+      "cis-[Co(en)₂Cl₂]⁺ is optically active; the trans form is not."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-05-03",
+    "chapterId": "c12-chem-05",
+    "title": "Crystal field splitting",
+    "content": "In an octahedral field, each t₂g electron lowers energy by 0.4Δo and each e_g electron raises it by 0.6Δo. Δt is smaller, so tetrahedral complexes are high spin.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "CFSE = (−0.4x + 0.6y)Δo ; Δt = (4/9)Δo",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-05-04",
+    "chapterId": "c12-chem-05",
+    "title": "Spectrochemical series",
+    "content": "Ligands arranged in order of increasing field strength, from experimental spectra.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": "I⁻ < Br⁻ < SCN⁻ < Cl⁻ < S²⁻ < F⁻ < OH⁻ < C₂O₄²⁻ < H₂O < NCS⁻ < edta⁴⁻ < NH₃ < en < CN⁻ < CO",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-06-01",
+    "chapterId": "c12-chem-06",
+    "title": "SN1 and SN2",
+    "content": null,
+    "bullets": [
+      "SN2: one step, back-side attack, inversion of configuration; rate = k[RX][Nu⁻]; reactivity 1° > 2° > 3°.",
+      "SN1: two steps through a carbocation, racemisation; rate = k[RX]; reactivity 3° > 2° > 1°.",
+      "Leaving group ability: R–I > R–Br > R–Cl > R–F."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-06-02",
+    "chapterId": "c12-chem-06",
+    "title": "Halogen exchange",
+    "content": "NaCl and NaBr are insoluble in dry acetone, which drives the Finkelstein reaction forward.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Finkelstein: R–Cl + NaI → R–I + NaCl (dry acetone) ; Swarts: R–Br + AgF → R–F + AgBr",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-06-03",
+    "chapterId": "c12-chem-06",
+    "title": "Coupling reactions with sodium",
+    "content": "All three use sodium in dry ether.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Wurtz: 2RX + 2Na → R–R + 2NaX ; Wurtz–Fittig: ArX + RX + 2Na → Ar–R + 2NaX ; Fittig: 2ArX + 2Na → Ar–Ar + 2NaX",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-06-04",
+    "chapterId": "c12-chem-06",
+    "title": "Why haloarenes resist nucleophilic substitution",
+    "content": null,
+    "bullets": [
+      "Resonance gives the C–X bond partial double bond character.",
+      "The sp² carbon holds the halogen more tightly.",
+      "The phenyl cation is unstable, and the electron-rich ring repels nucleophiles.",
+      "–NO₂ groups at ortho and para positions make substitution easier."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-07-01",
+    "chapterId": "c12-chem-07",
+    "title": "Dehydration of ethanol",
+    "content": "Temperature decides the product: lower temperature with excess alcohol gives ether, higher temperature gives alkene.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "C₂H₅OH → CH₂=CH₂ + H₂O (conc. H₂SO₄, 443 K) ; 2C₂H₅OH → C₂H₅OC₂H₅ + H₂O (conc. H₂SO₄, 413 K)",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-07-02",
+    "chapterId": "c12-chem-07",
+    "title": "Williamson synthesis",
+    "content": "Best with a primary alkyl halide. Tertiary halides give alkenes by elimination.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "R–X + R′–ONa → R–O–R′ + NaX",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-07-03",
+    "chapterId": "c12-chem-07",
+    "title": "Reactions of phenol",
+    "content": "The phenoxide ion is highly reactive towards weak electrophiles.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Kolbe: phenol + NaOH, then CO₂ and H⁺ → salicylic acid ; Reimer–Tiemann: phenol + CHCl₃ + aq. NaOH, then H⁺ → salicylaldehyde",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-07-04",
+    "chapterId": "c12-chem-07",
+    "title": "Acidity of phenols",
+    "content": null,
+    "bullets": [
+      "Phenol is more acidic than water and alcohols because phenoxide is resonance stabilised.",
+      "Electron-withdrawing –NO₂ at ortho or para positions increases acidity.",
+      "Electron-releasing –CH₃ decreases acidity."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-08-01",
+    "chapterId": "c12-chem-08",
+    "title": "Preparation of aldehydes",
+    "content": "Palladium on BaSO₄ is partly poisoned, so reduction stops at the aldehyde.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Rosenmund: RCOCl + H₂ → RCHO + HCl (Pd–BaSO₄) ; Stephen: RCN + SnCl₂/HCl, then H₃O⁺ → RCHO",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-08-02",
+    "chapterId": "c12-chem-08",
+    "title": "Aldol and Cannizzaro reactions",
+    "content": "Aldol needs an α-hydrogen. Cannizzaro occurs in aldehydes with no α-hydrogen, in concentrated alkali.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "2CH₃CHO → CH₃CH(OH)CH₂CHO → CH₃CH=CHCHO (dil. NaOH, then heat) ; 2HCHO + conc. KOH → CH₃OH + HCOOK",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-08-03",
+    "chapterId": "c12-chem-08",
+    "title": "Reduction of C=O to CH₂",
+    "content": "Clemmensen works in acid and Wolff–Kishner in base.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": ">C=O → >CH₂ (Zn–Hg/conc. HCl) or (NH₂NH₂, then KOH/ethylene glycol, heat)",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-08-04",
+    "chapterId": "c12-chem-08",
+    "title": "Distinguishing tests",
+    "content": null,
+    "bullets": [
+      "Tollens' reagent: silver mirror with aldehydes.",
+      "Fehling's solution: red-brown Cu₂O with aliphatic aldehydes, not aromatic ones.",
+      "Iodoform test: yellow CHI₃ with CH₃CO– compounds.",
+      "NaHCO₃: effervescence with carboxylic acids."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-08-05",
+    "chapterId": "c12-chem-08",
+    "title": "Acidity of carboxylic acids",
+    "content": "Electron-withdrawing groups stabilise the carboxylate ion and raise acidity.",
+    "bullets": [
+      "FCH₂COOH > ClCH₂COOH > BrCH₂COOH > CH₃COOH.",
+      "HCOOH is a stronger acid than CH₃COOH."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-chem-09-01",
+    "chapterId": "c12-chem-09",
+    "title": "Hofmann bromamide degradation",
+    "content": "The amine formed has one carbon fewer than the amide.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "RCONH₂ + Br₂ + 4NaOH → RNH₂ + Na₂CO₃ + 2NaBr + 2H₂O",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-09-02",
+    "chapterId": "c12-chem-09",
+    "title": "Carbylamine reaction",
+    "content": "A test for primary amines only. Isocyanides have a foul smell.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "RNH₂ + CHCl₃ + 3KOH → RNC + 3KCl + 3H₂O (heat)",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-09-03",
+    "chapterId": "c12-chem-09",
+    "title": "Diazotisation",
+    "content": "Arenediazonium salts are made at low temperature and are used at once.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "C₆H₅NH₂ + NaNO₂ + 2HCl → C₆H₅N₂⁺Cl⁻ + NaCl + 2H₂O (273–278 K)",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-09-04",
+    "chapterId": "c12-chem-09",
+    "title": "Basic strength and Hinsberg's test",
+    "content": null,
+    "bullets": [
+      "Aqueous order: (CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃ and (C₂H₅)₂NH > (C₂H₅)₃N > C₂H₅NH₂ > NH₃.",
+      "Aryl amines are weaker bases than ammonia because the lone pair is delocalised.",
+      "Hinsberg: 1° amine product dissolves in alkali, 2° product does not, and 3° amine does not react."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-10-01",
+    "chapterId": "c12-chem-10",
+    "title": "Carbohydrates",
+    "content": null,
+    "bullets": [
+      "Monosaccharides: glucose, fructose.",
+      "Disaccharides: sucrose (non-reducing), maltose and lactose (reducing).",
+      "Polysaccharides: starch, cellulose, glycogen."
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-chem-10-02",
+    "chapterId": "c12-chem-10",
+    "title": "Oxidation of glucose",
+    "content": "Bromine water is a mild oxidant and shows the presence of a –CHO group. Nitric acid also oxidises the terminal –CH₂OH.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Br₂ water: HOCH₂(CHOH)₄CHO → HOCH₂(CHOH)₄COOH (gluconic acid) ; HNO₃: gives HOOC(CHOH)₄COOH (saccharic acid)",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-chem-10-03",
+    "chapterId": "c12-chem-10",
+    "title": "Structure of proteins",
+    "content": null,
+    "bullets": [
+      "Primary: sequence of amino acids joined by peptide bonds.",
+      "Secondary: α-helix and β-pleated sheet, held by hydrogen bonds.",
+      "Tertiary: overall folding; quaternary: arrangement of subunits.",
+      "Denaturation destroys secondary and tertiary structure but leaves the primary structure intact."
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-chem-10-04",
+    "chapterId": "c12-chem-10",
+    "title": "Nucleic acids",
+    "content": "A nucleoside is a base plus sugar; a nucleotide also has phosphate. Nucleotides join by 3′–5′ phosphodiester links.",
+    "bullets": [
+      "DNA: 2-deoxyribose with A, G, C, T.",
+      "RNA: ribose with A, G, C, U.",
+      "Pairing in DNA: A with T, G with C."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-chem-10-05",
+    "chapterId": "c12-chem-10",
+    "title": "Vitamins",
+    "content": null,
+    "bullets": [
+      "Fat soluble: A, D, E, K.",
+      "Water soluble: B group and C.",
+      "Deficiency: A causes night blindness, C scurvy, D rickets, K increased clotting time."
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-math-01-01",
+    "chapterId": "c12-math-01",
+    "title": "Equivalence relation",
+    "content": "A relation that is reflexive, symmetric and transitive on a set A.",
+    "bullets": [
+      "Reflexive: (a, a) ∈ R for every a ∈ A",
+      "Symmetric: (a, b) ∈ R ⇒ (b, a) ∈ R",
+      "Transitive: (a, b), (b, c) ∈ R ⇒ (a, c) ∈ R"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-math-01-02",
+    "chapterId": "c12-math-01",
+    "title": "One-one and onto functions",
+    "content": null,
+    "bullets": [
+      "One-one: f(x₁) = f(x₂) ⇒ x₁ = x₂",
+      "Onto: every element of the codomain has a preimage",
+      "Bijective: one-one and onto together"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-math-01-03",
+    "chapterId": "c12-math-01",
+    "title": "Counting results",
+    "content": "For finite sets with |A| = m and |B| = n.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Relations A → B: 2^(mn); functions A → B: nᵐ; bijections A → A (|A| = n): n!",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-math-01-04",
+    "chapterId": "c12-math-01",
+    "title": "NCERT: equivalence classes",
+    "content": "An equivalence relation splits a set into disjoint classes whose union is the whole set. For 'a − b is even' on Z, the classes are the even and the odd integers.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-math-03-01",
+    "chapterId": "c12-math-03",
+    "title": "Special square matrices",
+    "content": null,
+    "bullets": [
+      "Symmetric: A′ = A",
+      "Skew-symmetric: A′ = −A, so all diagonal entries are 0",
+      "Scalar: diagonal with equal diagonal entries; identity I has entries 1"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-math-03-02",
+    "chapterId": "c12-math-03",
+    "title": "Matrix multiplication",
+    "content": "AB exists when columns of A equal rows of B. Multiplication is not commutative, and AB = O need not mean A = O or B = O.",
+    "bullets": null,
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-math-03-03",
+    "chapterId": "c12-math-03",
+    "title": "Transpose and inverse laws",
+    "content": "The order reverses in both cases.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "(AB)′ = B′A′; (AB)⁻¹ = B⁻¹A⁻¹",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-math-03-04",
+    "chapterId": "c12-math-03",
+    "title": "Symmetric plus skew-symmetric",
+    "content": "Every square matrix splits this way, and the split is unique.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "A = ½(A + A′) + ½(A − A′)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-math-03-05",
+    "chapterId": "c12-math-03",
+    "title": "NCERT: inverse of a matrix",
+    "content": "A square matrix A is invertible if a matrix B exists with AB = BA = I. If the inverse exists, it is unique.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-math-04-01",
+    "chapterId": "c12-math-04",
+    "title": "Minors and cofactors",
+    "content": "The minor Mᵢⱼ is the determinant left after deleting row i and column j.",
+    "bullets": null,
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-math-04-02",
+    "chapterId": "c12-math-04",
+    "title": "Cofactor and inverse",
+    "content": "A square matrix is invertible exactly when |A| ≠ 0.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Aᵢⱼ = (−1)^(i+j) Mᵢⱼ; A⁻¹ = (1/|A|) adj A",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-math-04-03",
+    "chapterId": "c12-math-04",
+    "title": "Area of a triangle",
+    "content": "Take the modulus; area is zero when the points are collinear.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Area = ½|x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-math-04-04",
+    "chapterId": "c12-math-04",
+    "title": "Useful results",
+    "content": "For a square matrix A of order n.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "|kA| = kⁿ|A|; |AB| = |A||B|; |adj A| = |A|^(n−1)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-math-04-05",
+    "chapterId": "c12-math-04",
+    "title": "NCERT: solving AX = B",
+    "content": null,
+    "bullets": [
+      "|A| ≠ 0: unique solution X = A⁻¹B",
+      "|A| = 0 and (adj A)B ≠ O: no solution",
+      "|A| = 0 and (adj A)B = O: infinitely many or no solutions"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-math-05-01",
+    "chapterId": "c12-math-05",
+    "title": "Continuity at a point",
+    "content": "f is continuous at x = a when the left limit, the right limit and f(a) all exist and are equal.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": "lim(x→a⁻) f(x) = lim(x→a⁺) f(x) = f(a)",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-math-05-02",
+    "chapterId": "c12-math-05",
+    "title": "Continuity versus differentiability",
+    "content": "Every differentiable function is continuous, but the converse is false: |x| is continuous at 0 yet not differentiable there.",
+    "bullets": null,
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-math-05-03",
+    "chapterId": "c12-math-05",
+    "title": "Standard derivatives",
+    "content": null,
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "d/dx(sin⁻¹x) = 1/√(1 − x²); d/dx(tan⁻¹x) = 1/(1 + x²); d/dx(log x) = 1/x; d/dx(eˣ) = eˣ",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-math-05-04",
+    "chapterId": "c12-math-05",
+    "title": "Parametric form",
+    "content": "For x = f(t), y = g(t) with dx/dt ≠ 0.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "dy/dx = (dy/dt)/(dx/dt)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-math-05-05",
+    "chapterId": "c12-math-05",
+    "title": "NCERT: logarithmic differentiation",
+    "content": "Use it for y = [u(x)]^v(x): take logs, then differentiate implicitly.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": "dy/dx = y[(v/u)u′ + v′ log u]",
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-phys-01-01",
+    "chapterId": "c12-phys-01",
+    "title": "Coulomb's law",
+    "content": "Force acts along the line joining two point charges; 1/4πε₀ = 9 × 10⁹ N m² C⁻².",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "F = (1/4πε₀)(q₁q₂/r²)",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-phys-01-02",
+    "chapterId": "c12-phys-01",
+    "title": "Electric dipole",
+    "content": "Field values hold for r ≫ a, with p = q(2a) directed from −q to +q.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "E(axial) = 2kp/r³; E(equatorial) = kp/r³; τ = p × E",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-phys-01-03",
+    "chapterId": "c12-phys-01",
+    "title": "Gauss's law",
+    "content": "Total flux through a closed surface depends only on the enclosed charge.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Φ = ∮E·dS = q(enclosed)/ε₀",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-phys-01-04",
+    "chapterId": "c12-phys-01",
+    "title": "Gauss's law results",
+    "content": null,
+    "bullets": [
+      "Infinite line: E = λ/(2πε₀r)",
+      "Infinite plane sheet: E = σ/(2ε₀)",
+      "Thin shell: E = q/(4πε₀r²) outside, 0 inside"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-phys-01-05",
+    "chapterId": "c12-phys-01",
+    "title": "NCERT: field line properties",
+    "content": null,
+    "bullets": [
+      "Start on positive and end on negative charges",
+      "Two lines never cross",
+      "Electrostatic field lines do not form closed loops"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-phys-02-01",
+    "chapterId": "c12-phys-02",
+    "title": "Potential of a point charge",
+    "content": "Potential is a scalar, so add values with their signs.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "V = q/(4πε₀r); E = −dV/dr",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-phys-02-02",
+    "chapterId": "c12-phys-02",
+    "title": "Equipotential surfaces",
+    "content": "No work is done moving a charge along an equipotential surface, and the field is perpendicular to it at every point.",
+    "bullets": null,
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-phys-02-03",
+    "chapterId": "c12-phys-02",
+    "title": "Capacitors",
+    "content": "K is the dielectric constant of the material filling the gap.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "C = Kε₀A/d; series 1/C = 1/C₁ + 1/C₂; parallel C = C₁ + C₂",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-phys-02-04",
+    "chapterId": "c12-phys-02",
+    "title": "Energy stored",
+    "content": null,
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "U = ½CV² = Q²/(2C) = ½QV",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-phys-02-05",
+    "chapterId": "c12-phys-02",
+    "title": "NCERT: inserting a dielectric",
+    "content": null,
+    "bullets": [
+      "Battery removed: Q fixed, V → V/K, U → U/K",
+      "Battery connected: V fixed, Q → KQ, U → KU",
+      "C → KC in both cases"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-phys-03-01",
+    "chapterId": "c12-phys-03",
+    "title": "Drift and current",
+    "content": "n is the free electron density, τ the relaxation time and μ the mobility.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "I = neAv_d; v_d = eEτ/m; μ = v_d/E = eτ/m",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-phys-03-02",
+    "chapterId": "c12-phys-03",
+    "title": "Resistance and resistivity",
+    "content": null,
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "R = ρl/A; ρ = m/(ne²τ); ρ_T = ρ₀[1 + α(T − T₀)]",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-phys-03-03",
+    "chapterId": "c12-phys-03",
+    "title": "Cell and power",
+    "content": "r is the internal resistance; V is the terminal voltage on discharge.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "V = ε − Ir; P = VI = I²R = V²/R",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-phys-03-04",
+    "chapterId": "c12-phys-03",
+    "title": "Kirchhoff's rules and bridge",
+    "content": null,
+    "bullets": [
+      "Junction rule: sum of currents in = sum out (charge conservation)",
+      "Loop rule: algebraic sum of potential changes is zero (energy conservation)",
+      "Wheatstone bridge balance: P/Q = R/S"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-phys-03-05",
+    "chapterId": "c12-phys-03",
+    "title": "NCERT: combination of cells",
+    "content": null,
+    "bullets": [
+      "Series: ε(eq) = ε₁ + ε₂, r(eq) = r₁ + r₂",
+      "Parallel: ε(eq)/r(eq) = ε₁/r₁ + ε₂/r₂",
+      "Parallel: 1/r(eq) = 1/r₁ + 1/r₂"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-phys-09-01",
+    "chapterId": "c12-phys-09",
+    "title": "Spherical mirrors",
+    "content": "Use the Cartesian sign convention, measuring from the pole.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "1/v + 1/u = 1/f; f = R/2; m = −v/u",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-phys-09-02",
+    "chapterId": "c12-phys-09",
+    "title": "Thin lenses",
+    "content": null,
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "1/v − 1/u = 1/f; 1/f = (n − 1)(1/R₁ − 1/R₂); P = 1/f (f in m)",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-phys-09-03",
+    "chapterId": "c12-phys-09",
+    "title": "Total internal reflection",
+    "content": "It occurs when light goes from denser to rarer medium with i greater than the critical angle, where sin i_c = 1/n. Optical fibres work on this principle.",
+    "bullets": null,
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-phys-09-04",
+    "chapterId": "c12-phys-09",
+    "title": "Prism",
+    "content": "D_m is the angle of minimum deviation and A is the prism angle.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "n = sin[(A + D_m)/2] / sin(A/2)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-phys-09-05",
+    "chapterId": "c12-phys-09",
+    "title": "NCERT: magnifying power",
+    "content": null,
+    "bullets": [
+      "Compound microscope: m ≈ (L/f_o)(D/f_e)",
+      "Telescope, normal adjustment: m = f_o/f_e",
+      "Telescope tube length: f_o + f_e"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-bio-01-01",
+    "chapterId": "c12-bio-01",
+    "title": "Microsporangium wall",
+    "content": "Four wall layers surround the sporogenous tissue.",
+    "bullets": [
+      "Epidermis, endothecium and middle layers: protection and dehiscence",
+      "Tapetum: innermost layer that nourishes developing pollen"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-bio-01-02",
+    "chapterId": "c12-bio-01",
+    "title": "Mature embryo sac",
+    "content": "The Polygonum type is 7-celled and 8-nucleate, formed from one functional megaspore.",
+    "bullets": [
+      "Egg apparatus: egg and 2 synergids",
+      "3 antipodals at the chalazal end",
+      "Central cell with 2 polar nuclei"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-bio-01-03",
+    "chapterId": "c12-bio-01",
+    "title": "Types of pollination",
+    "content": null,
+    "bullets": [
+      "Autogamy: within the same flower",
+      "Geitonogamy: another flower of the same plant",
+      "Xenogamy: flower of a different plant"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-bio-01-04",
+    "chapterId": "c12-bio-01",
+    "title": "Double fertilisation",
+    "content": "Syngamy and triple fusion occur in the same embryo sac.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Male gamete + egg → zygote (2n); male gamete + 2 polar nuclei → PEN (3n)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-bio-01-05",
+    "chapterId": "c12-bio-01",
+    "title": "NCERT: apomixis and polyembryony",
+    "content": "Apomixis produces seeds without fertilisation. In Citrus and mango, some nucellar cells protrude into the embryo sac and form extra embryos.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-bio-02-01",
+    "chapterId": "c12-bio-02",
+    "title": "Cells of the testis",
+    "content": null,
+    "bullets": [
+      "Spermatogonia: divide to form sperm",
+      "Sertoli cells: nourish germ cells",
+      "Leydig cells: interstitial, secrete androgens"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-bio-02-02",
+    "chapterId": "c12-bio-02",
+    "title": "Spermatogenesis",
+    "content": "Spermiogenesis converts spermatids into spermatozoa.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Spermatogonium (2n) → primary spermatocyte (2n) → secondary spermatocytes (n) → spermatids (n) → spermatozoa (n)",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-bio-02-03",
+    "chapterId": "c12-bio-02",
+    "title": "Menstrual cycle",
+    "content": null,
+    "bullets": [
+      "Menstrual phase: endometrium breaks down",
+      "Follicular phase: FSH and oestrogen, endometrium regenerates",
+      "Ovulation: LH surge near day 14",
+      "Luteal phase: corpus luteum secretes progesterone"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-bio-02-04",
+    "chapterId": "c12-bio-02",
+    "title": "Implantation",
+    "content": "Attachment of the blastocyst to the endometrium through the trophoblast, which leads to pregnancy.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-bio-02-05",
+    "chapterId": "c12-bio-02",
+    "title": "NCERT: hormones of pregnancy",
+    "content": "The placenta acts as an endocrine tissue and produces hCG, hPL, oestrogens and progestogens. Relaxin is produced by the ovary in the later phase of pregnancy.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-bio-04-01",
+    "chapterId": "c12-bio-04",
+    "title": "Mendel's laws",
+    "content": null,
+    "bullets": [
+      "Dominance: one factor expresses over the other",
+      "Segregation: alleles separate during gamete formation",
+      "Independent assortment: gene pairs segregate independently"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-bio-04-02",
+    "chapterId": "c12-bio-04",
+    "title": "Key ratios",
+    "content": null,
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Monohybrid F₂ 3:1 (genotypic 1:2:1); dihybrid F₂ 9:3:3:1; monohybrid test cross 1:1",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-bio-04-03",
+    "chapterId": "c12-bio-04",
+    "title": "Beyond simple dominance",
+    "content": null,
+    "bullets": [
+      "Incomplete dominance: F₂ snapdragon ratio 1:2:1",
+      "Codominance: IᴬIᴮ gives blood group AB",
+      "Linkage: genes on one chromosome tend to stay together"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-bio-04-04",
+    "chapterId": "c12-bio-04",
+    "title": "Sex determination",
+    "content": null,
+    "bullets": [
+      "Grasshopper: XX female, XO male",
+      "Humans and Drosophila: XX female, XY male",
+      "Birds: ZW female, ZZ male"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-bio-04-05",
+    "chapterId": "c12-bio-04",
+    "title": "NCERT: genetic disorders",
+    "content": null,
+    "bullets": [
+      "X-linked recessive: haemophilia, colour blindness",
+      "Sickle cell anaemia: autosomal recessive",
+      "Down's syndrome: trisomy 21",
+      "Klinefelter's: 47, XXY; Turner's: 45, X0"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c12-bio-05-01",
+    "chapterId": "c12-bio-05",
+    "title": "DNA double helix",
+    "content": null,
+    "bullets": [
+      "Two antiparallel polynucleotide chains",
+      "A pairs with T by 2 H-bonds; G with C by 3",
+      "Pitch 3.4 nm, about 10 bp per turn, rise 0.34 nm per bp"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c12-bio-05-02",
+    "chapterId": "c12-bio-05",
+    "title": "Central dogma",
+    "content": "Information generally flows from DNA to RNA to protein.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "DNA → (transcription) → mRNA → (translation) → protein",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c12-bio-05-03",
+    "chapterId": "c12-bio-05",
+    "title": "DNA replication",
+    "content": null,
+    "bullets": [
+      "Semiconservative, shown by Meselson and Stahl using ¹⁵N",
+      "Leading strand is continuous; lagging strand forms Okazaki fragments",
+      "DNA ligase joins the fragments"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c12-bio-05-04",
+    "chapterId": "c12-bio-05",
+    "title": "Lac operon",
+    "content": null,
+    "bullets": [
+      "i gene makes the repressor",
+      "z, y, a make β-galactosidase, permease, transacetylase",
+      "Lactose acts as inducer by inactivating the repressor"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c12-bio-05-05",
+    "chapterId": "c12-bio-05",
+    "title": "NCERT: genetic code",
+    "content": null,
+    "bullets": [
+      "Triplet code with 64 codons; 61 code for amino acids",
+      "AUG is the start codon and codes for methionine",
+      "UAA, UAG and UGA are stop codons",
+      "Degenerate, unambiguous and nearly universal"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c9-math-02-01",
+    "chapterId": "c9-math-02",
+    "title": "Polynomial and degree",
+    "content": "A polynomial in one variable has terms of the form axⁿ, where n is a whole number. The degree is the highest power of the variable.",
+    "bullets": [
+      "Degree 1: linear",
+      "Degree 2: quadratic",
+      "Degree 3: cubic"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c9-math-02-02",
+    "chapterId": "c9-math-02",
+    "title": "Zero of a polynomial",
+    "content": "A real number a is a zero of p(x) if p(a) = 0.",
+    "bullets": [
+      "A linear polynomial has exactly one zero",
+      "A non-zero constant polynomial has no zero",
+      "Every real number is a zero of the zero polynomial"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c9-math-02-03",
+    "chapterId": "c9-math-02",
+    "title": "Factor Theorem",
+    "content": "Use it to test a possible factor by substitution.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "x − a is a factor of p(x) ⇔ p(a) = 0",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c9-math-02-04",
+    "chapterId": "c9-math-02",
+    "title": "Key identities",
+    "content": "These give quick expansions and factorisations.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "(x + y + z)² = x² + y² + z² + 2xy + 2yz + 2zx; x³ + y³ + z³ − 3xyz = (x + y + z)(x² + y² + z² − xy − yz − zx)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c9-math-02-05",
+    "chapterId": "c9-math-02",
+    "title": "Splitting the middle term",
+    "content": "To factorise ax² + bx + c, find p and q with p + q = b and pq = ac.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c9-math-11-01",
+    "chapterId": "c9-math-11",
+    "title": "Right circular cone: surface",
+    "content": "Slant height links the radius and the height by Pythagoras.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "l = √(r² + h²); CSA = πrl; TSA = πr(l + r)",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c9-math-11-02",
+    "chapterId": "c9-math-11",
+    "title": "Sphere and hemisphere: surface",
+    "content": "A solid hemisphere's total surface includes its flat circular base.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Sphere S = 4πr²; Hemisphere CSA = 2πr²; Hemisphere TSA = 3πr²",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c9-math-11-03",
+    "chapterId": "c9-math-11",
+    "title": "Volumes",
+    "content": "All volumes are in cubic units.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Cone V = ⅓πr²h; Sphere V = (4/3)πr³; Hemisphere V = (2/3)πr³",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c9-math-11-04",
+    "chapterId": "c9-math-11",
+    "title": "Cone and cylinder",
+    "content": "A cone has one-third the volume of a cylinder with the same base radius and height.",
+    "bullets": [
+      "Take π = 22/7 unless told otherwise",
+      "Melting and recasting keeps the volume unchanged"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c9-sci-04-01",
+    "chapterId": "c9-sci-04",
+    "title": "Sub-atomic particles",
+    "content": null,
+    "bullets": [
+      "Electron: charge −1, discovered by J.J. Thomson",
+      "Proton: charge +1, canal rays observed by E. Goldstein",
+      "Neutron: no charge, discovered by J. Chadwick"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c9-sci-04-02",
+    "chapterId": "c9-sci-04",
+    "title": "Rutherford's alpha-scattering results",
+    "content": "Most alpha particles passed straight through gold foil, some deflected, and about 1 in 12000 rebounded.",
+    "bullets": [
+      "Most of the atom is empty space",
+      "A small, dense, positive nucleus holds nearly all the mass"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c9-sci-04-03",
+    "chapterId": "c9-sci-04",
+    "title": "Bohr-Bury shell rule",
+    "content": "Shells fill stepwise, and the outermost shell holds at most 8 electrons.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Maximum electrons in shell n = 2n² (K = 2, L = 8, M = 18, N = 32)",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c9-sci-04-04",
+    "chapterId": "c9-sci-04",
+    "title": "Atomic and mass number",
+    "content": "Atomic number Z is the number of protons. Mass number A is protons plus neutrons.",
+    "bullets": [
+      "Isotopes: same Z, different A",
+      "Isobars: same A, different Z"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c9-sci-04-05",
+    "chapterId": "c9-sci-04",
+    "title": "Valency",
+    "content": "Valency is the combining capacity of an atom, from the electrons lost, gained or shared to complete the octet.",
+    "bullets": [
+      "Na: 1",
+      "Mg: 2",
+      "Cl: 1",
+      "O: 2"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c9-sci-07-01",
+    "chapterId": "c9-sci-07",
+    "title": "Distance and displacement",
+    "content": "Distance is the actual path length. Displacement is the shortest distance from start to end, with direction.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c9-sci-07-02",
+    "chapterId": "c9-sci-07",
+    "title": "Speed, velocity, acceleration",
+    "content": null,
+    "bullets": [
+      "Speed = distance / time",
+      "Velocity = displacement / time",
+      "Acceleration = change in velocity / time"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c9-sci-07-03",
+    "chapterId": "c9-sci-07",
+    "title": "Equations of uniformly accelerated motion",
+    "content": "Here u is initial velocity, v final velocity, a acceleration, s displacement and t time.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "v = u + at; s = ut + ½at²; 2as = v² − u²",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c9-sci-07-04",
+    "chapterId": "c9-sci-07",
+    "title": "Reading graphs",
+    "content": null,
+    "bullets": [
+      "Slope of a distance-time graph gives speed",
+      "Slope of a velocity-time graph gives acceleration",
+      "Area under a velocity-time graph gives displacement"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c10-math-04-01",
+    "chapterId": "c10-math-04",
+    "title": "Standard form",
+    "content": "A quadratic equation is ax² + bx + c = 0 with a ≠ 0. A root is a value of x that satisfies it.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c10-math-04-02",
+    "chapterId": "c10-math-04",
+    "title": "Quadratic formula",
+    "content": "It gives the roots whenever b² − 4ac ≥ 0.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "x = [−b ± √(b² − 4ac)] / 2a",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c10-math-04-03",
+    "chapterId": "c10-math-04",
+    "title": "Discriminant and nature of roots",
+    "content": null,
+    "bullets": [
+      "D > 0: two distinct real roots",
+      "D = 0: two equal real roots",
+      "D < 0: no real roots"
+    ],
+    "contentType": "formula",
+    "formula": "D = b² − 4ac",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c10-math-04-04",
+    "chapterId": "c10-math-04",
+    "title": "Factorisation method",
+    "content": "Split the middle term so the two parts multiply to ac and add to b, then set each factor to zero.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c10-math-08-01",
+    "chapterId": "c10-math-08",
+    "title": "Trigonometric ratios",
+    "content": "In a right triangle, ratios are defined for an acute angle A from its sides.",
+    "bullets": [
+      "sin A = opposite / hypotenuse",
+      "cos A = adjacent / hypotenuse",
+      "tan A = opposite / adjacent"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c10-math-08-02",
+    "chapterId": "c10-math-08",
+    "title": "Standard values",
+    "content": "Recall these for 30°, 45° and 60°.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "sin 30° = 1/2, sin 45° = 1/√2, sin 60° = √3/2; tan 30° = 1/√3, tan 45° = 1, tan 60° = √3",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c10-math-08-03",
+    "chapterId": "c10-math-08",
+    "title": "Identities",
+    "content": "These hold for every acute angle A where the terms are defined.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "sin²A + cos²A = 1; 1 + tan²A = sec²A; 1 + cot²A = cosec²A",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c10-math-08-04",
+    "chapterId": "c10-math-08",
+    "title": "Reciprocal and quotient relations",
+    "content": null,
+    "bullets": [
+      "cosec A = 1/sin A",
+      "sec A = 1/cos A",
+      "cot A = 1/tan A",
+      "tan A = sin A / cos A"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c10-sci-01-01",
+    "chapterId": "c10-sci-01",
+    "title": "Balancing equations",
+    "content": "Atoms are neither created nor destroyed, so each element must have equal atoms on both sides. This follows the law of conservation of mass.",
+    "bullets": null,
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c10-sci-01-02",
+    "chapterId": "c10-sci-01",
+    "title": "Combination (exothermic)",
+    "content": "Quicklime reacts vigorously with water to give slaked lime.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "CaO(s) + H₂O(l) → Ca(OH)₂(aq) + Heat",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c10-sci-01-03",
+    "chapterId": "c10-sci-01",
+    "title": "Thermal decomposition",
+    "content": "Heating green ferrous sulphate leaves a brown solid and gives a smell of burning sulphur.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "2FeSO₄(s) —Heat→ Fe₂O₃(s) + SO₂(g) + SO₃(g)",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c10-sci-01-04",
+    "chapterId": "c10-sci-01",
+    "title": "Displacement and double displacement",
+    "content": "A more reactive metal displaces a less reactive one; in double displacement, ions are exchanged.",
+    "bullets": null,
+    "contentType": "reaction",
+    "formula": "Fe + CuSO₄ → FeSO₄ + Cu; Na₂SO₄ + BaCl₂ → BaSO₄↓ + 2NaCl",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c10-sci-01-05",
+    "chapterId": "c10-sci-01",
+    "title": "Oxidation and reduction",
+    "content": "Oxidation is gain of oxygen or loss of hydrogen; reduction is the reverse.",
+    "bullets": [
+      "In CuO + H₂ → Cu + H₂O, copper oxide is reduced",
+      "Hydrogen is oxidised to water"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c10-sci-11-01",
+    "chapterId": "c10-sci-11",
+    "title": "Ohm's law and resistance",
+    "content": "At constant temperature, current through a conductor is proportional to the potential difference. Resistivity ρ depends on the material.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "V = IR; R = ρl/A",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c10-sci-11-02",
+    "chapterId": "c10-sci-11",
+    "title": "Combinations of resistors",
+    "content": "Series adds resistance; parallel lowers the total below the smallest resistor.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Rs = R₁ + R₂ + R₃; 1/Rp = 1/R₁ + 1/R₂ + 1/R₃",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c10-sci-11-03",
+    "chapterId": "c10-sci-11",
+    "title": "Heating and power",
+    "content": "Joule's law gives the heat produced in a resistor.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "H = I²Rt; P = VI = I²R = V²/R",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c10-sci-11-04",
+    "chapterId": "c10-sci-11",
+    "title": "Charge and potential difference",
+    "content": "Current is the charge flowing per unit time, Q = It. Potential difference is the work done per unit charge, V = W/Q.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c10-sci-11-05",
+    "chapterId": "c10-sci-11",
+    "title": "Practical points",
+    "content": null,
+    "bullets": [
+      "Connect an ammeter in series and a voltmeter in parallel",
+      "1 kWh = 1 unit = 3.6 × 10⁶ J",
+      "Household appliances are wired in parallel"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c11-math-01-01",
+    "chapterId": "c11-math-01",
+    "title": "Representing sets",
+    "content": "Roster form lists the elements. Set-builder form states a common property.",
+    "bullets": [
+      "Roster: {1, 2, 3}",
+      "Set-builder: {x : x ∈ N, x < 4}"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-math-01-02",
+    "chapterId": "c11-math-01",
+    "title": "Subsets and the universal set",
+    "content": "A ⊂ B if every element of A is in B. The empty set is a subset of every set.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-math-01-03",
+    "chapterId": "c11-math-01",
+    "title": "Intervals",
+    "content": "Round brackets exclude an endpoint; square brackets include it.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "(a, b) = {x : a < x < b}; [a, b] = {x : a ≤ x ≤ b}; [a, b) = {x : a ≤ x < b}; (a, b] = {x : a < x ≤ b}",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-math-01-04",
+    "chapterId": "c11-math-01",
+    "title": "De Morgan's laws",
+    "content": "Complement swaps union and intersection.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "(A ∪ B)′ = A′ ∩ B′; (A ∩ B)′ = A′ ∪ B′",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-math-01-05",
+    "chapterId": "c11-math-01",
+    "title": "Difference and complement",
+    "content": null,
+    "bullets": [
+      "A − B = {x : x ∈ A and x ∉ B}",
+      "A′ = U − A",
+      "(A′)′ = A"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c11-math-12-01",
+    "chapterId": "c11-math-12",
+    "title": "Limit of a function",
+    "content": "lim(x→a) f(x) = L exists when the left-hand and right-hand limits both equal L.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-math-12-02",
+    "chapterId": "c11-math-12",
+    "title": "Standard limits",
+    "content": "Angles are in radians.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "lim(x→a) (xⁿ − aⁿ)/(x − a) = naⁿ⁻¹; lim(x→0) sin x/x = 1; lim(x→0) (1 − cos x)/x = 0",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-math-12-03",
+    "chapterId": "c11-math-12",
+    "title": "Derivative from first principles",
+    "content": "The derivative is the limit of the difference quotient.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "f′(x) = lim(h→0) [f(x + h) − f(x)]/h",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-math-12-04",
+    "chapterId": "c11-math-12",
+    "title": "Rules of differentiation",
+    "content": null,
+    "bullets": [
+      "d/dx(xⁿ) = nxⁿ⁻¹",
+      "d/dx(sin x) = cos x",
+      "d/dx(cos x) = −sin x"
+    ],
+    "contentType": "formula",
+    "formula": "(uv)′ = u′v + uv′; (u/v)′ = (u′v − uv′)/v²",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-math-12-05",
+    "chapterId": "c11-math-12",
+    "title": "Algebra of limits",
+    "content": "Limits of a sum, difference, product and quotient equal the same operation on the limits, when the denominator's limit is non-zero.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c11-phys-04-01",
+    "chapterId": "c11-phys-04",
+    "title": "Newton's laws",
+    "content": null,
+    "bullets": [
+      "First: a body keeps its state of rest or uniform motion unless a net external force acts",
+      "Second: force equals rate of change of momentum",
+      "Third: to every action there is an equal and opposite reaction"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-phys-04-02",
+    "chapterId": "c11-phys-04",
+    "title": "Force and impulse",
+    "content": "Impulse is the product of force and time, and it equals the change in momentum.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "F = dp/dt = ma; Impulse = FΔt = Δp",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-phys-04-03",
+    "chapterId": "c11-phys-04",
+    "title": "Friction and level circular road",
+    "content": "Static friction adjusts up to a limit; on a level curve it supplies the centripetal force.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "fₛ ≤ μₛN; fₖ = μₖN; v_max = √(μₛRg)",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-phys-04-04",
+    "chapterId": "c11-phys-04",
+    "title": "Action-reaction and momentum",
+    "content": "Action and reaction act on different bodies, so they never cancel each other.",
+    "bullets": [
+      "Total momentum of an isolated system stays constant"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-phys-05-01",
+    "chapterId": "c11-phys-05",
+    "title": "Work by a constant force",
+    "content": "Work is the scalar product of force and displacement.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "W = F · d = Fd cos θ",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-phys-05-02",
+    "chapterId": "c11-phys-05",
+    "title": "Work-energy theorem",
+    "content": "Net work done on a body equals its change in kinetic energy.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "K = ½mv²; K_f − K_i = W_net",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-phys-05-03",
+    "chapterId": "c11-phys-05",
+    "title": "Potential energy and power",
+    "content": "Gravitational and spring forces are conservative.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "V = mgh; V_spring = ½kx²; P = W/t = F · v",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-phys-05-04",
+    "chapterId": "c11-phys-05",
+    "title": "Collisions",
+    "content": "Linear momentum is conserved in all collisions.",
+    "bullets": [
+      "Elastic: kinetic energy is also conserved",
+      "Inelastic: some kinetic energy is lost",
+      "Completely inelastic: the bodies stick together"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-chem-01-01",
+    "chapterId": "c11-chem-01",
+    "title": "The mole",
+    "content": "One mole contains exactly 6.02214076 × 10²³ elementary entities, the Avogadro constant.",
+    "bullets": null,
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-chem-01-02",
+    "chapterId": "c11-chem-01",
+    "title": "Mole relations",
+    "content": "Here m is mass, M molar mass, N number of particles and Nₐ the Avogadro constant.",
+    "bullets": [
+      "Molecular formula = empirical formula × (molar mass / empirical formula mass)"
+    ],
+    "contentType": "formula",
+    "formula": "n = m/M = N/Nₐ",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-chem-01-03",
+    "chapterId": "c11-chem-01",
+    "title": "Concentration terms",
+    "content": "Molarity uses litres of solution; molality uses kilograms of solvent.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "M = moles of solute / L of solution; m = moles of solute / kg of solvent; mass % = (mass of solute / mass of solution) × 100",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-chem-01-04",
+    "chapterId": "c11-chem-01",
+    "title": "Laws of chemical combination",
+    "content": null,
+    "bullets": [
+      "Conservation of mass",
+      "Definite proportions",
+      "Multiple proportions",
+      "Gay Lussac's law of gaseous volumes",
+      "Avogadro's law"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-chem-01-05",
+    "chapterId": "c11-chem-01",
+    "title": "Limiting reagent",
+    "content": "The reactant used up first limits the amount of product formed.",
+    "bullets": null,
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c11-chem-04-01",
+    "chapterId": "c11-chem-04",
+    "title": "Formal charge and dipole moment",
+    "content": "V is valence electrons, L is lone-pair electrons and S is shared electrons on the atom.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Formal charge = V − L − ½S; μ = Q × r",
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-chem-04-02",
+    "chapterId": "c11-chem-04",
+    "title": "VSEPR repulsion order",
+    "content": "Lone pairs repel more strongly than bond pairs and shrink bond angles.",
+    "bullets": [
+      "lp–lp > lp–bp > bp–bp",
+      "CH₄ 109.5°",
+      "NH₃ 107°",
+      "H₂O 104.5°"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-chem-04-03",
+    "chapterId": "c11-chem-04",
+    "title": "Hybridisation and shape",
+    "content": null,
+    "bullets": [
+      "sp: linear, 180°",
+      "sp²: trigonal planar, 120°",
+      "sp³: tetrahedral, 109.5°",
+      "sp³d: trigonal bipyramidal",
+      "sp³d²: octahedral"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-chem-04-04",
+    "chapterId": "c11-chem-04",
+    "title": "Bond order",
+    "content": "Nb and Na are electrons in bonding and antibonding orbitals. Higher bond order means a shorter, stronger bond.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Bond order = ½(Nb − Na)",
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-chem-04-05",
+    "chapterId": "c11-chem-04",
+    "title": "Molecular orbital results",
+    "content": null,
+    "bullets": [
+      "N₂ has bond order 3 and is diamagnetic",
+      "O₂ has bond order 2 and is paramagnetic with two unpaired electrons",
+      "A positive bond order (Nb > Na) indicates a stable molecule"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c11-bio-08-01",
+    "chapterId": "c11-bio-08",
+    "title": "Cell theory",
+    "content": "Schleiden and Schwann proposed that all living organisms are made of cells. Virchow added that new cells arise from pre-existing cells.",
+    "bullets": [
+      "Omnis cellula-e cellula"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-bio-08-02",
+    "chapterId": "c11-bio-08",
+    "title": "Prokaryotic and eukaryotic cells",
+    "content": "Prokaryotes lack a membrane-bound nucleus and organelles. Eukaryotes have both.",
+    "bullets": [
+      "Prokaryotes: bacteria, blue-green algae, mycoplasma",
+      "Eukaryotes: protists, fungi, plants, animals"
+    ],
+    "contentType": "definition",
+    "formula": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-bio-08-03",
+    "chapterId": "c11-bio-08",
+    "title": "Ribosome types",
+    "content": "S stands for the Svedberg unit, a measure of sedimentation.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Prokaryotes: 70S (50S + 30S); Eukaryotes: 80S (60S + 40S)",
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-bio-08-04",
+    "chapterId": "c11-bio-08",
+    "title": "Fluid mosaic model",
+    "content": "Singer and Nicolson (1972) described the membrane as a quasi-fluid lipid bilayer with proteins.",
+    "bullets": [
+      "Proteins are integral or peripheral",
+      "Fluidity aids growth, secretion and division"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "REV-c11-bio-08-05",
+    "chapterId": "c11-bio-08",
+    "title": "Organelle roles",
+    "content": null,
+    "bullets": [
+      "Golgi: packaging, glycoproteins and glycolipids",
+      "Lysosome: hydrolytic digestion",
+      "Mitochondrion: aerobic respiration, ATP",
+      "Chloroplast: photosynthesis"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "REV-c11-bio-15-01",
+    "chapterId": "c11-bio-15",
+    "title": "Composition of blood",
+    "content": "Plasma forms about 55% of blood and formed elements about 45%.",
+    "bullets": [
+      "RBCs live about 120 days",
+      "Normal haemoglobin is 12–16 g per 100 mL",
+      "Blood groups: A, B, AB, O"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "REV-c11-bio-15-02",
+    "chapterId": "c11-bio-15",
+    "title": "Cardiac output",
+    "content": "It is the blood pumped by each ventricle per minute, about 5 L in a healthy adult.",
+    "bullets": null,
+    "contentType": "formula",
+    "formula": "Cardiac output = Stroke volume × Heart rate ≈ 70 mL × 72 per min ≈ 5 L/min",
+    "displayOrder": 2
+  },
+  {
+    "id": "REV-c11-bio-15-03",
+    "chapterId": "c11-bio-15",
+    "title": "Cardiac cycle",
+    "content": "One cycle of systole and diastole of the atria and ventricles lasts 0.8 s at 75 beats per minute.",
+    "bullets": [
+      "Lub: closure of the tricuspid and bicuspid valves",
+      "Dub: closure of the semilunar valves"
+    ],
+    "contentType": "concept",
+    "formula": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "REV-c11-bio-15-04",
+    "chapterId": "c11-bio-15",
+    "title": "Conducting system and ECG",
+    "content": "The SA node is the pacemaker, generating 70–75 action potentials per minute.",
+    "bullets": [
+      "P wave: atrial depolarisation",
+      "QRS complex: ventricular depolarisation",
+      "T wave: ventricular repolarisation"
+    ],
+    "contentType": "ncert",
+    "formula": null,
+    "displayOrder": 4
+  }
+]

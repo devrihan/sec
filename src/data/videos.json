@@ -1,0 +1,372 @@
+[
+  {
+    "id": "VID-c12-chem-01",
+    "chapterId": "c12-chem-01",
+    "title": "Solutions in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Solutions%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-02",
+    "chapterId": "c12-chem-02",
+    "title": "Electrochemistry in One Shot",
+    "provider": "LearnoHub on YouTube",
+    "videoId": "ZRSDAkjXR8c",
+    "videoUrl": "https://www.youtube.com/watch?v=ZRSDAkjXR8c",
+    "thumbnailUrl": "https://i.ytimg.com/vi/ZRSDAkjXR8c/hqdefault.jpg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-03",
+    "chapterId": "c12-chem-03",
+    "title": "Chemical Kinetics in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Chemical%20Kinetics%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-04",
+    "chapterId": "c12-chem-04",
+    "title": "The d- and f-Block Elements in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=The%20d-%20and%20f-Block%20Elements%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-05",
+    "chapterId": "c12-chem-05",
+    "title": "Coordination Compounds in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Coordination%20Compounds%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-06",
+    "chapterId": "c12-chem-06",
+    "title": "Haloalkanes and Haloarenes in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Haloalkanes%20and%20Haloarenes%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-07",
+    "chapterId": "c12-chem-07",
+    "title": "Alcohols, Phenols and Ethers in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Alcohols%2C%20Phenols%20and%20Ethers%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-08",
+    "chapterId": "c12-chem-08",
+    "title": "Aldehydes, Ketones and Carboxylic Acids in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Aldehydes%2C%20Ketones%20and%20Carboxylic%20Acids%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-09",
+    "chapterId": "c12-chem-09",
+    "title": "Amines in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Amines%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-chem-10",
+    "chapterId": "c12-chem-10",
+    "title": "Biomolecules in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Biomolecules%20class%2012%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-math-01",
+    "chapterId": "c12-math-01",
+    "title": "Relations and Functions in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Relations%20and%20Functions%20class%2012%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-math-03",
+    "chapterId": "c12-math-03",
+    "title": "Matrices in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Matrices%20class%2012%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-math-04",
+    "chapterId": "c12-math-04",
+    "title": "Determinants in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Determinants%20class%2012%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-math-05",
+    "chapterId": "c12-math-05",
+    "title": "Continuity and Differentiability in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Continuity%20and%20Differentiability%20class%2012%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-phys-01",
+    "chapterId": "c12-phys-01",
+    "title": "Electric Charges and Fields in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Electric%20Charges%20and%20Fields%20class%2012%20Physics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/physics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-phys-02",
+    "chapterId": "c12-phys-02",
+    "title": "Electrostatic Potential and Capacitance in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Electrostatic%20Potential%20and%20Capacitance%20class%2012%20Physics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/physics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-phys-03",
+    "chapterId": "c12-phys-03",
+    "title": "Current Electricity in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Current%20Electricity%20class%2012%20Physics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/physics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-phys-09",
+    "chapterId": "c12-phys-09",
+    "title": "Ray Optics and Optical Instruments in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Ray%20Optics%20and%20Optical%20Instruments%20class%2012%20Physics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/physics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-bio-01",
+    "chapterId": "c12-bio-01",
+    "title": "Sexual Reproduction in Flowering Plants in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Sexual%20Reproduction%20in%20Flowering%20Plants%20class%2012%20Biology%20one%20shot",
+    "thumbnailUrl": "/thumbnails/biology.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-bio-04",
+    "chapterId": "c12-bio-04",
+    "title": "Principles of Inheritance and Variation in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Principles%20of%20Inheritance%20and%20Variation%20class%2012%20Biology%20one%20shot",
+    "thumbnailUrl": "/thumbnails/biology.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c12-bio-05",
+    "chapterId": "c12-bio-05",
+    "title": "Molecular Basis of Inheritance in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Molecular%20Basis%20of%20Inheritance%20class%2012%20Biology%20one%20shot",
+    "thumbnailUrl": "/thumbnails/biology.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c9-math-02",
+    "chapterId": "c9-math-02",
+    "title": "Polynomials in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Polynomials%20class%209%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c9-math-11",
+    "chapterId": "c9-math-11",
+    "title": "Surface Areas and Volumes in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Surface%20Areas%20and%20Volumes%20class%209%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c9-sci-04",
+    "chapterId": "c9-sci-04",
+    "title": "Structure of the Atom in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Structure%20of%20the%20Atom%20class%209%20Science%20one%20shot",
+    "thumbnailUrl": "/thumbnails/science.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c9-sci-07",
+    "chapterId": "c9-sci-07",
+    "title": "Motion in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Motion%20class%209%20Science%20one%20shot",
+    "thumbnailUrl": "/thumbnails/science.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c10-math-04",
+    "chapterId": "c10-math-04",
+    "title": "Quadratic Equations in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Quadratic%20Equations%20class%2010%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c10-math-08",
+    "chapterId": "c10-math-08",
+    "title": "Introduction to Trigonometry in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Introduction%20to%20Trigonometry%20class%2010%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c10-sci-01",
+    "chapterId": "c10-sci-01",
+    "title": "Chemical Reactions and Equations in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Chemical%20Reactions%20and%20Equations%20class%2010%20Science%20one%20shot",
+    "thumbnailUrl": "/thumbnails/science.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c10-sci-11",
+    "chapterId": "c10-sci-11",
+    "title": "Electricity in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Electricity%20class%2010%20Science%20one%20shot",
+    "thumbnailUrl": "/thumbnails/science.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-math-01",
+    "chapterId": "c11-math-01",
+    "title": "Sets in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Sets%20class%2011%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-math-12",
+    "chapterId": "c11-math-12",
+    "title": "Limits and Derivatives in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Limits%20and%20Derivatives%20class%2011%20Mathematics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/mathematics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-phys-04",
+    "chapterId": "c11-phys-04",
+    "title": "Laws of Motion in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Laws%20of%20Motion%20class%2011%20Physics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/physics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-phys-05",
+    "chapterId": "c11-phys-05",
+    "title": "Work, Energy and Power in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Work%2C%20Energy%20and%20Power%20class%2011%20Physics%20one%20shot",
+    "thumbnailUrl": "/thumbnails/physics.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-chem-01",
+    "chapterId": "c11-chem-01",
+    "title": "Some Basic Concepts of Chemistry in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Some%20Basic%20Concepts%20of%20Chemistry%20class%2011%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-chem-04",
+    "chapterId": "c11-chem-04",
+    "title": "Chemical Bonding and Molecular Structure in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Chemical%20Bonding%20and%20Molecular%20Structure%20class%2011%20Chemistry%20one%20shot",
+    "thumbnailUrl": "/thumbnails/chemistry.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-bio-08",
+    "chapterId": "c11-bio-08",
+    "title": "Cell: The Unit of Life in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Cell%3A%20The%20Unit%20of%20Life%20class%2011%20Biology%20one%20shot",
+    "thumbnailUrl": "/thumbnails/biology.svg",
+    "duration": null
+  },
+  {
+    "id": "VID-c11-bio-15",
+    "chapterId": "c11-bio-15",
+    "title": "Body Fluids and Circulation in One Shot",
+    "provider": "YouTube",
+    "videoId": null,
+    "videoUrl": "https://www.youtube.com/results?search_query=Body%20Fluids%20and%20Circulation%20class%2011%20Biology%20one%20shot",
+    "thumbnailUrl": "/thumbnails/biology.svg",
+    "duration": null
+  }
+]

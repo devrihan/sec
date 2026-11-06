@@ -1,0 +1,7 @@
+[
+  { "id": "starter", "name": "Starter", "imageUrl": "/badges/starter.svg", "description": "Reach the first points milestone" },
+  { "id": "achiever", "name": "Achiever", "imageUrl": "/badges/achiever.svg", "description": "Reach the second points milestone" },
+  { "id": "champion", "name": "Champion", "imageUrl": "/badges/champion.svg", "description": "Reach the third points milestone" },
+  { "id": "quiz-champion", "name": "Quiz Champion", "imageUrl": "/badges/quiz-champion.svg", "description": "Get every question right in a solo quiz" },
+  { "id": "remediation-finisher", "name": "Remediation Finisher", "imageUrl": "/badges/remediation-finisher.svg", "description": "Finish all weak chapters in a subject" }
+]

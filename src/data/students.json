@@ -1,0 +1,37 @@
+{
+  "students": [
+    {"id":"STU-12M-001","name":"Aarav","class":12,"section":"M","activeAvatarId":"blue-hoodie","openingCoins":1000,"openingPoints":2450,"quizCorrect":312,"quizAnswered":390,"achievedAt":"2026-10-28T10:30:00.000Z","extraBadgeIds":["quiz-champion"],"isDemoStudent":true},
+    {"id":"STU-12M-002","name":"Meera","class":12,"section":"M","activeAvatarId":"scientist","openingCoins":820,"openingPoints":2780,"quizCorrect":355,"quizAnswered":410,"achievedAt":"2026-10-30T09:10:00.000Z","extraBadgeIds":["quiz-champion"]},
+    {"id":"STU-12M-003","name":"Kabir","class":12,"section":"M","activeAvatarId":"robot-master","openingCoins":640,"openingPoints":2540,"quizCorrect":301,"quizAnswered":380,"achievedAt":"2026-10-29T11:45:00.000Z"},
+    {"id":"STU-12M-004","name":"Ishita","class":12,"section":"M","activeAvatarId":"glasses-scholar","openingCoins":910,"openingPoints":2310,"quizCorrect":280,"quizAnswered":360,"achievedAt":"2026-10-27T08:20:00.000Z"},
+    {"id":"STU-12M-005","name":"Rohan","class":12,"section":"M","activeAvatarId":"gamer","openingCoins":500,"openingPoints":2120,"quizCorrect":260,"quizAnswered":350,"achievedAt":"2026-10-26T14:05:00.000Z"},
+    {"id":"STU-12M-006","name":"Ananya","class":12,"section":"M","activeAvatarId":"purple-hoodie","openingCoins":730,"openingPoints":1890,"quizCorrect":242,"quizAnswered":320,"achievedAt":"2026-10-25T16:40:00.000Z"},
+    {"id":"STU-12M-007","name":"Vihaan","class":12,"section":"M","activeAvatarId":"space-explorer","openingCoins":450,"openingPoints":1460,"quizCorrect":190,"quizAnswered":280,"achievedAt":"2026-10-24T13:15:00.000Z"},
+    {"id":"STU-12M-008","name":"Sara","class":12,"section":"M","activeAvatarId":"blue-hoodie","openingCoins":610,"openingPoints":280,"quizCorrect":60,"quizAnswered":90,"achievedAt":"2026-10-22T10:00:00.000Z"},
+    {"id":"STU-12M-009","name":"Dev","class":12,"section":"M","activeAvatarId":"purple-hoodie","openingCoins":300,"openingPoints":150,"quizCorrect":30,"quizAnswered":60,"achievedAt":"2026-10-20T10:00:00.000Z"},
+    {"id":"STU-12M-010","name":"Tara","class":12,"section":"M","activeAvatarId":"gamer","openingCoins":200,"openingPoints":60,"quizCorrect":12,"quizAnswered":24,"achievedAt":"2026-10-18T10:00:00.000Z"},
+    {"id":"STU-12N-001","name":"Nikhil","class":12,"section":"N","activeAvatarId":"gamer","openingCoins":700,"openingPoints":3120,"quizCorrect":380,"quizAnswered":440,"achievedAt":"2026-10-29T10:00:00.000Z"},
+    {"id":"STU-12N-002","name":"Pooja","class":12,"section":"N","activeAvatarId":"scientist","openingCoins":540,"openingPoints":1980,"quizCorrect":250,"quizAnswered":330,"achievedAt":"2026-10-28T10:00:00.000Z"},
+    {"id":"STU-12N-003","name":"Farhan","class":12,"section":"N","activeAvatarId":"blue-hoodie","openingCoins":620,"openingPoints":1340,"quizCorrect":180,"quizAnswered":260,"achievedAt":"2026-10-27T10:00:00.000Z"},
+    {"id":"STU-11A-001","name":"Lakshmi","class":11,"section":"A","activeAvatarId":"glasses-scholar","openingCoins":650,"openingPoints":1710,"quizCorrect":220,"quizAnswered":300,"achievedAt":"2026-10-29T10:00:00.000Z"},
+    {"id":"STU-11A-002","name":"Arjun","class":11,"section":"A","activeAvatarId":"robot-master","openingCoins":430,"openingPoints":1250,"quizCorrect":170,"quizAnswered":250,"achievedAt":"2026-10-28T10:00:00.000Z"},
+    {"id":"STU-11A-003","name":"Zoya","class":11,"section":"A","activeAvatarId":"purple-hoodie","openingCoins":520,"openingPoints":240,"quizCorrect":50,"quizAnswered":80,"achievedAt":"2026-10-27T10:00:00.000Z"},
+    {"id":"STU-10B-001","name":"Harsh","class":10,"section":"B","activeAvatarId":"space-explorer","openingCoins":590,"openingPoints":1560,"quizCorrect":200,"quizAnswered":280,"achievedAt":"2026-10-29T10:00:00.000Z"},
+    {"id":"STU-10B-002","name":"Nisha","class":10,"section":"B","activeAvatarId":"scientist","openingCoins":480,"openingPoints":1120,"quizCorrect":150,"quizAnswered":220,"achievedAt":"2026-10-28T10:00:00.000Z"},
+    {"id":"STU-10B-003","name":"Yash","class":10,"section":"B","activeAvatarId":"gamer","openingCoins":360,"openingPoints":130,"quizCorrect":28,"quizAnswered":50,"achievedAt":"2026-10-27T10:00:00.000Z"},
+    {"id":"STU-9A-001","name":"Riya","class":9,"section":"A","activeAvatarId":"purple-hoodie","openingCoins":610,"openingPoints":880,"quizCorrect":120,"quizAnswered":180,"achievedAt":"2026-10-29T10:00:00.000Z"},
+    {"id":"STU-9A-002","name":"Aditya","class":9,"section":"A","activeAvatarId":"blue-hoodie","openingCoins":420,"openingPoints":410,"quizCorrect":70,"quizAnswered":110,"achievedAt":"2026-10-28T10:00:00.000Z"},
+    {"id":"STU-9A-003","name":"Sneha","class":9,"section":"A","activeAvatarId":"glasses-scholar","openingCoins":330,"openingPoints":90,"quizCorrect":20,"quizAnswered":40,"achievedAt":"2026-10-27T10:00:00.000Z"}
+  ],
+  "demoHistory": [
+    {"studentId":"STU-12M-001","type":"OPENING_BALANCE","coinAmount":1120,"pointsAmount":2050,"reason":"Opening balance for the demo","createdAt":"2026-06-01T04:30:00.000Z"},
+    {"studentId":"STU-12M-001","type":"AVATAR_PURCHASE","coinAmount":-500,"pointsAmount":0,"reason":"Bought the Blue Hoodie avatar","createdAt":"2026-07-14T09:12:00.000Z"},
+    {"studentId":"STU-12M-001","type":"QUIZ_REWARD","coinAmount":130,"pointsAmount":130,"reason":"Completed the Solutions quiz (11/12 correct)","createdAt":"2026-08-22T11:02:00.000Z"},
+    {"studentId":"STU-12M-001","type":"MULTIPLAYER_REWARD","coinAmount":150,"pointsAmount":150,"reason":"Finished the Solutions room quiz","createdAt":"2026-09-30T12:40:00.000Z"},
+    {"studentId":"STU-12M-001","type":"HINT_PURCHASE","coinAmount":-20,"pointsAmount":0,"reason":"Hint for question 4","createdAt":"2026-10-28T10:21:00.000Z"},
+    {"studentId":"STU-12M-001","type":"QUIZ_REWARD","coinAmount":120,"pointsAmount":120,"reason":"Completed the Solutions quiz (10/12 correct)","createdAt":"2026-10-28T10:30:00.000Z"}
+  ],
+  "ownedAvatars": [
+    {"studentId":"STU-12M-001","avatarId":"blue-hoodie","purchasedAt":"2026-07-14T09:12:00.000Z"}
+  ]
+}

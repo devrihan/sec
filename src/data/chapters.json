@@ -1,0 +1,306 @@
+[
+  {
+    "id": "c12-chem-01",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 1,
+    "title": "Solutions",
+    "displayOrder": 1
+  },
+  {
+    "id": "c12-chem-02",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 2,
+    "title": "Electrochemistry",
+    "displayOrder": 2
+  },
+  {
+    "id": "c12-chem-03",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 3,
+    "title": "Chemical Kinetics",
+    "displayOrder": 3
+  },
+  {
+    "id": "c12-chem-04",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 4,
+    "title": "The d- and f-Block Elements",
+    "displayOrder": 4
+  },
+  {
+    "id": "c12-chem-05",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 5,
+    "title": "Coordination Compounds",
+    "displayOrder": 5
+  },
+  {
+    "id": "c12-chem-06",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 6,
+    "title": "Haloalkanes and Haloarenes",
+    "displayOrder": 6
+  },
+  {
+    "id": "c12-chem-07",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 7,
+    "title": "Alcohols, Phenols and Ethers",
+    "displayOrder": 7
+  },
+  {
+    "id": "c12-chem-08",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 8,
+    "title": "Aldehydes, Ketones and Carboxylic Acids",
+    "displayOrder": 8
+  },
+  {
+    "id": "c12-chem-09",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 9,
+    "title": "Amines",
+    "displayOrder": 9
+  },
+  {
+    "id": "c12-chem-10",
+    "subjectId": "c12-chem",
+    "class": 12,
+    "number": 10,
+    "title": "Biomolecules",
+    "displayOrder": 10
+  },
+  {
+    "id": "c12-math-01",
+    "subjectId": "c12-math",
+    "class": 12,
+    "number": 1,
+    "title": "Relations and Functions",
+    "displayOrder": 1
+  },
+  {
+    "id": "c12-math-03",
+    "subjectId": "c12-math",
+    "class": 12,
+    "number": 3,
+    "title": "Matrices",
+    "displayOrder": 3
+  },
+  {
+    "id": "c12-math-04",
+    "subjectId": "c12-math",
+    "class": 12,
+    "number": 4,
+    "title": "Determinants",
+    "displayOrder": 4
+  },
+  {
+    "id": "c12-math-05",
+    "subjectId": "c12-math",
+    "class": 12,
+    "number": 5,
+    "title": "Continuity and Differentiability",
+    "displayOrder": 5
+  },
+  {
+    "id": "c12-phys-01",
+    "subjectId": "c12-phys",
+    "class": 12,
+    "number": 1,
+    "title": "Electric Charges and Fields",
+    "displayOrder": 1
+  },
+  {
+    "id": "c12-phys-02",
+    "subjectId": "c12-phys",
+    "class": 12,
+    "number": 2,
+    "title": "Electrostatic Potential and Capacitance",
+    "displayOrder": 2
+  },
+  {
+    "id": "c12-phys-03",
+    "subjectId": "c12-phys",
+    "class": 12,
+    "number": 3,
+    "title": "Current Electricity",
+    "displayOrder": 3
+  },
+  {
+    "id": "c12-phys-09",
+    "subjectId": "c12-phys",
+    "class": 12,
+    "number": 9,
+    "title": "Ray Optics and Optical Instruments",
+    "displayOrder": 9
+  },
+  {
+    "id": "c12-bio-01",
+    "subjectId": "c12-bio",
+    "class": 12,
+    "number": 1,
+    "title": "Sexual Reproduction in Flowering Plants",
+    "displayOrder": 1
+  },
+  {
+    "id": "c12-bio-02",
+    "subjectId": "c12-bio",
+    "class": 12,
+    "number": 2,
+    "title": "Human Reproduction",
+    "displayOrder": 2
+  },
+  {
+    "id": "c12-bio-04",
+    "subjectId": "c12-bio",
+    "class": 12,
+    "number": 4,
+    "title": "Principles of Inheritance and Variation",
+    "displayOrder": 4
+  },
+  {
+    "id": "c12-bio-05",
+    "subjectId": "c12-bio",
+    "class": 12,
+    "number": 5,
+    "title": "Molecular Basis of Inheritance",
+    "displayOrder": 5
+  },
+  {
+    "id": "c9-math-02",
+    "subjectId": "c9-math",
+    "class": 9,
+    "number": 2,
+    "title": "Polynomials",
+    "displayOrder": 2
+  },
+  {
+    "id": "c9-math-11",
+    "subjectId": "c9-math",
+    "class": 9,
+    "number": 11,
+    "title": "Surface Areas and Volumes",
+    "displayOrder": 11
+  },
+  {
+    "id": "c9-sci-04",
+    "subjectId": "c9-sci",
+    "class": 9,
+    "number": 4,
+    "title": "Structure of the Atom",
+    "displayOrder": 4
+  },
+  {
+    "id": "c9-sci-07",
+    "subjectId": "c9-sci",
+    "class": 9,
+    "number": 7,
+    "title": "Motion",
+    "displayOrder": 7
+  },
+  {
+    "id": "c10-math-04",
+    "subjectId": "c10-math",
+    "class": 10,
+    "number": 4,
+    "title": "Quadratic Equations",
+    "displayOrder": 4
+  },
+  {
+    "id": "c10-math-08",
+    "subjectId": "c10-math",
+    "class": 10,
+    "number": 8,
+    "title": "Introduction to Trigonometry",
+    "displayOrder": 8
+  },
+  {
+    "id": "c10-sci-01",
+    "subjectId": "c10-sci",
+    "class": 10,
+    "number": 1,
+    "title": "Chemical Reactions and Equations",
+    "displayOrder": 1
+  },
+  {
+    "id": "c10-sci-11",
+    "subjectId": "c10-sci",
+    "class": 10,
+    "number": 11,
+    "title": "Electricity",
+    "displayOrder": 11
+  },
+  {
+    "id": "c11-math-01",
+    "subjectId": "c11-math",
+    "class": 11,
+    "number": 1,
+    "title": "Sets",
+    "displayOrder": 1
+  },
+  {
+    "id": "c11-math-12",
+    "subjectId": "c11-math",
+    "class": 11,
+    "number": 12,
+    "title": "Limits and Derivatives",
+    "displayOrder": 12
+  },
+  {
+    "id": "c11-phys-04",
+    "subjectId": "c11-phys",
+    "class": 11,
+    "number": 4,
+    "title": "Laws of Motion",
+    "displayOrder": 4
+  },
+  {
+    "id": "c11-phys-05",
+    "subjectId": "c11-phys",
+    "class": 11,
+    "number": 5,
+    "title": "Work, Energy and Power",
+    "displayOrder": 5
+  },
+  {
+    "id": "c11-chem-01",
+    "subjectId": "c11-chem",
+    "class": 11,
+    "number": 1,
+    "title": "Some Basic Concepts of Chemistry",
+    "displayOrder": 1
+  },
+  {
+    "id": "c11-chem-04",
+    "subjectId": "c11-chem",
+    "class": 11,
+    "number": 4,
+    "title": "Chemical Bonding and Molecular Structure",
+    "displayOrder": 4
+  },
+  {
+    "id": "c11-bio-08",
+    "subjectId": "c11-bio",
+    "class": 11,
+    "number": 8,
+    "title": "Cell: The Unit of Life",
+    "displayOrder": 8
+  },
+  {
+    "id": "c11-bio-15",
+    "subjectId": "c11-bio",
+    "class": 11,
+    "number": 15,
+    "title": "Body Fluids and Circulation",
+    "displayOrder": 15
+  }
+]
