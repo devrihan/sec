@@ -80,7 +80,7 @@ export function RoomsPage() {
                 autoComplete="off"
                 data-testid="room-code-input"
                 aria-invalid={Boolean(error)}
-                className="bg-white"
+                className="bg-background"
                 onChange={(e) => {
                   setCode(e.target.value.toUpperCase());
                   setError(null);

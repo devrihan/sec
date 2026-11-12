@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Spinner } from '@/components/ui/spinner';
 import { cn } from '@/lib/utils';
-import { BackLink, NotFoundState, WHITE_PANEL } from '../components/page-parts';
+import { BackLink, flashcardTone, NotFoundState } from '../components/page-parts';
 import { OptionList } from '../components/QuestionCard';
 import { HINT_COST_COINS } from '../config/rewards';
 import { chapterById, questionById, subjectById } from '../services/catalog';
@@ -14,6 +14,8 @@ import { attemptById, completeQuiz, submitAnswer } from '../services/quizService
 import { finishRoom } from '../services/roomService';
 import { useAppState } from '../services/store';
 import { useCoins } from '../services/studentService';
+
+const CARD_FACE = 'rounded-2xl border bg-card p-6 shadow-md';
 
 export function QuizPage() {
   const { attemptId = '' } = useParams();
@@ -88,16 +90,18 @@ export function QuizPage() {
         })}
       </div>
 
-      <div className={`flip${submitted ? ' is-flipped' : ''}`}>
+      <div className={cn('flip', flashcardTone(index), submitted && 'is-flipped')}>
+        {index + 2 < total && <span aria-hidden="true" className={cn('deck-card deck-card-2', flashcardTone(index + 2))} />}
+        {index + 1 < total && <span aria-hidden="true" className={cn('deck-card', flashcardTone(index + 1))} />}
         <div className="flip-inner">
-          <section className={`flip-face flip-front ${WHITE_PANEL}`} aria-hidden={submitted}>
-            <p className="mb-1 text-[12px] leading-4 font-medium tracking-[-0.072px] text-muted-foreground">Question</p>
+          <section className={`flip-face flip-front ${CARD_FACE}`} aria-hidden={submitted}>
+            <p className="mb-3 border-b border-border pb-2 text-[12px] leading-4 font-medium tracking-[-0.072px] text-muted-foreground">Question</p>
             <p className="mb-4 text-[18px] leading-7 font-medium tracking-[-0.108px] text-foreground" data-testid="question-text">{question.questionText}</p>
             <OptionList question={question} selectedId={chosen} disabled={submitted} onSelect={setSelected} name={`q-${question.id}`} />
             {attempt.mode === 'solo' && !submitted && <HintControl key={question.id} attemptId={attempt.id} questionId={question.id} />}
           </section>
-          <section className={`flip-face flip-back ${WHITE_PANEL}`} aria-hidden={!submitted} data-testid="feedback">
-            <p role="status" className={cn('verdict mb-1 text-[20px] leading-7 font-semibold tracking-[-0.12px]', answer?.correct ? 'text-[#008a2e]' : 'text-[#e60000]')}>
+          <section className={`flip-face flip-back ${CARD_FACE}`} aria-hidden={!submitted} data-testid="feedback">
+            <p role="status" className={cn('verdict mb-3 w-fit rounded-full bg-background px-3 py-0.5 text-[20px] leading-7 font-semibold tracking-[-0.12px] empty:bg-transparent', answer?.correct ? 'text-good' : 'text-bad')}>
               {submitted ? (answer?.correct ? 'Correct' : 'Incorrect') : ''}
             </p>
             <p className="mb-4 text-[18px] leading-7 font-medium tracking-[-0.108px] text-foreground">{question.questionText}</p>
@@ -130,7 +134,7 @@ function HintControl({ attemptId, questionId }: { attemptId: string; questionId:
 
   if (hint) {
     return (
-      <div className="mt-4 rounded-lg border border-[#ad4e00]/20 bg-[#fffcf0] px-4 py-3" data-testid="hint-text">
+      <div className="mt-4 rounded-lg border border-warn/20 bg-warn-soft px-4 py-3" data-testid="hint-text">
         <p className="text-[14px] leading-5 text-foreground">{hint.hintText}</p>
         <p className="mt-1 text-[12px] leading-4 tracking-[-0.072px] text-muted-foreground">Hint used for {hint.coinCost} coins. {hintProviderLabel()}.</p>
       </div>
@@ -162,7 +166,7 @@ function HintControl({ attemptId, questionId }: { attemptId: string; questionId:
         {loading ? <Spinner className="size-4" /> : <Lightbulb className="size-4" />}
         {loading ? 'Getting your hint' : `Get hint · ${HINT_COST_COINS} coins`}
       </Button>
-      {message && <p role="alert" data-testid="hint-message" className="text-[14px] leading-5 text-[#e60000]">{message}</p>}
+      {message && <p role="alert" data-testid="hint-message" className="rounded-md bg-background px-3 py-2 text-[14px] leading-5 text-bad">{message}</p>}
     </div>
   );
 }

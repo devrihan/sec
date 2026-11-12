@@ -66,7 +66,7 @@ export function RoomLobbyPage() {
             <li key={p.studentId} data-testid="player" data-student={p.studentId} className="flex items-center gap-3 px-4 py-2.5">
               <AvatarImage config={getState().avatarConfigs[p.studentId]} className="size-8" />
               <span className="min-w-0 flex-1 truncate text-[14px] leading-5 text-foreground">{seedStudentById(p.studentId)?.name}{p.studentId === myId && ' (you)'}</span>
-              <span className={cn('text-[12px] leading-4 font-medium tracking-[-0.072px]', p.state === 'ready' ? 'text-[#008a2e]' : 'text-[#ad4e00]')}>
+              <span className={cn('text-[12px] leading-4 font-medium tracking-[-0.072px]', p.state === 'ready' ? 'text-good' : 'text-warn')}>
                 {p.isHost ? 'Host, ' : ''}{p.state === 'ready' ? 'ready' : 'waiting'}
               </span>
             </li>

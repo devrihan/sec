@@ -1,9 +1,11 @@
+import { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { HERO_CTA, NotFoundState, SectionHeading } from '../components/page-parts';
 import { SectionAverageCard, type SectionAverageVariant } from '../components/section-average-card';
 import { questionById } from '../services/catalog';
 import { accuracyPercent, attemptById, marksOf } from '../services/quizService';
+import { roadmapSpotForChapter } from '../services/remediationService';
 import { useAppState } from '../services/store';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +14,7 @@ const variantFor = (pct: number): SectionAverageVariant => (pct >= 60 ? 'good' :
 
 export function ReviewList({ rows }: { rows: { id: string; text: string; right: boolean; detail: string }[] }) {
   return (
-    <ol className="divide-y divide-sidebar-border overflow-hidden rounded-xl border border-sidebar-border bg-white">
+    <ol className="divide-y divide-sidebar-border overflow-hidden rounded-xl border border-sidebar-border bg-background">
       {rows.map((r) => (
         <li key={r.id} className="flex gap-3 px-4 py-3">
           <span aria-hidden="true" className={cn('mt-2 size-2 shrink-0 rounded-full', r.right ? 'bg-[#008a2e]' : 'bg-[#e60000]')} />
@@ -30,6 +32,8 @@ export function QuizResultsPage() {
   const { attemptId = '' } = useParams();
   const attempt = useAppState((s) => attemptById(s, attemptId));
   const reward = useAppState((s) => s.transactions.find((t) => t.dedupeKey === `quiz:${attemptId}`));
+  const state = useAppState((s) => s);
+  const spot = useMemo(() => (attempt ? roadmapSpotForChapter(state, attempt.chapterId) : undefined), [state, attempt]);
   if (!attempt || !attempt.completedAt) {
     return <NotFoundState message="Results appear after every question is answered." />;
   }
@@ -56,6 +60,25 @@ export function QuizResultsPage() {
           </div>
         </div>
       </section>
+      {spot && (
+        <section className="flex flex-col gap-3 rounded-xl border border-good-edge bg-good-tint px-5 py-4 sm:flex-row sm:items-center" data-testid="retake-remediation">
+          <div className="min-w-0 flex-1">
+            <p className="text-[16px] leading-6 font-semibold text-foreground">
+              {spot.node.state === 'current' ? 'Ready? Retake the remediation check' : 'This chapter is on your roadmap'}
+            </p>
+            <p className="text-[14px] leading-5 text-muted-foreground">
+              {spot.node.state === 'current'
+                ? `Pass it to win back up to ${spot.node.marks} ${spot.node.marks === 1 ? 'mark' : 'marks'} in ${spot.subject.name}, ${spot.exam.name}.`
+                : `It unlocks after the earlier chapters on your ${spot.subject.name} ${spot.exam.name} roadmap.`}
+            </p>
+          </div>
+          <Button asChild className={HERO_CTA}>
+            <Link to={spot.node.state === 'current' ? `/remediation/${spot.exam.id}/${spot.subject.id}/${spot.node.chapter.id}` : `/remediation/${spot.exam.id}/${spot.subject.id}`}>
+              {spot.node.state === 'current' ? 'Go to remediation' : 'Open roadmap'}
+            </Link>
+          </Button>
+        </section>
+      )}
       <section>
         <SectionHeading title="Review your answers" />
         <ReviewList

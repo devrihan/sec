@@ -16,7 +16,26 @@ interface Live {
 }
 
 /** A live, rotatable WebGL view of the avatar. Drag, use the buttons, or press the arrow keys. */
-export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
+/** 'close' frames the whole figure, head to feet, filling most of the canvas. */
+const FRAMING = {
+  default: { y: 1.9, distance: 9.1, look: 1.48 },
+  close: { y: 1.58, distance: 6.1, look: 1.5 },
+};
+
+export function Avatar3DViewer({
+  config,
+  framing = 'default',
+  heightClass = 'h-[440px]',
+  label = 'Your 3D avatar. Drag or use the arrow keys to rotate it.',
+  bare = false,
+}: {
+  config: AvatarConfig;
+  framing?: keyof typeof FRAMING;
+  heightClass?: string;
+  label?: string;
+  /** No background, floor or buttons: the character floats on the page. */
+  bare?: boolean;
+}) {
   const hostRef = useRef<HTMLDivElement>(null);
   const live = useRef<Live | null>(null);
   const latest = useRef(config);
@@ -55,10 +74,11 @@ export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
         const scene = module.createScene();
         const floor = new THREE.Mesh(new THREE.CircleGeometry(1.1, 48), new THREE.MeshBasicMaterial({ color: 0x0f172a, transparent: true, opacity: 0.09 }));
         floor.rotation.x = -Math.PI / 2;
-        scene.add(floor);
+        if (!bare) scene.add(floor);
         const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
-        camera.position.set(0, 1.9, 9.1);
-        camera.lookAt(0, 1.48, 0);
+        const view = FRAMING[framing];
+        camera.position.set(0, view.y, view.distance);
+        camera.lookAt(0, view.look, 0);
         live.current = { module, renderer, scene, camera, avatar: null, spin: -0.3 };
         rebuild();
 
@@ -67,6 +87,13 @@ export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
           if (w === 0 || h === 0) return;
           renderer.setSize(w, h);
           camera.aspect = w / h;
+          if (framing === 'close') {
+            // Back the camera off until the whole figure fits both the height and the width.
+            const half = Math.tan((camera.fov * Math.PI) / 360);
+            const distance = Math.max(3.3 / (2 * half), 1.8 / (2 * half * camera.aspect));
+            camera.position.set(0, view.y, distance);
+            camera.lookAt(0, view.look, 0);
+          }
           camera.updateProjectionMatrix();
         };
         resize();
@@ -80,6 +107,8 @@ export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
           if (l.avatar) {
             const sway = still ? 0 : Math.sin((t - start) / 1500) * 0.04;
             l.avatar.rotation.y = l.spin + sway;
+            // Hero powers glow, orbit and hover. Still for reduced motion.
+            if (!still) l.module.animateAvatar(l.avatar, (t - start) / 1000);
           }
           renderer.render(scene, camera);
           frame = requestAnimationFrame(draw);
@@ -117,16 +146,16 @@ export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
   const drag = useRef<number | null>(null);
 
   return (
-    <div className="relative">
+    <div className="relative h-full">
       <div
         ref={hostRef}
         role="img"
-        aria-label="Your 3D avatar. Drag or use the arrow keys to rotate it."
+        aria-label={label}
         tabIndex={0}
         data-testid="avatar-3d"
         data-status={status}
         data-config={key}
-        className="h-[440px] w-full cursor-grab touch-none rounded-xl bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 active:cursor-grabbing"
+        className={`${heightClass} w-full cursor-grab touch-none rounded-xl ${bare ? '' : 'bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900'} outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 active:cursor-grabbing`}
         onPointerDown={(e) => {
           drag.current = e.clientX;
           e.currentTarget.setPointerCapture(e.pointerId);
@@ -147,7 +176,7 @@ export function Avatar3DViewer({ config }: { config: AvatarConfig }) {
           3D isn't available in this browser. Turn on hardware acceleration, then reload.
         </p>
       )}
-      <div className="absolute right-2 bottom-2 flex gap-1">
+      <div className={bare ? 'hidden' : 'absolute right-2 bottom-2 flex gap-1'}>
         <Button type="button" variant="outline" size="icon-sm" aria-label="Rotate left" onClick={() => spinBy(-0.5)}><RotateCcw className="size-4" /></Button>
         <Button type="button" variant="outline" size="icon-sm" aria-label="Rotate right" onClick={() => spinBy(0.5)}><RotateCw className="size-4" /></Button>
       </div>

@@ -49,6 +49,21 @@ export const BADGE_THRESHOLDS: Record<string, number> = {
   champion: 300,
 };
 
+/** Badge id to marks fixed in remediation. */
+export const BADGE_MARK_GOALS: Record<string, number> = {
+  'mark-hunter': 10,
+  'mark-collector': 25,
+  'mark-master': 50,
+};
+
+/** Badge id to days in a row with a finished quiz or assessment. */
+export const BADGE_STREAK_GOALS: Record<string, number> = {
+  'on-a-roll': 3,
+  'week-warrior': 7,
+};
+
+export const PLAN_KEEPER_SESSIONS = 5;
+
 /** Wallet shows its low-balance state below this. */
 export const LOW_BALANCE_COINS = 100;
 
@@ -74,3 +89,31 @@ export const NOTIFICATION_TICK_MS = 15000;
 
 /** Simulated latency so the leaderboard loading state is visible. */
 export const LEADERBOARD_LATENCY_MS = 250;
+
+/* Team Battle (Play with Friends). */
+export const BATTLE_TEAM_SIZE = 3;
+/** Target 10–15. Drawn from the whole subject, since one chapter rarely has enough. */
+export const BATTLE_QUESTION_COUNT = 12;
+export const BATTLE_MIN_QUESTIONS = 5;
+/** Per-question timers, in seconds. Calculation questions (3 marks or hard) get longer. */
+export const BATTLE_SIMPLE_SECONDS = 120;
+export const BATTLE_CALC_SECONDS = 180;
+export const BATTLE_LIFELINE_EXTRA_SECONDS = 30;
+export const BATTLE_COUNTDOWN_MS = 5000;
+/** How long the correct answer stays on screen before the next question. */
+export const BATTLE_REVEAL_MS = 3500;
+/** Delay before each simulated friend joins or readies up. */
+export const BATTLE_SIM_STEP_MS = 1200;
+export const BATTLE_CHAT_MAX_LENGTH = 280;
+
+/** PLACEHOLDER. Every member gets the same reward, from the team's marks. */
+export const TEAM_BATTLE_REWARD = {
+  baseCoins: 25,
+  coinsPerMark: 5,
+  basePoints: 25,
+  pointsPerMark: 5,
+  winBonusCoins: 60,
+  winBonusPoints: 60,
+  drawBonusCoins: 30,
+  drawBonusPoints: 30,
+};

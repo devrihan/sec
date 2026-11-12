@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/compone
 import { getLeaderboard, nearby } from '../services/leaderboardService';
 import { dismissPopup, getState, usePopup } from '../services/store';
 import { currentStudent } from '../services/studentService';
+import { BadgeUnlock } from './BadgeMedal';
 import { CoinIcon } from './CoinBalance';
 import { LeaderboardTable } from './LeaderboardTable';
 
@@ -43,7 +44,7 @@ export function TransactionModal() {
         }}
       >
         <div>
-          <DialogTitle className={`flex items-center gap-2 text-[30px] leading-[36px] font-semibold tracking-[-0.225px] ${t.coinAmount < 0 ? 'text-[#e76e4f]' : 'text-[#008138]'}`}>
+          <DialogTitle className={`flex items-center gap-2 text-[30px] leading-[36px] font-semibold tracking-[-0.225px] ${t.coinAmount < 0 ? 'text-[#e76e4f]' : 'text-good-strong'}`}>
             <CoinIcon className="size-6" />
             {signed(t.coinAmount)} coins
           </DialogTitle>
@@ -59,26 +60,12 @@ export function TransactionModal() {
           </Fact>
         </dl>
         {popup.newRank !== popup.previousRank && (
-          <p className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-green-700">
+          <p className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-green-700 dark:text-green-400">
             You moved from #{popup.previousRank} to #{popup.newRank}.
           </p>
         )}
 
-        {popup.newBadges.length > 0 && (
-          <div className="rounded-lg border border-[#d3fde5] bg-[#ecfdf2] px-4 py-3" data-testid="txn-badges">
-            <p className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-[#008a2e]">
-              {popup.newBadges.length === 1 ? 'Badge unlocked' : 'Badges unlocked'}
-            </p>
-            <ul className="mt-1 flex flex-wrap gap-3">
-              {popup.newBadges.map((b) => (
-                <li key={b.id} className="flex items-center gap-1.5 text-[14px] leading-5 text-foreground">
-                  <img src={b.imageUrl} alt="" width={24} height={24} />
-                  {b.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <BadgeUnlock badges={popup.newBadges} testId="txn-badges" />
 
         <div className="space-y-2">
           <h3 className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-foreground">Updated leaderboard</h3>

@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowRight, ArrowUpRight } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -16,9 +17,11 @@ interface StatCardProps {
   trendDown?: boolean;
   href?: string;
   testId?: string;
+  /** A small tag under the title, such as a roadmap marker. */
+  tag?: ReactNode;
 }
 
-export function StatCard({ name, subtitle, label, avg, suffix = '', valueDisplay, trend, trendDown = false, href, testId }: StatCardProps) {
+export function StatCard({ name, subtitle, label, avg, suffix = '', valueDisplay, trend, trendDown = false, href, testId, tag }: StatCardProps) {
   const card = (
     <Card className="gap-0 overflow-hidden rounded-xl py-0 transition-shadow hover:shadow-md" data-testid={href ? undefined : testId}>
       <CardContent className="p-0">
@@ -32,6 +35,7 @@ export function StatCard({ name, subtitle, label, avg, suffix = '', valueDisplay
             <TooltipContent side="top" className="max-w-[280px] text-wrap">{name}</TooltipContent>
           </Tooltip>
           {subtitle && <p className="truncate text-[16px] leading-[24px] text-muted-foreground">{subtitle}</p>}
+          {tag && <div className="mt-2">{tag}</div>}
         </div>
         <div className="flex items-end justify-between px-4 pt-0 pb-4">
           <div className="flex flex-col gap-0.5">
@@ -41,7 +45,7 @@ export function StatCard({ name, subtitle, label, avg, suffix = '', valueDisplay
                 {valueDisplay ?? (avg === null ? '—' : `${avg}${suffix}`)}
               </span>
               {trend && (
-                <span className={`flex items-center gap-1 text-[12px] leading-4 tracking-[-0.072px] ${trendDown ? 'text-red-700' : 'text-green-700'}`}>
+                <span className={`flex items-center gap-1 text-[12px] leading-4 tracking-[-0.072px] ${trendDown ? 'text-red-700 dark:text-red-400' : 'text-green-700 dark:text-green-400'}`}>
                   {trendDown ? <ArrowDownRight className="size-5 shrink-0" /> : <ArrowUpRight className="size-5 shrink-0" />}
                   {trend}
                 </span>

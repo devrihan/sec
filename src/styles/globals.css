@@ -9,8 +9,85 @@
   --font-geist-mono: "Geist Mono Variable";
 }
 
-/* The flashcard flip has no Loam equivalent; everything else is Tailwind. */
+/* Colours that need a different value per theme. Light values match the original hard-coded ones. */
+:root {
+  --canvas: #fafaf9;
+  --table-head: #f0fdf4;
+  --good: #008a2e;
+  --good-strong: #008138;
+  --good-soft: #ecfdf2;
+  --good-tint: #eaf4ee;
+  --good-edge: #d3fde5;
+  --bad: #e60000;
+  --bad-soft: #fff0f0;
+  --warn: #ad4e00;
+  --warn-soft: #fffcf0;
+  --road: #e2e8f0;
+}
+
+/* Loam's dark tokens leave cards and canvas the same colour, so surfaces are lifted here. */
+.dark {
+  color-scheme: dark;
+  --canvas: #020617;
+  --background: #0f172a;
+  --card: #0f172a;
+  --popover: #0f172a;
+  --destructive: #f87171;
+  --sidebar: #0f172a;
+  --sidebar-accent: #1e293b;
+  --sidebar-border: #334155;
+  --table-head: #12302a;
+  --good: #4ade80;
+  --good-strong: #4ade80;
+  --good-soft: #0b2e1d;
+  --good-tint: #0b2e1d;
+  --good-edge: #166534;
+  --bad: #f87171;
+  --bad-soft: #3b1111;
+  --warn: #fbbf24;
+  --warn-soft: #2e2008;
+  --road: #1e293b;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-table-head: var(--table-head);
+  --color-good: var(--good);
+  --color-good-strong: var(--good-strong);
+  --color-good-soft: var(--good-soft);
+  --color-good-tint: var(--good-tint);
+  --color-good-edge: var(--good-edge);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+}
+
+/* Flashcards are the one deliberately colourful surface, like a pack of coloured index cards.
+   Colour is decoration here, not meaning, so no tone is a plain red or green that could read as
+   right or wrong. Overriding the tokens lets bg-card and text-muted-foreground follow the tone. */
+.flashcard {
+  --card: var(--fc);
+  --border: var(--fc-edge);
+  --muted-foreground: var(--fc-ink);
+}
+.fc-0 { --fc: #fde047; --fc-back: #fef9c3; --fc-edge: #eab308; --fc-ink: #713f12; }
+.fc-1 { --fc: #7dd3fc; --fc-back: #e0f2fe; --fc-edge: #38bdf8; --fc-ink: #0c4a6e; }
+.fc-2 { --fc: #f9a8d4; --fc-back: #fce7f3; --fc-edge: #f472b6; --fc-ink: #831843; }
+.fc-3 { --fc: #c4b5fd; --fc-back: #ede9fe; --fc-edge: #a78bfa; --fc-ink: #4c1d95; }
+.fc-4 { --fc: #fdba74; --fc-back: #ffedd5; --fc-edge: #fb923c; --fc-ink: #7c2d12; }
+.fc-5 { --fc: #5eead4; --fc-back: #ccfbf1; --fc-edge: #2dd4bf; --fc-ink: #134e4a; }
+.dark .fc-0 { --fc: #854d0e; --fc-back: #422006; --fc-edge: #a16207; --fc-ink: #fde68a; }
+.dark .fc-1 { --fc: #075985; --fc-back: #082f49; --fc-edge: #0284c7; --fc-ink: #bae6fd; }
+.dark .fc-2 { --fc: #9d174d; --fc-back: #500724; --fc-edge: #db2777; --fc-ink: #fbcfe8; }
+.dark .fc-3 { --fc: #5b21b6; --fc-back: #2e1065; --fc-edge: #7c3aed; --fc-ink: #ddd6fe; }
+.dark .fc-4 { --fc: #9a3412; --fc-back: #431407; --fc-edge: #ea580c; --fc-ink: #fed7aa; }
+.dark .fc-5 { --fc: #115e59; --fc-back: #042f2e; --fc-edge: #0d9488; --fc-ink: #99f6e4; }
+
+/* The flip has no Loam equivalent; everything else is Tailwind. */
 .flip {
+  position: relative;
+  margin-bottom: 26px;
   perspective: 1400px;
 }
 .flip-inner {
@@ -27,7 +104,109 @@
   -webkit-backface-visibility: hidden;
 }
 .flip-back {
+  --card: var(--fc-back);
   transform: rotateY(180deg);
+}
+
+/* The next cards in the pack, peeking out behind the current one. */
+.deck-card {
+  position: absolute;
+  inset: 8px 6px -6px;
+  z-index: -1;
+  border: 1px solid var(--fc-edge);
+  border-radius: 1rem;
+  background: var(--fc);
+  transform: rotate(-0.6deg);
+}
+.deck-card-2 {
+  inset: 14px 12px -12px;
+  transform: rotate(0.7deg);
+}
+
+/* Team Battle is the other deliberately colourful surface. Each team picks an emblem; its
+   colour identifies the team only, never right or wrong, which keep Loam's good and bad. */
+.em-0 { --em: #7c3aed; --em-soft: #f3efff; --em-edge: #c4b5fd; --em-ink: #5b21b6; }
+.em-1 { --em: #0284c7; --em-soft: #eaf6fd; --em-edge: #7dd3fc; --em-ink: #075985; }
+.em-2 { --em: #db2777; --em-soft: #fdf0f6; --em-edge: #f9a8d4; --em-ink: #9d174d; }
+.em-3 { --em: #d97706; --em-soft: #fff7e8; --em-edge: #fcd34d; --em-ink: #92400e; }
+.em-4 { --em: #0d9488; --em-soft: #eafaf8; --em-edge: #5eead4; --em-ink: #115e59; }
+.em-5 { --em: #ea580c; --em-soft: #fff2ea; --em-edge: #fdba74; --em-ink: #9a3412; }
+.dark .em-0 { --em: #a78bfa; --em-soft: #1e1537; --em-edge: #5b21b6; --em-ink: #ddd6fe; }
+.dark .em-1 { --em: #38bdf8; --em-soft: #0b2233; --em-edge: #075985; --em-ink: #bae6fd; }
+.dark .em-2 { --em: #f472b6; --em-soft: #2e1020; --em-edge: #9d174d; --em-ink: #fbcfe8; }
+.dark .em-3 { --em: #fbbf24; --em-soft: #2b1d07; --em-edge: #92400e; --em-ink: #fde68a; }
+.dark .em-4 { --em: #2dd4bf; --em-soft: #072622; --em-edge: #115e59; --em-ink: #99f6e4; }
+.dark .em-5 { --em: #fb923c; --em-soft: #2d1609; --em-edge: #9a3412; --em-ink: #fed7aa; }
+
+.battle-hero {
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgb(124 58 237 / 0.18), transparent 55%),
+    radial-gradient(120% 140% at 100% 100%, rgb(14 165 233 / 0.18), transparent 55%),
+    var(--background);
+}
+
+@keyframes battle-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes battle-float {
+  0% { transform: translateY(6px); opacity: 0; }
+  20% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-18px); opacity: 0; }
+}
+@keyframes battle-tick {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes battle-speak {
+  0% { box-shadow: 0 0 0 0 rgb(34 197 94 / 0.55); }
+  100% { box-shadow: 0 0 0 8px rgb(34 197 94 / 0); }
+}
+@keyframes battle-flame {
+  0%, 100% { transform: rotate(-4deg) scale(1); }
+  50% { transform: rotate(4deg) scale(1.12); }
+}
+@keyframes battle-confetti {
+  0% { transform: translateY(-20px) rotate(0); opacity: 1; }
+  100% { transform: translateY(420px) rotate(540deg); opacity: 0; }
+}
+.battle-confetti {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0;
+}
+.battle-speaking { box-shadow: 0 0 0 3px rgb(34 197 94 / 0.7); }
+@media (prefers-reduced-motion: no-preference) {
+  .battle-pop { animation: battle-pop 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .battle-float { animation: battle-float 1600ms ease-out both; }
+  .battle-tick { animation: battle-tick 1s ease-in-out infinite; }
+  .battle-speaking { animation: battle-speak 1s ease-out infinite; }
+  .battle-flame { animation: battle-flame 700ms ease-in-out infinite; }
+  .battle-confetti { animation: battle-confetti 2.6s ease-in forwards; }
+}
+
+/* The remediation path. Without motion the ring stays still and the bubble stays put. */
+@keyframes road-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+}
+@keyframes road-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes badge-pop {
+  0% { transform: scale(0.6) rotate(-8deg); opacity: 0; }
+  70% { transform: scale(1.08) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .badge-pop { animation: badge-pop 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .road-pulse { animation: road-pulse 2s ease-in-out infinite; }
+  .road-bob { animation: road-bob 2s ease-in-out infinite; }
 }
 
 @media (prefers-reduced-motion: reduce) {

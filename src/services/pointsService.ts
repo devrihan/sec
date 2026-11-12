@@ -3,6 +3,7 @@ import {
   MULTIPLAYER_REWARD,
   QUIZ_REWARD,
   REMEDIATION_COMPLETION_REWARD,
+  TEAM_BATTLE_REWARD,
 } from '../config/rewards';
 import { allBadges, avatarById, seedStudentById } from './catalog';
 import { getLeaderboard, rankOf } from './leaderboardService';
@@ -35,6 +36,8 @@ interface TransactionInput {
   dedupeKey: string | null;
   /** Earned alongside this transaction, such as Remediation Finisher. */
   achievementBadgeId?: string;
+  /** More than one achievement in the same transaction, such as Team Victory and Dream Team. */
+  achievementBadgeIds?: string[];
 }
 
 function thresholdBadgesReached(s: AppState, studentId: string, newPoints: number): Badge[] {
@@ -74,10 +77,8 @@ export function applyTransaction(input: TransactionInput): TransactionResult | n
 
   // Achievements go first so a threshold crossed in the same transaction ends up as the latest badge.
   const owned = new Set(badgesOf(before, input.studentId).map((b) => b.badgeId));
-  const achievement =
-    input.achievementBadgeId && !owned.has(input.achievementBadgeId)
-      ? allBadges().filter((b) => b.id === input.achievementBadgeId)
-      : [];
+  const wanted = [...(input.achievementBadgeId ? [input.achievementBadgeId] : []), ...(input.achievementBadgeIds ?? [])];
+  const achievement = allBadges().filter((b) => wanted.includes(b.id) && !owned.has(b.id));
   const newBadges = [...achievement, ...thresholdBadgesReached(before, input.studentId, newPoints)];
   const newStudentBadges: StudentBadge[] = newBadges.map((b) => ({
     studentId: input.studentId,
@@ -106,7 +107,7 @@ export function applyTransaction(input: TransactionInput): TransactionResult | n
   };
 }
 
-const REWARD_TYPES: TransactionType[] = ['QUIZ_REWARD', 'MULTIPLAYER_REWARD', 'REMEDIATION_REWARD'];
+const REWARD_TYPES: TransactionType[] = ['QUIZ_REWARD', 'MULTIPLAYER_REWARD', 'TEAM_BATTLE_REWARD', 'REMEDIATION_REWARD'];
 
 /** Badges, rewards and overtakes all come from real ledger changes. */
 function notifyAbout(before: AppState, t: PointTransaction, badges: Badge[]): void {
@@ -206,6 +207,39 @@ export function awardMultiplayerReward(
     reason: `Finished the ${chapterTitle} room quiz${won ? ' in first place' : ''}`,
     referenceId: roomId,
     dedupeKey: `room:${roomId}:${studentId}`,
+  });
+}
+
+export type BattleOutcome = 'won' | 'draw' | 'lost';
+
+/** Every member of a team gets the same reward: their team's marks, plus a win or draw bonus. */
+export function calculateTeamBattleReward(marks: number, outcome: BattleOutcome) {
+  const r = TEAM_BATTLE_REWARD;
+  return {
+    coins: r.baseCoins + r.coinsPerMark * marks + (outcome === 'won' ? r.winBonusCoins : outcome === 'draw' ? r.drawBonusCoins : 0),
+    points: r.basePoints + r.pointsPerMark * marks + (outcome === 'won' ? r.winBonusPoints : outcome === 'draw' ? r.drawBonusPoints : 0),
+  };
+}
+
+export function awardTeamBattleReward(
+  studentId: string,
+  battleId: string,
+  teamName: string,
+  marks: number,
+  outcome: BattleOutcome,
+  badgeIds: string[],
+): TransactionResult | null {
+  const { coins, points } = calculateTeamBattleReward(marks, outcome);
+  const how = outcome === 'won' ? 'won' : outcome === 'draw' ? 'drew' : 'played';
+  return applyTransaction({
+    studentId,
+    type: 'TEAM_BATTLE_REWARD',
+    coinAmount: coins,
+    pointsAmount: points,
+    reason: `${teamName} ${how} a team battle (${marks} marks)`,
+    referenceId: battleId,
+    dedupeKey: `battle:${battleId}:${studentId}`,
+    achievementBadgeIds: badgeIds,
   });
 }
 

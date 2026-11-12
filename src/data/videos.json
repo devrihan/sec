@@ -3,11 +3,98 @@
     "id": "VID-c12-chem-01",
     "chapterId": "c12-chem-01",
     "title": "Solutions in One Shot",
-    "provider": "YouTube",
-    "videoId": null,
-    "videoUrl": "https://www.youtube.com/results?search_query=Solutions%20class%2012%20Chemistry%20one%20shot",
-    "thumbnailUrl": "/thumbnails/chemistry.svg",
-    "duration": null
+    "provider": "LearnoHub on YouTube",
+    "videoId": "QWh8RACSqxc",
+    "videoUrl": "https://www.youtube.com/watch?v=QWh8RACSqxc",
+    "thumbnailUrl": "https://i.ytimg.com/vi/QWh8RACSqxc/hqdefault.jpg",
+    "duration": "3:39:40",
+    "lengthSeconds": 13180,
+    "timeline": [
+      {
+        "time": 49,
+        "label": "What is a solution"
+      },
+      {
+        "time": 571,
+        "label": "Types of solutions"
+      },
+      {
+        "time": 889,
+        "label": "Expressing concentration"
+      },
+      {
+        "time": 1075,
+        "label": "Mass and volume percentage"
+      },
+      {
+        "time": 1338,
+        "label": "Parts per million"
+      },
+      {
+        "time": 1533,
+        "label": "Mole fraction"
+      },
+      {
+        "time": 1985,
+        "label": "Molarity"
+      },
+      {
+        "time": 2434,
+        "label": "Molality"
+      },
+      {
+        "time": 2763,
+        "label": "Solved problems: concentration"
+      },
+      {
+        "time": 3893,
+        "label": "Solubility"
+      },
+      {
+        "time": 4135,
+        "label": "Solubility of a solid in a liquid"
+      },
+      {
+        "time": 5082,
+        "label": "Solubility of a gas in a liquid"
+      },
+      {
+        "time": 5275,
+        "label": "Henry's law"
+      },
+      {
+        "time": 6256,
+        "label": "Vapour pressure of liquid solutions"
+      },
+      {
+        "time": 6656,
+        "label": "Raoult's law"
+      },
+      {
+        "time": 7900,
+        "label": "Ideal and non-ideal solutions"
+      },
+      {
+        "time": 8342,
+        "label": "Azeotropes"
+      },
+      {
+        "time": 8937,
+        "label": "Colligative properties"
+      },
+      {
+        "time": 9069,
+        "label": "Relative lowering of vapour pressure"
+      },
+      {
+        "time": 9923,
+        "label": "Elevation of boiling point"
+      },
+      {
+        "time": 10543,
+        "label": "Depression of freezing point"
+      }
+    ]
   },
   {
     "id": "VID-c12-chem-02",
@@ -17,17 +104,179 @@
     "videoId": "ZRSDAkjXR8c",
     "videoUrl": "https://www.youtube.com/watch?v=ZRSDAkjXR8c",
     "thumbnailUrl": "https://i.ytimg.com/vi/ZRSDAkjXR8c/hqdefault.jpg",
-    "duration": null
+    "duration": "4:01:06",
+    "lengthSeconds": 14466,
+    "timeline": [
+      {
+        "time": 1007,
+        "label": "Electrochemical cells"
+      },
+      {
+        "time": 1036,
+        "label": "Daniell cell"
+      },
+      {
+        "time": 1994,
+        "label": "Galvanic cell"
+      },
+      {
+        "time": 2515,
+        "label": "Cell potential (EMF)"
+      },
+      {
+        "time": 2654,
+        "label": "Representing a galvanic cell"
+      },
+      {
+        "time": 3233,
+        "label": "Standard hydrogen electrode"
+      },
+      {
+        "time": 4871,
+        "label": "Standard electrode potential"
+      },
+      {
+        "time": 4888,
+        "label": "Nernst equation"
+      },
+      {
+        "time": 5597,
+        "label": "Nernst equation and equilibrium constant"
+      },
+      {
+        "time": 5949,
+        "label": "Gibbs energy and cell EMF"
+      },
+      {
+        "time": 6186,
+        "label": "Solved problems: Nernst equation"
+      },
+      {
+        "time": 7254,
+        "label": "Conductance of electrolytic solutions"
+      },
+      {
+        "time": 8097,
+        "label": "Molar conductivity"
+      },
+      {
+        "time": 8511,
+        "label": "Variation of conductivity with concentration"
+      },
+      {
+        "time": 9669,
+        "label": "Kohlrausch's law"
+      },
+      {
+        "time": 10282,
+        "label": "Electrolytic cells and electrolysis"
+      },
+      {
+        "time": 10960,
+        "label": "Faraday's laws of electrolysis"
+      },
+      {
+        "time": 11617,
+        "label": "Products of electrolysis"
+      },
+      {
+        "time": 12496,
+        "label": "Galvanic vs electrolytic cell"
+      },
+      {
+        "time": 12619,
+        "label": "Primary batteries"
+      },
+      {
+        "time": 13138,
+        "label": "Secondary batteries (lead storage)"
+      },
+      {
+        "time": 13458,
+        "label": "Fuel cells"
+      }
+    ]
   },
   {
     "id": "VID-c12-chem-03",
     "chapterId": "c12-chem-03",
     "title": "Chemical Kinetics in One Shot",
-    "provider": "YouTube",
-    "videoId": null,
-    "videoUrl": "https://www.youtube.com/results?search_query=Chemical%20Kinetics%20class%2012%20Chemistry%20one%20shot",
-    "thumbnailUrl": "/thumbnails/chemistry.svg",
-    "duration": null
+    "provider": "LearnoHub on YouTube",
+    "videoId": "WyM1rK6QIfo",
+    "videoUrl": "https://www.youtube.com/watch?v=WyM1rK6QIfo",
+    "thumbnailUrl": "https://i.ytimg.com/vi/WyM1rK6QIfo/hqdefault.jpg",
+    "duration": "2:36:32",
+    "lengthSeconds": 9392,
+    "timeline": [
+      {
+        "time": 580,
+        "label": "Rate of a chemical reaction"
+      },
+      {
+        "time": 670,
+        "label": "Average rate"
+      },
+      {
+        "time": 859,
+        "label": "Instantaneous rate"
+      },
+      {
+        "time": 1951,
+        "label": "Factors affecting the rate"
+      },
+      {
+        "time": 2460,
+        "label": "Rate law"
+      },
+      {
+        "time": 2844,
+        "label": "Order of a reaction"
+      },
+      {
+        "time": 3395,
+        "label": "Units of the rate constant"
+      },
+      {
+        "time": 4222,
+        "label": "Molecularity"
+      },
+      {
+        "time": 5258,
+        "label": "Integrated rate equations"
+      },
+      {
+        "time": 5315,
+        "label": "Zero order reactions"
+      },
+      {
+        "time": 5585,
+        "label": "First order reactions"
+      },
+      {
+        "time": 6350,
+        "label": "Half-life of a reaction"
+      },
+      {
+        "time": 7065,
+        "label": "Pseudo first order reactions"
+      },
+      {
+        "time": 7704,
+        "label": "Temperature dependence of rate"
+      },
+      {
+        "time": 7894,
+        "label": "Activation energy and Arrhenius equation"
+      },
+      {
+        "time": 8609,
+        "label": "Collision theory"
+      },
+      {
+        "time": 9031,
+        "label": "Effect of a catalyst"
+      }
+    ]
   },
   {
     "id": "VID-c12-chem-04",
@@ -143,11 +392,94 @@
     "id": "VID-c12-phys-01",
     "chapterId": "c12-phys-01",
     "title": "Electric Charges and Fields in One Shot",
-    "provider": "YouTube",
-    "videoId": null,
-    "videoUrl": "https://www.youtube.com/results?search_query=Electric%20Charges%20and%20Fields%20class%2012%20Physics%20one%20shot",
-    "thumbnailUrl": "/thumbnails/physics.svg",
-    "duration": null
+    "provider": "LearnoHub on YouTube",
+    "videoId": "JjUsCYMOdPU",
+    "videoUrl": "https://www.youtube.com/watch?v=JjUsCYMOdPU",
+    "thumbnailUrl": "https://i.ytimg.com/vi/JjUsCYMOdPU/hqdefault.jpg",
+    "duration": "2:25:50",
+    "lengthSeconds": 8750,
+    "timeline": [
+      {
+        "time": 68,
+        "label": "Electric charge"
+      },
+      {
+        "time": 307,
+        "label": "Charging by rubbing"
+      },
+      {
+        "time": 660,
+        "label": "Charging by conduction"
+      },
+      {
+        "time": 913,
+        "label": "Properties of electric charge"
+      },
+      {
+        "time": 943,
+        "label": "Quantisation of charge"
+      },
+      {
+        "time": 1296,
+        "label": "Coulomb's law"
+      },
+      {
+        "time": 1542,
+        "label": "Principle of superposition"
+      },
+      {
+        "time": 1940,
+        "label": "Continuous charge distribution"
+      },
+      {
+        "time": 2080,
+        "label": "Solved problems: Coulomb's law"
+      },
+      {
+        "time": 2528,
+        "label": "Electric field"
+      },
+      {
+        "time": 2728,
+        "label": "Electric field lines"
+      },
+      {
+        "time": 3091,
+        "label": "Electric field intensity"
+      },
+      {
+        "time": 4475,
+        "label": "Electric dipole"
+      },
+      {
+        "time": 4858,
+        "label": "Field on the axial line of a dipole"
+      },
+      {
+        "time": 5264,
+        "label": "Field on the equatorial line of a dipole"
+      },
+      {
+        "time": 5645,
+        "label": "Dipole in a uniform electric field"
+      },
+      {
+        "time": 6329,
+        "label": "Electric flux"
+      },
+      {
+        "time": 6678,
+        "label": "Gauss's law"
+      },
+      {
+        "time": 6773,
+        "label": "Field of an infinitely long straight wire"
+      },
+      {
+        "time": 7173,
+        "label": "Field of an infinite plane sheet"
+      }
+    ]
   },
   {
     "id": "VID-c12-phys-02",
@@ -163,11 +495,86 @@
     "id": "VID-c12-phys-03",
     "chapterId": "c12-phys-03",
     "title": "Current Electricity in One Shot",
-    "provider": "YouTube",
-    "videoId": null,
-    "videoUrl": "https://www.youtube.com/results?search_query=Current%20Electricity%20class%2012%20Physics%20one%20shot",
-    "thumbnailUrl": "/thumbnails/physics.svg",
-    "duration": null
+    "provider": "LearnoHub on YouTube",
+    "videoId": "tZXJt5SF6Q0",
+    "videoUrl": "https://www.youtube.com/watch?v=tZXJt5SF6Q0",
+    "thumbnailUrl": "https://i.ytimg.com/vi/tZXJt5SF6Q0/hqdefault.jpg",
+    "duration": "2:37:04",
+    "lengthSeconds": 9424,
+    "timeline": [
+      {
+        "time": 336,
+        "label": "Electric current"
+      },
+      {
+        "time": 939,
+        "label": "Current in conductors"
+      },
+      {
+        "time": 1321,
+        "label": "Ohm's law"
+      },
+      {
+        "time": 1618,
+        "label": "Drift of electrons"
+      },
+      {
+        "time": 2452,
+        "label": "Current density"
+      },
+      {
+        "time": 2555,
+        "label": "Mobility"
+      },
+      {
+        "time": 2599,
+        "label": "Resistivity"
+      },
+      {
+        "time": 2795,
+        "label": "Temperature dependence of resistivity"
+      },
+      {
+        "time": 3097,
+        "label": "Limitations of Ohm's law"
+      },
+      {
+        "time": 3257,
+        "label": "Solved problems: Ohm's law"
+      },
+      {
+        "time": 3962,
+        "label": "Electrical energy and power"
+      },
+      {
+        "time": 5151,
+        "label": "Cells"
+      },
+      {
+        "time": 5449,
+        "label": "EMF and internal resistance"
+      },
+      {
+        "time": 5866,
+        "label": "Terminal potential difference"
+      },
+      {
+        "time": 6376,
+        "label": "Cells in series"
+      },
+      {
+        "time": 6603,
+        "label": "Cells in parallel"
+      },
+      {
+        "time": 7191,
+        "label": "Kirchhoff's laws"
+      },
+      {
+        "time": 9129,
+        "label": "Wheatstone bridge"
+      }
+    ]
   },
   {
     "id": "VID-c12-phys-09",
@@ -182,12 +589,204 @@
   {
     "id": "VID-c12-bio-01",
     "chapterId": "c12-bio-01",
-    "title": "Sexual Reproduction in Flowering Plants in One Shot",
-    "provider": "YouTube",
-    "videoId": null,
-    "videoUrl": "https://www.youtube.com/results?search_query=Sexual%20Reproduction%20in%20Flowering%20Plants%20class%2012%20Biology%20one%20shot",
-    "thumbnailUrl": "/thumbnails/biology.svg",
-    "duration": null
+    "title": "Sexual Reproduction in Flowering Plants: Full Chapter",
+    "provider": "Competition Wallah on YouTube",
+    "videoId": "AT_Jqc-E1Eg",
+    "videoUrl": "https://www.youtube.com/watch?v=AT_Jqc-E1Eg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/AT_Jqc-E1Eg/hqdefault.jpg",
+    "duration": "3:43:24",
+    "lengthSeconds": 13404,
+    "timeline": [
+      {
+        "time": 382,
+        "label": "The flower"
+      },
+      {
+        "time": 966,
+        "label": "Formation of a flower"
+      },
+      {
+        "time": 1410,
+        "label": "Pre-fertilisation events"
+      },
+      {
+        "time": 1590,
+        "label": "Stamen and anther"
+      },
+      {
+        "time": 2618,
+        "label": "Structure of the microsporangium"
+      },
+      {
+        "time": 2826,
+        "label": "Pollen grain (male gametophyte)"
+      },
+      {
+        "time": 4235,
+        "label": "The pistil"
+      },
+      {
+        "time": 4910,
+        "label": "Formation of the embryo sac"
+      },
+      {
+        "time": 5942,
+        "label": "Pollination"
+      },
+      {
+        "time": 7522,
+        "label": "Agents of pollination"
+      },
+      {
+        "time": 8642,
+        "label": "Outbreeding devices"
+      },
+      {
+        "time": 9215,
+        "label": "Pollen–pistil interaction"
+      },
+      {
+        "time": 9485,
+        "label": "Artificial hybridisation"
+      },
+      {
+        "time": 9698,
+        "label": "Double fertilisation"
+      },
+      {
+        "time": 10130,
+        "label": "Post-fertilisation events"
+      },
+      {
+        "time": 10360,
+        "label": "Endosperm and embryo"
+      },
+      {
+        "time": 11005,
+        "label": "Seeds"
+      },
+      {
+        "time": 11902,
+        "label": "Fruits"
+      },
+      {
+        "time": 12640,
+        "label": "Parthenocarpic fruits"
+      },
+      {
+        "time": 12722,
+        "label": "Polyembryony"
+      },
+      {
+        "time": 12910,
+        "label": "Apomixis"
+      }
+    ]
+  },
+  {
+    "id": "VID-c12-bio-02",
+    "chapterId": "c12-bio-02",
+    "title": "Human Reproduction in One Shot",
+    "provider": "LearnoHub on YouTube",
+    "videoId": "LenU4UHvO5s",
+    "videoUrl": "https://www.youtube.com/watch?v=LenU4UHvO5s",
+    "thumbnailUrl": "https://i.ytimg.com/vi/LenU4UHvO5s/hqdefault.jpg",
+    "duration": "1:47:18",
+    "lengthSeconds": 6438,
+    "timeline": [
+      {
+        "time": 84,
+        "label": "Puberty"
+      },
+      {
+        "time": 347,
+        "label": "Male reproductive system"
+      },
+      {
+        "time": 824,
+        "label": "Male accessory glands"
+      },
+      {
+        "time": 1060,
+        "label": "Internal structure of the testis"
+      },
+      {
+        "time": 1397,
+        "label": "Female reproductive system"
+      },
+      {
+        "time": 1439,
+        "label": "Ovary"
+      },
+      {
+        "time": 1530,
+        "label": "Fallopian tube"
+      },
+      {
+        "time": 1603,
+        "label": "Uterus"
+      },
+      {
+        "time": 1960,
+        "label": "Female external genitalia"
+      },
+      {
+        "time": 2173,
+        "label": "Mammary glands"
+      },
+      {
+        "time": 2281,
+        "label": "Gametogenesis"
+      },
+      {
+        "time": 2340,
+        "label": "Spermatogenesis"
+      },
+      {
+        "time": 3011,
+        "label": "Structure of a sperm"
+      },
+      {
+        "time": 3206,
+        "label": "Oogenesis"
+      },
+      {
+        "time": 3864,
+        "label": "Structure of the ovum"
+      },
+      {
+        "time": 4072,
+        "label": "Menstrual cycle"
+      },
+      {
+        "time": 4842,
+        "label": "Fertilisation"
+      },
+      {
+        "time": 5170,
+        "label": "Sex determination"
+      },
+      {
+        "time": 5405,
+        "label": "Implantation"
+      },
+      {
+        "time": 5794,
+        "label": "Placenta"
+      },
+      {
+        "time": 5976,
+        "label": "Embryonic development"
+      },
+      {
+        "time": 6180,
+        "label": "Parturition"
+      },
+      {
+        "time": 6361,
+        "label": "Lactation"
+      }
+    ]
   },
   {
     "id": "VID-c12-bio-04",

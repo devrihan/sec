@@ -16,7 +16,16 @@ export const MOUTH_STYLES = [
 ];
 
 /** Hats, glasses and bags can be taken off. Everything else always has something on. */
-export const OPTIONAL_SLOTS: AvatarSlot[] = ['hat', 'glasses', 'bag'];
+export const OPTIONAL_SLOTS: AvatarSlot[] = ['hat', 'glasses', 'bag', 'hero'];
+
+/** Hero collections, in store order. Every character is an original design (mythology figures are public domain). */
+export const HERO_SERIES = [
+  { id: 'myth', name: 'Mythic Gods', tagline: 'Legends from Norse, Greek and Egyptian myth.' },
+  { id: 'titan', name: 'Power Titans', tagline: 'Giant strength, spider skills and tech armour.' },
+  { id: 'alien', name: 'Alien Morphs', tagline: 'Transform into a creature from another world.' },
+  { id: 'ninja', name: 'Ninja Academy', tagline: 'Stealth, focus and a little bit of stretch.' },
+  { id: 'justice', name: 'Justice Guard', tagline: 'Speed, shadows, flight and a warrior’s aim.' },
+] as const;
 
 export const DEFAULT_AVATAR: AvatarConfig = {
   skin: SKIN_TONES[2],
@@ -68,7 +77,9 @@ export function avatarForSeed(seed: StudentSeed): AvatarConfig {
 
 /** A dress replaces the top, so choosing a top has to take the dress off. */
 export function withItem(config: AvatarConfig, item: Pick<Avatar, 'id' | 'slot'>): AvatarConfig {
-  const next = { ...config, [item.slot]: item.id };
+  if (item.slot === 'hero') return { ...config, hero: item.id };
+  // Changing an outfit item shows the student's own character again, so the change is visible.
+  const next = { ...config, [item.slot]: item.id, hero: null };
   return item.slot === 'top' && config.bottom === 'summer-dress' ? { ...next, bottom: 'blue-jeans' } : next;
 }
 
@@ -82,7 +93,8 @@ export const SLOT_CROP: Record<AvatarSlot, AvatarCrop> = {
   bag: 'torso',
   bottom: 'legs',
   shoes: 'feet',
+  hero: 'full',
 };
 
 export const avatarKey = (c: AvatarConfig) =>
-  [c.skin, c.hairColor, c.eyes, c.mouth, c.hair, c.hat, c.top, c.bottom, c.shoes, c.glasses, c.bag].join('|');
+  [c.skin, c.hairColor, c.eyes, c.mouth, c.hair, c.hat, c.top, c.bottom, c.shoes, c.glasses, c.bag, c.hero ?? ''].join('|');

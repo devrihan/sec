@@ -92,7 +92,7 @@ export function SessionDialog({ request, studentClass, onClose, onSaved }: { req
           )}
 
           {holiday && <p className="text-[14px] leading-5 text-muted-foreground" data-testid="ses-holiday">This falls on {holiday.name}.</p>}
-          {exam && <p className="text-[14px] leading-5 text-[#ad4e00]" data-testid="ses-exam">You have your {exam.subjectName} exam on this day.</p>}
+          {exam && <p className="text-[14px] leading-5 text-warn" data-testid="ses-exam">You have your {exam.subjectName} exam on this day.</p>}
           {error && <Notice tone="error" testId="ses-error">{error}</Notice>}
 
           <div className="mt-1 flex justify-end gap-2">

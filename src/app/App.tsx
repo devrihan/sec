@@ -3,6 +3,7 @@ import { BrowserRouter, Outlet, useLocation, useNavigate } from 'react-router-do
 import { toast, Toaster } from 'sonner';
 import { AppHeader } from '../components/AppHeader';
 import { MobileNav, SidebarNav } from '../components/SidebarNav';
+import { HelpChat } from '../components/HelpChat';
 import { ErrorBoundary } from '../components/page-parts';
 import { TransactionModal } from '../components/TransactionModal';
 import { TooltipProvider } from '../components/ui/tooltip';
@@ -68,8 +69,9 @@ export function Layout() {
         <SidebarNav collapsed={collapsed} />
         <div className="flex min-w-0 flex-1 flex-col">
           <AppHeader onToggleSidebar={() => setCollapsed((v) => !v)} />
-          <main ref={mainRef} id="main" className="flex-1 overflow-auto bg-canvas [scrollbar-gutter:stable]">
-            <div className="min-h-full space-y-sp-4xl bg-canvas px-4 py-6 md:px-sp-5xl md:py-sp-4xl">
+          {/* isolate: a page background (the dashboard galaxy) can sit behind the content but above this colour. */}
+          <main ref={mainRef} id="main" className="isolate flex-1 overflow-auto bg-canvas [scrollbar-gutter:stable]">
+            <div className="min-h-full space-y-sp-4xl px-4 py-6 md:px-sp-5xl md:py-sp-4xl">
               <ErrorBoundary>
                 <Outlet />
               </ErrorBoundary>
@@ -79,6 +81,7 @@ export function Layout() {
             </div>
           </main>
           <MobileNav />
+          <HelpChat />
         </div>
         <TransactionModal />
         <Toaster position="bottom-right" closeButton theme={theme} />

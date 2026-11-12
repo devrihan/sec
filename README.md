@@ -33,13 +33,14 @@ To start clean, open **Demo settings** (top right) and choose **Reset demo data*
 1. **Preparation:** Chemistry → Electrochemistry. Play the video, then open Revision and Important Questions, and filter by 5 marks.
 2. **Flashcards:** Chemistry → Electrochemistry → Start quiz. Take a hint (coins drop by 20, points don't change, and a popup confirms it). Submit an answer to flip the card. Finish all 12 questions: the reward arrives only then. A strong score moves Aarav past Kabir into #2.
 3. **Rooms:** Flashcards → Multiplayer rooms. Create a room, wait for simulated classmates to join, and start. Or join with code `CHEM12M`. Try `PHYS12M` (closed) or any wrong code to see the errors.
-4. **Avatar store:** buy Scientist for 600 coins. Coins fall, points and rank don't. Equip it and check the leaderboard.
-5. **Remediation:** Pre-board → Chemistry → View my roadmap. All ten chapters appear, with chapter 2 onward locked. Review the mistakes in Solutions, then take the assessment. Fail one to see Retry, then pass to unlock the next chapter.
-6. **Subject completion:** Mid-term → Mathematics is the quickest route, with one chapter already done and two left. The final pass pays 250 coins and 250 points, once.
+4. **Team Battle:** Flashcards → Team Battle. Name your team, pick an emblem and create it. Two friends join with your code while the other team forms. Ready up for the countdown. On each question all three teammates must pick the same option before **Lock in** works. Disagree with a teammate and they argue or come round in the team chat. Use 50:50 and +30s once each. Join voice to see your own speaking ring and mute control. The results show the winner, MVP, question-by-question marks and everyone's reward. Or join with code `SQUAD7`.
+5. **Hero avatars:** open the Avatar store. It starts on **Heroes**: 19 characters in five collections (Mythic Gods, Power Titans, Alien Morphs, Ninja Academy and Justice Guard). With 1,000 coins, unlock Leaf Ninja for 900 and choose **Become Leaf Ninja**. Try on Thor or Cosmic Ascendant to see the idle animations: lightning, orbiting moons and hovering. Your leaderboard row now shows the hero. Locked heroes show how many more coins you need. Under **Tops**, buy Scientist for 600 coins: coins fall, points and rank don't.
+6. **Remediation:** Pre-board → Chemistry → View my roadmap. All ten chapters appear, with chapter 2 onward locked. Review the mistakes in Solutions, then take the assessment. Fail one to see Retry, then pass to unlock the next chapter.
+7. **Subject completion:** Mid-term → Mathematics is the quickest route, with one chapter already done and two left. The final pass pays 250 coins and 250 points, once.
 
-7. **Timetable:** add a session, then edit, reschedule and delete it. The month view shows holidays and exams. "Suggested for you" comes from your exam errors: add a suggestion and the next chapter moves up.
-8. **Avatar store:** drag the 3D character to rotate it. Select an item image to try it on, buy it, then equip it. It appears on the leaderboard and stays in your profile inventory.
-9. **Notifications:** open the bell. Select a notification to go to the right screen. In Demo settings, "Add a session in 40 minutes" fires a reminder and "Let a classmate overtake me" fires a leaderboard alert.
+8. **Timetable:** add a session, then edit, reschedule and delete it. The month view shows holidays and exams. "Suggested for you" comes from your exam errors: add a suggestion and the next chapter moves up.
+9. **Avatar store:** drag the 3D character to rotate it. Select an item image to try it on, buy it, then equip it. It appears on the leaderboard and stays in your profile inventory.
+10. **Notifications:** open the bell. Select a notification to go to the right screen. In Demo settings, "Add a session in 40 minutes" fires a reminder and "Let a classmate overtake me" fires a leaderboard alert.
 
 Useful staging controls in **Demo settings**:
 
@@ -52,8 +53,10 @@ Useful staging controls in **Demo settings**:
 - **Preparation:** class-filtered subjects, chapters in syllabus order, video preview cards, revision snippets with formula blocks, and Important Questions with marks and source filters, expandable answers, and Class 10/12 versus 9/11 rules.
 - **Flashcards:** subject → chapter → quiz intro, MCQ flip card, one answer per question, hints charged once per question per attempt, summary and rewards after the full quiz, resuming after refresh.
 - **Multiplayer:** create, code, copy, join, lobby, host-only start, shared question set, final standings, one reward per participant.
+- **Team Battle:** 3 vs 3 teams with codes, creative names and emblems, a shared lobby with avatars, ready states, battle details and a countdown. The same 12 subject MCQs for both teams, ordered 1 to 3 marks, ending in a boss round. 2-minute timers, or 3 minutes for calculations. Team answers lock only on full agreement. Lifelines, streaks, a live tug-of-war scoreboard, results with MVP and question-wise marks, ledger rewards for all six players, and Team Victory and Dream Team badges. Private team chat and voice are isolated per team in `battleComms.ts`. Every read takes the viewer, and there is no call that returns the other team's channel.
 - **Remediation:** exam and subject selection, sequential roadmap, error review, shuffled 5-question assessments, pass at 75% or above, unlimited retries, full attempt history, one reward per exam and subject, positive empty state.
 - **Timetable:** add, edit, reschedule and delete sessions with overlap checks, week and month views, sample holidays and exam dates, and suggestions built only from exam errors and remediation records.
+- **Hero avatars:** 19 full-body 3D heroes with idle animations, unlocked with coins and kept for good. A hero is worn over the student's own character, and **Take off** or changing an outfit item brings the character back. They are built from primitives in `src/avatar3d/heroes.ts`, so they render everywhere avatars appear. Thor, Hercules, Athena and Anubis come from public-domain mythology and are drawn from the myths, not from any film or comic. The rest use power archetypes with their own names, costumes and emblems. No hero copies or is named after a Marvel, DC, Ben 10 or anime character, which would need a licence from the owner.
 - **3D avatar:** a real-time Three.js character with interchangeable hair, face, hats, tops, bottoms, dresses, shoes, glasses and bags. Try on before buying, coin marketplace, permanent inventory, and 3D renders on the leaderboard and profile.
 - **Notifications:** session reminders 45 and 15 minutes before, leaderboard overtakes, unfinished quizzes, flashcard inactivity, pending remediation, badges, rewards, weekly consistency, exams at 7, 3 and 1 days, and holidays. Includes a bell, a full list, read states and links to the relevant screen.
 - **Shared:** transaction ledger, result popup with refreshed leaderboard after every student points or coin transaction, cumulative section leaderboard with deterministic tie-breaks, badges, avatar store, profile, persistence, reset.
@@ -64,6 +67,7 @@ Useful staging controls in **Demo settings**:
 | --- | --- | --- |
 | Hints | Returns the seeded `hintContext` for the question, labelled "Demo hints" | A provider behind a server-side proxy. Swap it in with `setHintProvider` in `hintService.ts`. Answer-leak screening and fallback are already applied. |
 | Multiplayer | Classmates are timers on this device, labelled as demo mode. Separate devices don't connect. | A WebSocket backend in place of `tickRoom` in `roomService.ts` |
+| Team Battle | Friends and the opposing team are simulated on this device. Your microphone really opens, for mute and the speaking ring, but the audio goes nowhere. Teammates' voices are simulated. | A WebSocket game server running `tickBattle`, with the team resolved from the session. Per-team chat channels, and a WebRTC room or SFU per team for voice. |
 | Videos | Electrochemistry has a verified embedded video. Other chapters open a YouTube search in a new tab because no video IDs were supplied. Class 12 Human Reproduction has no video, to show "Video coming soon". | Curated video IDs in `videos.json` |
 | Identity | One demo student with configurable class and section | Authentication |
 | Storage | `localStorage` through `storageService.ts` | A database and API |
@@ -75,16 +79,16 @@ Useful staging controls in **Demo settings**:
 
 Please review these. Each one is easy to change.
 
-1. **Reward values are placeholders.** The SRS leaves quiz and multiplayer rewards open. Everything is in `src/config/rewards.ts`. The quiz uses base 20 + 10 per correct answer, which gives the +120 for 10/12 shown in the wireframe. Multiplayer is base 30 + 10 per correct + 50 for first place.
+1. **Reward values are placeholders.** The SRS leaves quiz and multiplayer rewards open. Everything is in `src/config/rewards.ts`. The quiz uses base 20 + 10 per correct answer, which gives the +120 for 10/12 shown in the wireframe. Multiplayer is base 30 + 10 per correct + 50 for first place. Team Battle gives every member 25 + 5 per mark the team scored, plus 60 for a win or 30 for a draw.
 2. **Written questions are stored separately.** The SRS requires exactly four options on every question, but also a 5-mark filter. MCQs stay in `questions.json`, and 3 and 5-mark written questions are in `descriptive-questions.json`. Only Important Questions reads the written file, so flashcards and assessments stay MCQ.
 3. **The hint is charged after it arrives.** Section 6.6 implies charging first; section 4.1 says after a successful request. The prototype follows 4.1, so a failed hint never costs coins.
 4. **Hints are for solo quizzes only.** They're off in rooms and remediation assessments, to keep those fair.
-5. **The demo profile uses the SRS example of 2,450 points**, which is already above all badge thresholds. Use Demo settings to show badges unlocking.
-6. **Quiz Champion and Remediation Finisher** have invented rules, since the SRS marks them optional: a perfect solo quiz, and a first subject completion. Neither pays coins.
-7. **The marketplace spends coins, not leaderboard points.** The new brief says "points", but SRS 2.4 says spending must never lower rank. Coins are earned from the same flashcards, quizzes and remediation, so both rules hold.
-8. **The 8 original avatars became Tops** at their original prices, so nothing from the SRS was removed. Everyone's first look uses free items.
-9. **Reminders fire at 45 and 15 minutes.** The brief gives both in its examples. Both are in `config/rewards.ts`.
-10. **Remediation shows only subjects with errors in the dropdown.** Subjects with none are listed underneath as links, so the "Great work!" empty state is reachable.
+6. **The demo profile uses the SRS example of 2,450 points**, which is already above all badge thresholds. Use Demo settings to show badges unlocking.
+7. **Quiz Champion and Remediation Finisher** have invented rules, since the SRS marks them optional: a perfect solo quiz, and a first subject completion. Neither pays coins.
+8. **The marketplace spends coins, not leaderboard points.** The new brief says "points", but SRS 2.4 says spending must never lower rank. Coins are earned from the same flashcards, quizzes and remediation, so both rules hold.
+9. **The 8 original avatars became Tops** at their original prices, so nothing from the SRS was removed. Everyone's first look uses free items.
+10. **Reminders fire at 45 and 15 minutes.** The brief gives both in its examples. Both are in `config/rewards.ts`.
+11. **Remediation shows only subjects with errors in the dropdown.** Subjects with none are listed underneath as links, so the "Great work!" empty state is reachable.
 
 ## Known limitations and next steps
 

@@ -91,7 +91,7 @@ export function DemoSettingsPage() {
         >
           <div className="flex w-[260px] flex-col gap-1.5">
             <Label htmlFor="set-coins">Set coins (now {coins.toLocaleString('en-IN')})</Label>
-            <Input id="set-coins" type="number" min={0} value={coinValue} onChange={(e) => setCoinValue(e.target.value)} data-testid="set-coins" className="bg-white" />
+            <Input id="set-coins" type="number" min={0} value={coinValue} onChange={(e) => setCoinValue(e.target.value)} data-testid="set-coins" className="bg-background" />
           </div>
           <Button type="submit" variant="outline" data-testid="set-coins-submit">Set coins</Button>
         </form>
@@ -107,7 +107,7 @@ export function DemoSettingsPage() {
         >
           <div className="flex w-[260px] flex-col gap-1.5">
             <Label htmlFor="set-points">Set earned points (now {points.toLocaleString('en-IN')})</Label>
-            <Input id="set-points" type="number" min={0} value={pointValue} onChange={(e) => setPointValue(e.target.value)} data-testid="set-points" className="bg-white" />
+            <Input id="set-points" type="number" min={0} value={pointValue} onChange={(e) => setPointValue(e.target.value)} data-testid="set-points" className="bg-background" />
           </div>
           <Button type="submit" variant="outline" data-testid="set-points-submit">Set points</Button>
         </form>

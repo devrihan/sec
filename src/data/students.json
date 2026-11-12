@@ -1,6 +1,6 @@
 {
   "students": [
-    {"id":"STU-12M-001","name":"Aarav","class":12,"section":"M","activeAvatarId":"blue-hoodie","openingCoins":1000,"openingPoints":2450,"quizCorrect":312,"quizAnswered":390,"achievedAt":"2026-10-28T10:30:00.000Z","extraBadgeIds":["quiz-champion"],"isDemoStudent":true},
+    {"id":"STU-12M-001","name":"Aarav","class":12,"section":"M","activeAvatarId":"blue-hoodie","openingCoins":1000,"openingPoints":2450,"quizCorrect":312,"quizAnswered":390,"achievedAt":"2026-10-28T10:30:00.000Z","extraBadgeIds":["first-fix","quiz-champion"],"isDemoStudent":true},
     {"id":"STU-12M-002","name":"Meera","class":12,"section":"M","activeAvatarId":"scientist","openingCoins":820,"openingPoints":2780,"quizCorrect":355,"quizAnswered":410,"achievedAt":"2026-10-30T09:10:00.000Z","extraBadgeIds":["quiz-champion"]},
     {"id":"STU-12M-003","name":"Kabir","class":12,"section":"M","activeAvatarId":"robot-master","openingCoins":640,"openingPoints":2540,"quizCorrect":301,"quizAnswered":380,"achievedAt":"2026-10-29T11:45:00.000Z"},
     {"id":"STU-12M-004","name":"Ishita","class":12,"section":"M","activeAvatarId":"glasses-scholar","openingCoins":910,"openingPoints":2310,"quizCorrect":280,"quizAnswered":360,"achievedAt":"2026-10-27T08:20:00.000Z"},

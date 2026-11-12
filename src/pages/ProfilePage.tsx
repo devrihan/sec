@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { cn } from '@/lib/utils';
 import { AvatarImage } from '../components/AvatarImage';
-import { BadgePill } from '../components/BadgePill';
+import { BadgeCase } from '../components/BadgeCase';
 import { PageTitle, SectionHeading, WHITE_PANEL } from '../components/page-parts';
 import { SLOT_CROP, withItem } from '../avatar3d/options';
 import { allBadges, avatarById } from '../services/catalog';
@@ -62,18 +62,8 @@ export function ProfilePage() {
       </section>
 
       <section>
-        <SectionHeading title="Your badges" sub="Earned points unlock milestones as you go" />
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5" data-testid="profile-badges">
-          {allBadges().map((b) => {
-            const has = earned.some((e) => e.badgeId === b.id);
-            return (
-              <li key={b.id} data-badge={b.id} data-earned={has} className={cn('flex flex-col gap-1 rounded-xl border p-4', has ? 'bg-card shadow-sm' : 'border-dashed bg-transparent')}>
-                {has ? <BadgePill badgeId={b.id} /> : <span className="text-[14px] leading-5 font-medium tracking-[-0.084px] text-muted-foreground">{b.name}</span>}
-                <span className="text-[12px] leading-4 tracking-[-0.072px] text-muted-foreground">{b.threshold !== null ? `${b.threshold} earned points` : b.description}</span>
-              </li>
-            );
-          })}
-        </ul>
+        <SectionHeading title="Your badges" sub={`${earned.length} of ${allBadges().length} earned. Each one marks something you really did.`} />
+        <BadgeCase state={state} />
       </section>
 
       <section>
@@ -96,10 +86,10 @@ export function ProfilePage() {
 
       <section>
         <SectionHeading title="Transaction history" />
-        <div className="overflow-hidden rounded-xl border border-sidebar-border bg-white">
+        <div className="overflow-hidden rounded-xl border border-sidebar-border bg-background">
           <Table data-testid="ledger">
             <TableHeader>
-              <TableRow className="border-sidebar-border bg-green-50 hover:bg-green-50">
+              <TableRow className="border-sidebar-border bg-table-head hover:bg-table-head">
                 <TableHead className={HEAD}>Date</TableHead>
                 <TableHead className={HEAD}>Type</TableHead>
                 <TableHead className={HEAD}>Reason</TableHead>
@@ -109,11 +99,11 @@ export function ProfilePage() {
             </TableHeader>
             <TableBody>
               {history.map((t) => (
-                <TableRow key={t.id} className="border-sidebar-border bg-white hover:bg-muted/30">
+                <TableRow key={t.id} className="border-sidebar-border bg-background hover:bg-muted/30">
                   <TableCell className={cn(CELL, 'tabular-nums')}>{new Date(t.createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</TableCell>
                   <TableCell className={CELL}>{TYPE_LABEL[t.type] ?? t.type}</TableCell>
                   <TableCell className={CELL}>{t.reason}</TableCell>
-                  <TableCell className={cn(CELL, 'text-right tabular-nums', t.coinAmount < 0 ? 'text-red-700' : 'text-green-700')}>{signed(t.coinAmount)}</TableCell>
+                  <TableCell className={cn(CELL, 'text-right tabular-nums', t.coinAmount < 0 ? 'text-red-700 dark:text-red-400' : 'text-green-700 dark:text-green-400')}>{signed(t.coinAmount)}</TableCell>
                   <TableCell className={cn(CELL, 'text-right tabular-nums')}>{signed(t.pointsAmount)}</TableCell>
                 </TableRow>
               ))}

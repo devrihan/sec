@@ -5,6 +5,7 @@ import {
   ROOM_SIM_HOST_START_MS,
   ROOM_SIM_STEP_MS,
 } from '../config/rewards';
+import { awardEarnedBadges } from './badgeService';
 import { chapterById, seedStudentById, seedStudents, subjectById } from './catalog';
 import { awardMultiplayerReward } from './pointsService';
 import { accuracyOf } from './leaderboardService';
@@ -253,7 +254,7 @@ export function finishRoom(attemptId: string): QuizRoom | null {
 
   for (const row of roomStandings(getState(), finished)) {
     const result = awardMultiplayerReward(row.studentId, room.id, row.score, row.rank === 1, title);
-    if (row.isCurrent && result) pushPopup(result);
+    if (row.isCurrent && result) pushPopup({ ...result, newBadges: [...result.newBadges, ...awardEarnedBadges()] });
   }
   patchAttempt(attemptId, (a) => ({ ...a, rewardClaimed: true }));
   return finished;

@@ -7,7 +7,6 @@
   { "id": "long-hair", "name": "Long hair", "slot": "hair", "price": 200, "isAvailable": true, "description": "Past the shoulders" },
   { "id": "top-bun", "name": "Top bun", "slot": "hair", "price": 180, "isAvailable": true, "description": "Tied up in a bun" },
   { "id": "ponytail", "name": "Ponytail", "slot": "hair", "price": 180, "isAvailable": true, "description": "Tied back in a ponytail" },
-
   { "id": "baseball-cap", "name": "Baseball cap", "slot": "hat", "price": 200, "isAvailable": true, "description": "Classic cap with a curved brim" },
   { "id": "beanie", "name": "Beanie", "slot": "hat", "price": 180, "isAvailable": true, "description": "Knitted beanie with a pom" },
   { "id": "sun-hat", "name": "Sun hat", "slot": "hat", "price": 220, "isAvailable": true, "description": "Wide-brimmed sun hat" },
@@ -15,7 +14,6 @@
   { "id": "grad-cap", "name": "Graduation cap", "slot": "hat", "price": 350, "isAvailable": true, "description": "Square cap with a tassel" },
   { "id": "gold-crown", "name": "Gold crown", "slot": "hat", "price": 900, "isAvailable": true, "description": "For leaderboard royalty" },
   { "id": "space-helmet", "name": "Space helmet", "slot": "hat", "price": 800, "isAvailable": true, "description": "Clear astronaut helmet" },
-
   { "id": "plain-tee", "name": "Plain T-shirt", "slot": "top", "price": 0, "isAvailable": true, "description": "Simple coral T-shirt" },
   { "id": "striped-tee", "name": "Striped T-shirt", "slot": "top", "price": 250, "isAvailable": true, "description": "Navy and white stripes" },
   { "id": "white-shirt", "name": "White shirt", "slot": "top", "price": 300, "isAvailable": true, "description": "Collared shirt with a tie" },
@@ -28,22 +26,38 @@
   { "id": "space-explorer", "name": "Space Explorer Suit", "slot": "top", "price": 750, "isAvailable": true, "description": "Astronaut suit with a life-support pack" },
   { "id": "robot-master", "name": "Robot Master Armour", "slot": "top", "price": 1000, "isAvailable": true, "description": "Polished armour with a glowing core" },
   { "id": "super-learner", "name": "Super Learner Suit", "slot": "top", "price": 1500, "isAvailable": true, "description": "Hero suit with a cape" },
-
   { "id": "blue-jeans", "name": "Blue jeans", "slot": "bottom", "price": 0, "isAvailable": true, "description": "Everyday blue jeans" },
   { "id": "school-trousers", "name": "School trousers", "slot": "bottom", "price": 150, "isAvailable": true, "description": "Smart grey trousers" },
   { "id": "track-pants", "name": "Track pants", "slot": "bottom", "price": 200, "isAvailable": true, "description": "Navy with a side stripe" },
   { "id": "khaki-shorts", "name": "Khaki shorts", "slot": "bottom", "price": 180, "isAvailable": true, "description": "Knee-length shorts" },
   { "id": "pleated-skirt", "name": "Pleated skirt", "slot": "bottom", "price": 220, "isAvailable": true, "description": "Navy pleated skirt" },
   { "id": "summer-dress", "name": "Summer dress", "slot": "bottom", "price": 400, "isAvailable": true, "description": "One-piece dress, worn in place of a top" },
-
   { "id": "white-sneakers", "name": "White sneakers", "slot": "shoes", "price": 0, "isAvailable": true, "description": "Clean white sneakers" },
   { "id": "red-hightops", "name": "Red high-tops", "slot": "shoes", "price": 220, "isAvailable": true, "description": "Red high-top trainers" },
   { "id": "black-formals", "name": "Black formals", "slot": "shoes", "price": 180, "isAvailable": true, "description": "Polished school shoes" },
   { "id": "brown-boots", "name": "Brown boots", "slot": "shoes", "price": 300, "isAvailable": true, "description": "Sturdy ankle boots" },
-
   { "id": "round-glasses", "name": "Round glasses", "slot": "glasses", "price": 150, "isAvailable": true, "description": "Thin round frames" },
   { "id": "square-glasses", "name": "Square glasses", "slot": "glasses", "price": 150, "isAvailable": true, "description": "Bold square frames" },
   { "id": "sunglasses", "name": "Sunglasses", "slot": "glasses", "price": 240, "isAvailable": true, "description": "Dark lenses" },
   { "id": "backpack", "name": "School backpack", "slot": "bag", "price": 280, "isAvailable": true, "description": "Backpack with two straps" },
-  { "id": "sling-bag", "name": "Sling bag", "slot": "bag", "price": 240, "isAvailable": true, "description": "Small cross-body bag" }
+  { "id": "sling-bag", "name": "Sling bag", "slot": "bag", "price": 240, "isAvailable": true, "description": "Small cross-body bag" },
+  { "id": "myth-thor", "name": "Thor", "slot": "hero", "series": "myth", "price": 2200, "isAvailable": true, "description": "Norse god of thunder, with a fur cloak and a lightning hammer" },
+  { "id": "myth-hercules", "name": "Hercules", "slot": "hero", "series": "myth", "price": 2000, "isAvailable": true, "description": "The Greek strongman in a lion-skin hood, with an olive-wood club" },
+  { "id": "myth-athena", "name": "Athena", "slot": "hero", "series": "myth", "price": 2000, "isAvailable": true, "description": "Greek goddess of wisdom, with spear, shield and her owl" },
+  { "id": "myth-anubis", "name": "Anubis", "slot": "hero", "series": "myth", "price": 2500, "isAvailable": true, "description": "Jackal-headed guardian of Egypt, with a glowing sceptre" },
+  { "id": "titan-gamma", "name": "Gamma Titan", "slot": "hero", "series": "titan", "price": 2500, "isAvailable": true, "description": "A towering green giant with glowing gamma veins" },
+  { "id": "titan-web-runner", "name": "Web Runner", "slot": "hero", "series": "titan", "price": 1800, "isAvailable": true, "description": "Wall-crawling hero with web shooters and glowing goggles" },
+  { "id": "titan-arachnix", "name": "Arachnix", "slot": "hero", "series": "titan", "price": 2000, "isAvailable": true, "description": "A spider-powered hero in purple and lime, with amber goggles and glowing silk" },
+  { "id": "titan-iron-vanguard", "name": "Iron Vanguard", "slot": "hero", "series": "titan", "price": 2800, "isAvailable": true, "description": "Armoured tech hero with a hex core and jet pack" },
+  { "id": "alien-quad-fist", "name": "Quad-Fist", "slot": "hero", "series": "alien", "price": 1500, "isAvailable": true, "description": "A four-armed alien powerhouse in gold bracers" },
+  { "id": "alien-prism-shard", "name": "Prism Shard", "slot": "hero", "series": "alien", "price": 1500, "isAvailable": true, "description": "A crystal alien with shard shoulders and a spinning core" },
+  { "id": "alien-cosmic-ascendant", "name": "Cosmic Ascendant", "slot": "hero", "series": "alien", "price": 5000, "isAvailable": true, "description": "Legendary star-born alien, with orbiting moons and a floating crown" },
+  { "id": "ninja-leaf", "name": "Leaf Ninja", "slot": "hero", "series": "ninja", "price": 900, "isAvailable": true, "description": "Forest ninja with a ponytail, bandana and a drifting leaf" },
+  { "id": "ninja-shadow", "name": "Shadow Ninja", "slot": "hero", "series": "ninja", "price": 1200, "isAvailable": true, "description": "Hooded ninja with twin blades and swirling smoke" },
+  { "id": "ninja-silver-sensei", "name": "Silver Sensei", "slot": "hero", "series": "ninja", "price": 1400, "isAvailable": true, "description": "Calm master in a gi and wide trousers, with a wooden sword" },
+  { "id": "ninja-stretch-pirate", "name": "Stretch-Hat Pirate", "slot": "hero", "series": "ninja", "price": 1500, "isAvailable": true, "description": "A rubbery pirate whose punch stretches across the room" },
+  { "id": "justice-volt-dash", "name": "Volt Dash", "slot": "hero", "series": "justice", "price": 2200, "isAvailable": true, "description": "Electric-blue speedster trailing lightning streaks" },
+  { "id": "justice-night-warden", "name": "Night Warden", "slot": "hero", "series": "justice", "price": 2400, "isAvailable": true, "description": "A hooded night guardian with glowing eyes and a moon emblem" },
+  { "id": "justice-sky-sentinel", "name": "Sky Sentinel", "slot": "hero", "series": "justice", "price": 2600, "isAvailable": true, "description": "A caped flier with a sun emblem, hovering above the ground" },
+  { "id": "justice-amazon", "name": "Amazon Warrior", "slot": "hero", "series": "justice", "price": 2000, "isAvailable": true, "description": "A Greek warrior with bow, quiver and bronze armour" }
 ]

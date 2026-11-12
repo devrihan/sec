@@ -25,7 +25,7 @@ export function EmptyState({ illustration, title, description, action, variant =
       className={cn(
         inline
           ? 'min-h-0 gap-2 p-0 rounded-none'
-          : 'min-h-[340px] gap-4 px-10 border border-border rounded-xl bg-white',
+          : 'min-h-[340px] gap-4 px-10 border border-border rounded-xl bg-background',
         className,
       )}
     >

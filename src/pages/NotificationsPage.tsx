@@ -7,7 +7,7 @@ import { NotificationRow, useNotifications } from '../components/NotificationBel
 import { PageTitle } from '../components/page-parts';
 import { markAllRead } from '../services/notificationStore';
 
-const SEGMENT = 'flex-none rounded-[4px] px-3 py-1.5 text-[14px] leading-5 font-medium tracking-[-0.084px] text-muted-foreground data-[state=active]:bg-white data-[state=active]:text-foreground data-[state=active]:shadow-[0px_1px_1px_rgba(0,0,0,0.05)]';
+const SEGMENT = 'flex-none rounded-[4px] px-3 py-1.5 text-[14px] leading-5 font-medium tracking-[-0.084px] text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-[0px_1px_1px_rgba(0,0,0,0.05)]';
 
 export function NotificationsPage() {
   const { list, unread } = useNotifications();
@@ -30,7 +30,7 @@ export function NotificationsPage() {
       {shown.length === 0 ? (
         <EmptyState variant="page" title={filter === 'unread' ? 'Nothing unread' : 'No notifications yet'} description="Reminders, rewards and leaderboard updates will land here." />
       ) : (
-        <div className="divide-y divide-sidebar-border overflow-hidden rounded-xl border border-sidebar-border bg-white" data-testid="notification-list">
+        <div className="divide-y divide-sidebar-border overflow-hidden rounded-xl border border-sidebar-border bg-background" data-testid="notification-list">
           {shown.map((n) => <NotificationRow key={n.id} notification={n} />)}
         </div>
       )}

@@ -17,6 +17,7 @@ import {
   revision,
   seedExtras,
   seedStudents,
+  marksLost,
   studentErrors,
   subjects,
   videos,
@@ -33,17 +34,22 @@ import {
 } from './pointsService';
 import { bankForChapter, isRepeated, questionsForChapter } from './questionService';
 import { completeQuiz, startQuiz, submitAnswer } from './quizService';
+import { dueFormulaItems, formulaItems, INTERVALS, mistakeFixFor, reviewFormula, routeOf, scheduleReview, schemeSummary } from './mistakeFixService';
+import { fixCheckFor, numberMatches, parseNumber, recordRetry, retryFor, scoreResponse, twinById, twinsForAttempt } from './fixCheckService';
 import {
   examsWithErrors,
   getRoadmap,
   isPass,
+  mistakeResults,
   setAssessmentAnswer,
+  setTwinResponse,
   startAssessment,
   submitAssessment,
   subjectsWithErrors,
 } from './remediationService';
 import { createRoom, finishRoom, joinRoom, roomById, startRoom, tickRoom } from './roomService';
 import { getState, resetDemo, updateState } from './store';
+import { awardEarnedBadges, badgeCards, longestStreak } from './badgeService';
 import { badgesOf, coinsOf, earnedPointsOf, equipAvatar, latestBadgeIdOf, setStudentContext } from './studentService';
 
 const ME = 'STU-12M-001';
@@ -56,12 +62,27 @@ function answerAllCorrect(attemptId: string) {
   attempt?.questionIds.forEach((id) => submitAnswer(attemptId, id, questionById(id)?.correctOptionId as string));
 }
 
-function passChapter(examId: string, subjectId: string, chapterId: string, correct = Infinity) {
+/** Answers a twin right or wrong: numbers by value, written answers by ticking all or none of the marking points. */
+function answerTwin(attemptId: string, twinId: string, right: boolean) {
+  const twin = twinById(twinId)?.twin;
+  if (!twin) throw new Error(`No twin ${twinId}`);
+  if (twin.kind === 'numeric') {
+    setTwinResponse(attemptId, twinId, { values: twin.parts.map((part) => String(right ? part.answer : part.answer * 3 + 7)) });
+  } else {
+    setTwinResponse(attemptId, twinId, { text: 'A written answer long enough to mark', marked: true, ticked: right ? twin.keyPoints.map((_, i) => i) : [] });
+  }
+}
+
+/** Takes a check in order (twins, then MCQs), getting the first `correct` items right, or choosing items with `rightIf`. */
+function passChapter(examId: string, subjectId: string, chapterId: string, correct = Infinity, rightIf?: (index: number, errorId?: string) => boolean) {
   const start = startAssessment(examId, subjectId, chapterId);
   if (!start.ok) throw new Error(start.reason);
-  start.attempt.questionIds.forEach((id, i) => {
+  const right = (i: number, errorId?: string) => (rightIf ? rightIf(i, errorId) : i < correct);
+  const twins = start.attempt.twins ?? [];
+  twins.forEach((t, i) => answerTwin(start.attempt.id, t.twinId, right(i, t.errorId)));
+  start.attempt.questionIds.forEach((id, k) => {
     const q = questionById(id);
-    const answer = i < correct ? q?.correctOptionId : q?.options.find((o) => o.id !== q.correctOptionId)?.id;
+    const answer = right(twins.length + k) ? q?.correctOptionId : q?.options.find((o) => o.id !== q.correctOptionId)?.id;
     setAssessmentAnswer(start.attempt.id, id, answer as string);
   });
   return submitAssessment(start.attempt.id);
@@ -447,54 +468,116 @@ describe('remediation', () => {
     expect(subjectsWithErrors(PRE).map((s) => s.name)).toEqual(['Physics', 'Chemistry']);
   });
 
-  it('the roadmap has every error chapter in syllabus order and no others', () => {
+  it('the roadmap has every error chapter, biggest wins first, and no others', () => {
     const road = getRoadmap(getState(), PRE, CHEM);
     expect(road.total).toBe(10);
-    const numbers = road.nodes.map((n) => n.chapter.number);
-    expect(numbers).toEqual([...numbers].sort((a, b) => a - b));
+    expect(road.nodes.map((n) => n.marks)).toEqual([8, 5, 4, 4, 4, 4, 2, 2, 2, 2]);
+    expect(road.nodes[0].chapter.title).toBe('Electrochemistry');
+    // Equal marks fall back to syllabus order.
+    expect(road.nodes.slice(2, 6).map((n) => n.chapter.number)).toEqual([3, 4, 5, 8]);
     expect(getRoadmap(getState(), PRE, 'c12-bio').total).toBe(0);
   });
 
-  it('assessments pick 5 bank questions, shuffle options, keep the answer mapping', () => {
-    const start = startAssessment(PRE, CHEM, 'c12-chem-01');
+  it('adds up marks from the questions the student got wrong', () => {
+    const road = getRoadmap(getState(), PRE, CHEM);
+    expect(road.marksTotal).toBe(37);
+    expect(road.marksLeft).toBe(37);
+    expect(road.marksPercent).toBe(0);
+    for (const e of studentErrors) expect(marksLost(e)).toBeGreaterThan(0);
+  });
+
+  it('fixing a chapter takes its marks off, and the path keeps its order', () => {
+    const before = getRoadmap(getState(), PRE, CHEM).nodes.map((n) => n.chapter.id);
+    passChapter(PRE, CHEM, 'c12-chem-02');
+    passChapter(PRE, CHEM, 'c12-chem-01');
+    const road = getRoadmap(getState(), PRE, CHEM);
+    expect(road.nodes.map((n) => n.chapter.id)).toEqual(before);
+    expect(road.marksLeft).toBe(24);
+    expect(road.marksPercent).toBe(35);
+  });
+
+  it('keeps a finished chapter ahead of locked ones, whatever its marks', () => {
+    const road = getRoadmap(getState(), 'EX-MIDTERM', 'c12-math');
+    expect(road.nodes.map((n) => n.state)).toEqual(['completed', 'current', 'locked']);
+    expect(road.marksLeft).toBe(6);
+  });
+
+  it('a fix check asks two twins for each mistake, then two MCQs with shuffled options', () => {
+    const start = startAssessment(PRE, CHEM, 'c12-chem-02');
     if (!start.ok) throw new Error(start.reason);
-    expect(start.attempt.questions).toHaveLength(5);
+    // Electrochemistry has three Pre-board mistakes.
+    expect(start.attempt.twins?.map((t) => t.errorId)).toEqual(['ERR-04', 'ERR-04', 'ERR-05', 'ERR-05', 'ERR-06', 'ERR-06']);
+    expect(start.attempt.questions).toHaveLength(2);
+    expect(start.attempt.total).toBe(8);
     for (const q of start.attempt.questions) {
       const bank = questionById(q.questionId);
-      expect(bank?.chapterId).toBe('c12-chem-01');
+      expect(bank?.chapterId).toBe('c12-chem-02');
       expect([...q.optionIds].sort()).toEqual(bank?.options.map((o) => o.id).sort());
     }
   });
 
   it('refreshing mid-assessment keeps the same attempt', () => {
-    const a = startAssessment(PRE, CHEM, 'c12-chem-01');
-    const b = startAssessment(PRE, CHEM, 'c12-chem-01');
+    const a = startAssessment(PRE, CHEM, 'c12-chem-02');
+    const b = startAssessment(PRE, CHEM, 'c12-chem-02');
     if (!a.ok || !b.ok) throw new Error('start failed');
     expect(b.attempt.id).toBe(a.attempt.id);
   });
 
   it('locks later chapters at the service level too', () => {
-    expect(startAssessment(PRE, CHEM, 'c12-chem-02')).toEqual({ ok: false, reason: 'locked' });
+    expect(startAssessment(PRE, CHEM, 'c12-chem-01')).toEqual({ ok: false, reason: 'locked' });
   });
 
   it('cannot submit a partly answered assessment', () => {
-    const s = startAssessment(PRE, CHEM, 'c12-chem-01');
+    const s = startAssessment(PRE, CHEM, 'c12-chem-02');
     if (!s.ok) throw new Error(s.reason);
     setAssessmentAnswer(s.attempt.id, s.attempt.questionIds[0], 'x');
     expect(submitAssessment(s.attempt.id)).toBeNull();
+    // Everything answered except one blank number box is still not submittable.
+    for (const t of s.attempt.twins ?? []) answerTwin(s.attempt.id, t.twinId, true);
+    s.attempt.questionIds.forEach((id) => setAssessmentAnswer(s.attempt.id, id, questionById(id)?.correctOptionId as string));
+    setTwinResponse(s.attempt.id, (s.attempt.twins ?? [])[0].twinId, { values: [''] });
+    expect(submitAssessment(s.attempt.id)).toBeNull();
+  });
+
+  it('a high score still fails while any single mistake is repeating', () => {
+    // Both twins for the first mistake wrong, everything else right: 6 / 8 = 75%, enough on score alone.
+    const r = passChapter(PRE, CHEM, 'c12-chem-02', Infinity, (_i, errorId) => errorId !== 'ERR-04');
+    expect(r?.attempt.percent).toBe(75);
+    expect(r?.attempt.passed).toBe(false);
+    expect(mistakeResults(r!.attempt).find((m) => m.errorId === 'ERR-04')?.fixed).toBe(false);
+    expect(getRoadmap(getState(), PRE, CHEM).nodes[0].state).toBe('current');
+  });
+
+  it('one right twin per mistake counts it as fixed, but the score must reach 75% too', () => {
+    // Only the second twin of each mistake right, MCQs right: 5 / 8 = 63%, every mistake fixed, still a fail.
+    const low = passChapter(PRE, CHEM, 'c12-chem-02', Infinity, (i) => i >= 6 || i % 2 === 1);
+    expect(mistakeResults(low!.attempt).every((m) => m.fixed)).toBe(true);
+    expect(low?.attempt.passed).toBe(false);
+    // Twins all right and MCQs wrong: 6 / 8 = 75% with every mistake fixed passes.
+    const ok = passChapter(PRE, CHEM, 'c12-chem-02', 6);
+    expect(ok?.attempt.passed).toBe(true);
+  });
+
+  it('rotates twins so a retry never repeats the same pair', () => {
+    const check = fixCheckFor('ERR-04')!;
+    const ids = (n: number) => twinsForAttempt(check, n).map((t) => t.id).join();
+    expect(ids(0)).toBe('FX-04-a,FX-04-b');
+    expect(ids(1)).toBe('FX-04-b,FX-04-c');
+    expect(ids(2)).toBe('FX-04-c,FX-04-a');
   });
 
   it('a fail leaves the chapter current, retries differ, and attempts are stored', () => {
-    const r1 = passChapter(PRE, CHEM, 'c12-chem-01', 3);
-    const r2 = passChapter(PRE, CHEM, 'c12-chem-01', 3);
+    const r1 = passChapter(PRE, CHEM, 'c12-chem-02', 3);
+    const r2 = passChapter(PRE, CHEM, 'c12-chem-02', 3);
     expect(r1?.attempt.passed).toBe(false);
-    expect(r1?.attempt.questionIds.join()).not.toBe(r2?.attempt.questionIds.join());
+    const twinIds = (r: typeof r1) => r?.attempt.twins?.map((t) => t.twinId).join();
+    expect(twinIds(r1)).not.toBe(twinIds(r2));
     expect(getRoadmap(getState(), PRE, CHEM).nodes[0].state).toBe('current');
     expect(getState().remediationAttempts).toHaveLength(2);
   });
 
   it('a pass unlocks only the next chapter', () => {
-    passChapter(PRE, CHEM, 'c12-chem-01', 4);
+    passChapter(PRE, CHEM, 'c12-chem-02', 6);
     const road = getRoadmap(getState(), PRE, CHEM);
     expect(road.nodes.slice(0, 3).map((n) => n.state)).toEqual(['completed', 'current', 'locked']);
     expect(road.percent).toBe(10);
@@ -520,8 +603,160 @@ describe('remediation', () => {
   });
 
   it('progress in one exam does not leak into another', () => {
-    passChapter(PRE, CHEM, 'c12-chem-01');
+    passChapter(PRE, CHEM, 'c12-chem-02');
     expect(getRoadmap(getState(), 'EX-MIDTERM', CHEM).completed).toBe(0);
+  });
+});
+
+describe('learning badges', () => {
+  const PRE = 'EX-PREBOARD';
+  const CHEM = 'c12-chem';
+
+  it('counts first-fix as earned in the seed, because a chapter is already passed', () => {
+    expect(myBadges()).toContain('first-fix');
+    expect(awardEarnedBadges()).toEqual([]);
+  });
+
+  it('awards marks badges from marks really fixed, once each', () => {
+    passChapter(PRE, CHEM, 'c12-chem-02');
+    expect(myBadges()).toContain('mark-hunter');
+    expect(myBadges()).not.toContain('mark-collector');
+    passChapter(PRE, CHEM, 'c12-chem-01');
+    expect(myBadges().filter((b) => b === 'mark-hunter')).toHaveLength(1);
+    const card = badgeCards(getState()).find((c) => c.badge.id === 'mark-collector');
+    expect(card?.progress).toEqual({ current: 19, target: 25 });
+  });
+
+  it('Comeback needs a fail first, and First-Try Fix needs a perfect first attempt', () => {
+    passChapter(PRE, CHEM, 'c12-chem-02', 3);
+    expect(myBadges()).not.toContain('comeback');
+    const result = passChapter(PRE, CHEM, 'c12-chem-02');
+    expect(result?.newBadges.map((b) => b.id)).toContain('comeback');
+    expect(myBadges()).not.toContain('first-try');
+
+    passChapter(PRE, CHEM, 'c12-chem-01');
+    expect(myBadges()).toContain('first-try');
+  });
+
+  it('counts the longest run of days, ignoring repeats and gaps', () => {
+    const at = (d: string) => `${d}T10:00:00`;
+    expect(longestStreak([])).toBe(0);
+    expect(longestStreak([at('2026-11-01'), at('2026-11-01')])).toBe(1);
+    expect(longestStreak([at('2026-11-01'), at('2026-11-02'), at('2026-11-04')])).toBe(2);
+    expect(longestStreak(['2026-10-31', '2026-11-01', '2026-11-02'].map(at))).toBe(3);
+  });
+
+  it('says how many in the section hold a badge', () => {
+    const cards = badgeCards(getState());
+    expect(cards.find((c) => c.badge.id === 'first-fix')).toMatchObject({ holders: 1, sectionSize: 10 });
+    expect(cards.find((c) => c.badge.id === 'week-warrior')?.holders).toBe(0);
+  });
+
+  it('every badge has a meaning and a tier', () => {
+    for (const b of allBadges()) {
+      expect(b.meaning.length).toBeGreaterThan(0);
+      expect(b.tier).toBeTruthy();
+    }
+  });
+});
+
+describe('fix checks', () => {
+  it('every recorded mistake has a re-ask and three twins with usable answers', () => {
+    for (const e of studentErrors) {
+      const check = fixCheckFor(e.id);
+      expect(check, e.id).toBeTruthy();
+      expect(check?.twins).toHaveLength(3);
+      for (const marking of [check!.retry, ...check!.twins]) {
+        if (marking.kind === 'numeric') {
+          for (const part of marking.parts) expect(Number.isFinite(part.answer)).toBe(true);
+        } else {
+          expect(marking.keyPoints.length).toBeGreaterThan(0);
+        }
+      }
+    }
+  });
+
+  it('reads the ways students type numbers', () => {
+    expect(parseNumber('0.6')).toBe(0.6);
+    expect(parseNumber('−212.3')).toBe(-212.3);
+    expect(parseNumber('1,250')).toBe(1250);
+    expect(parseNumber('1.8e-4')).toBeCloseTo(1.8e-4);
+    expect(parseNumber('1.8 × 10^-4')).toBeCloseTo(1.8e-4);
+    expect(parseNumber('1.8x10⁻⁴')).toBeCloseTo(1.8e-4);
+    expect(parseNumber('60/7')).toBeCloseTo(8.571, 2);
+    expect(parseNumber('abc')).toBeNull();
+    expect(parseNumber('')).toBeNull();
+  });
+
+  it('allows rounding but never a wrong sign', () => {
+    expect(numberMatches(0.56, 0.558)).toBe(true);
+    expect(numberMatches(1.33, 4 / 3)).toBe(true);
+    expect(numberMatches(1.5, 1.56)).toBe(false);
+    expect(numberMatches(-1.56, 1.56)).toBe(false);
+    expect(numberMatches(30, -30)).toBe(false);
+    expect(numberMatches(0, 0)).toBe(true);
+    expect(numberMatches(720, 0)).toBe(false);
+  });
+
+  it('gives written answers credit per marking point ticked, only once compared', () => {
+    const marking = { kind: 'written' as const, keyPoints: ['a', 'b', 'c', 'd'] };
+    expect(scoreResponse(marking, { text: 'x', marked: true, ticked: [0, 1, 2] })).toBe(0.75);
+    expect(scoreResponse(marking, { text: 'x', ticked: [0, 1, 2, 3] })).toBe(0);
+  });
+
+  it('records the re-ask of an exam question, or that the answer was shown without one', () => {
+    expect(retryFor(getState(), 'ERR-04')).toBeUndefined();
+    expect(recordRetry('ERR-04', { values: ['-1.56'] })?.score).toBe(0);
+    expect(recordRetry('ERR-04', { values: ['1.56'] })?.score).toBe(1);
+    expect(recordRetry('ERR-02', null)?.score).toBeNull();
+    expect(retryFor(getState(), 'ERR-02')).toMatchObject({ score: null, response: null });
+  });
+});
+
+describe('fix routes by mistake type', () => {
+  const TODAY = '2026-11-10';
+
+  it('sends each kind of mistake down its own route, with the data that route needs', () => {
+    expect(routeOf('Conceptual')).toBe('relearn');
+    expect(routeOf('Formula recall')).toBe('formula');
+    expect(routeOf('Sign error')).toBe('slip');
+    expect(routeOf('Unit error')).toBe('slip');
+    expect(routeOf('Incomplete answer')).toBe('scheme');
+    for (const e of studentErrors) {
+      const fix = mistakeFixFor(e.id);
+      const need = { relearn: fix?.concept, formula: fix?.formulaCards, slip: fix?.checklist, scheme: fix?.scheme }[routeOf(e.errorType)];
+      expect(need, e.id).toBeTruthy();
+    }
+  });
+
+  it('spaces formula reviews out and resets a forgotten card', () => {
+    const first = scheduleReview(undefined, true, TODAY);
+    expect(first).toMatchObject({ box: 1, due: '2026-11-11' });
+    const second = scheduleReview(first, true, '2026-11-11');
+    expect(second).toMatchObject({ box: 2, due: '2026-11-14' });
+    expect(scheduleReview(second, false, '2026-11-14')).toMatchObject({ box: 0, due: '2026-11-14' });
+    // The top box keeps repeating the longest gap.
+    const top = scheduleReview({ box: INTERVALS.length - 1, due: TODAY, reviewedAt: '' }, true, TODAY);
+    expect(top).toMatchObject({ box: INTERVALS.length - 1, due: '2026-12-10' });
+  });
+
+  it('makes formula cards from formula-recall mistakes due at once, then schedules them', () => {
+    const all = formulaItems(getState(), TODAY);
+    expect(all.map((i) => i.error.errorType).every((t) => t === 'Formula recall')).toBe(true);
+    expect(dueFormulaItems(getState(), TODAY)).toHaveLength(all.length);
+    reviewFormula(all[0].card.id, true, TODAY);
+    reviewFormula(all[1].card.id, false, TODAY);
+    const due = dueFormulaItems(getState(), TODAY).map((i) => i.card.id);
+    expect(due).not.toContain(all[0].card.id);
+    expect(due).toContain(all[1].card.id);
+    expect(dueFormulaItems(getState(), '2026-11-11').map((i) => i.card.id)).toContain(all[0].card.id);
+  });
+
+  it('works out which marks the missing steps of an incomplete answer carry', () => {
+    const s = schemeSummary(mistakeFixFor('ERR-13'));
+    expect(s.total).toBe(3);
+    expect(s.missingMarks).toBe(1.5);
+    expect(s.missing).toHaveLength(2);
   });
 });
 

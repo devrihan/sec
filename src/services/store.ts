@@ -11,10 +11,14 @@ import type {
   PointTransaction,
   QuizAttempt,
   QuizRoom,
+  FormulaReview,
+  MistakeRetry,
   RemediationAttempt,
   RemediationProgress,
   StudentAvatar,
   StudentBadge,
+  TeamBattle,
+  TeamMessage,
   TimetableEntry,
   TransactionResult,
 } from '../types';
@@ -42,6 +46,19 @@ export interface AppState {
   remediationProgress: RemediationProgress[];
   remediationAttempts: RemediationAttempt[];
   completedVideoIds: string[];
+  /** Revision snippets bookmarked with a left swipe. Optional so saves from before this existed still load. */
+  savedSnippetIds?: string[];
+  /** Re-asks of original exam questions, by error id. Optional so older saves still load. */
+  mistakeRetries?: Record<string, MistakeRetry>;
+  /** Spaced-repetition state of formula cards, by card id. Optional so older saves still load. */
+  formulaReviews?: Record<string, FormulaReview>;
+  /** Team battles. Optional so older saves still load. */
+  battles?: TeamBattle[];
+  /**
+   * Private team chat, keyed by channel id (battle id + team id). Only battleComms.ts
+   * reads it, and only for a member of that team.
+   */
+  teamChannels?: Record<string, TeamMessage[]>;
   /** Correct/answered per student, for the leaderboard tie-break. */
   quizStats: Record<string, { correct: number; answered: number }>;
   /** When each student last gained points, for the tie-break. */
@@ -128,6 +145,11 @@ export function buildInitialState(): AppState {
     remediationProgress: seedExtras.remediationProgress.map((p) => ({ ...p })),
     remediationAttempts: [],
     completedVideoIds: [],
+    savedSnippetIds: [],
+    mistakeRetries: {},
+    formulaReviews: {},
+    battles: [],
+    teamChannels: {},
     quizStats,
     achievedAt,
   };

@@ -38,6 +38,17 @@ export function loadState<T>(): T | null {
   }
 }
 
+/** Kept apart from the demo state, so a demo reset doesn't change the theme. */
+const THEME_KEY = 'slp.theme';
+
+export function saveTheme(theme: string): void {
+  try {
+    safeStorage()?.setItem(THEME_KEY, theme);
+  } catch {
+    /* Storage is full or blocked: the theme lasts until the page reloads. */
+  }
+}
+
 export function saveState<T>(state: T): void {
   const raw = JSON.stringify({ version: SCHEMA_VERSION, state } satisfies Envelope<T>);
   memoryFallback = raw;

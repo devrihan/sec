@@ -4,14 +4,19 @@ import {
   REMEDIATION_PASS_PERCENT,
   REMEDIATION_QUESTION_COUNT,
 } from '../config/rewards';
-import { chapterById, exams, questionById, studentErrors, subjectById } from './catalog';
+import { awardEarnedBadges } from './badgeService';
+import { chapterById, exams, marksLost, questionById, studentErrors, subjectById } from './catalog';
+import { fixCheckFor, FIXED_AT, isAnswered, MCQ_TOP_UP, scoreResponse, twinById, twinsForAttempt } from './fixCheckService';
 import { completeRemediationSubject } from './pointsService';
 import { questionsForChapter, shuffled } from './questionService';
 import { getState, newId, nowIso, pushPopup, updateState, type AppState } from './store';
 import { currentStudent, subjectsForClass } from './studentService';
 import type {
+  Badge,
   Chapter,
+  CheckTwin,
   Exam,
+  FixResponse,
   RemediationAttempt,
   RemediationProgress,
   StudentError,
@@ -24,6 +29,8 @@ export interface RoadmapNode {
   chapter: Chapter;
   position: number;
   errorCount: number;
+  /** The most this chapter can win back: the full marks of every question the student got wrong. */
+  marks: number;
   state: NodeState;
   bestScore: number;
   attempts: number;
@@ -34,6 +41,11 @@ export interface Roadmap {
   completed: number;
   total: number;
   percent: number;
+  marksTotal: number;
+  /** Marks in chapters still to fix. */
+  marksLeft: number;
+  /** Progress by marks, so a big chapter counts for more than a small one. */
+  marksPercent: number;
   isComplete: boolean;
   current: RoadmapNode | undefined;
 }
@@ -77,13 +89,30 @@ export function getRoadmapStatusForChapter(s: AppState, examId: string, _subject
   return progressRecord(s, examId, chapterId)?.status ?? 'not_started';
 }
 
-/** Every chapter with at least one error appears; none other can (FR-032, SRS 9.4). */
+/**
+ * Every chapter with at least one error appears; none other can (FR-032, SRS 9.4).
+ * The biggest wins come first. Finished chapters stay at the start in the order they were
+ * finished, so the path never shifts under the student and no finished stop follows a locked one.
+ */
 export function getRoadmap(s: AppState, examId: string, subjectId: string): Roadmap {
   const errors = myErrors(s).filter((e) => e.examId === examId && e.subjectId === subjectId);
+  const marksIn = (chapterId: string) =>
+    errors.filter((e) => e.chapterId === chapterId).reduce((sum, e) => sum + marksLost(e), 0);
+  const finishedAt = (chapterId: string) => {
+    const progress = progressRecord(s, examId, chapterId);
+    return progress?.status === 'completed' ? (progress.completedAt ?? '') : null;
+  };
   const chapters = [...new Set(errors.map((e) => e.chapterId))]
     .map((id) => chapterById(id))
     .filter((c): c is Chapter => c !== undefined)
-    .sort((a, b) => a.displayOrder - b.displayOrder);
+    .sort((a, b) => {
+      const doneA = finishedAt(a.id);
+      const doneB = finishedAt(b.id);
+      if (doneA !== null && doneB !== null) return doneA.localeCompare(doneB);
+      if (doneA !== null) return -1;
+      if (doneB !== null) return 1;
+      return marksIn(b.id) - marksIn(a.id) || a.displayOrder - b.displayOrder;
+    });
 
   let foundCurrent = false;
   const nodes: RoadmapNode[] = chapters.map((chapter, i) => {
@@ -101,6 +130,7 @@ export function getRoadmap(s: AppState, examId: string, subjectId: string): Road
       chapter,
       position: i + 1,
       errorCount: errors.filter((e) => e.chapterId === chapter.id).length,
+      marks: marksIn(chapter.id),
       state,
       bestScore: progress?.bestScore ?? 0,
       attempts: progress
@@ -111,11 +141,16 @@ export function getRoadmap(s: AppState, examId: string, subjectId: string): Road
 
   const completed = nodes.filter((n) => n.state === 'completed').length;
   const total = nodes.length;
+  const marksTotal = nodes.reduce((sum, n) => sum + n.marks, 0);
+  const marksLeft = nodes.filter((n) => n.state !== 'completed').reduce((sum, n) => sum + n.marks, 0);
   return {
     nodes,
     completed,
     total,
     percent: total === 0 ? 0 : Math.round((completed / total) * 100),
+    marksTotal,
+    marksLeft,
+    marksPercent: marksTotal === 0 ? 0 : Math.round(((marksTotal - marksLeft) / marksTotal) * 100),
     isComplete: total > 0 && completed === total,
     current: nodes.find((n) => n.state === 'current'),
   };
@@ -148,9 +183,9 @@ export function attemptHistory(s: AppState, examId: string, chapterId: string): 
   return s.remediationAttempts.filter((a) => a.progressId === progress.id && a.submittedAt);
 }
 
-function pickQuestions(chapterId: string, previous: string | undefined) {
+function pickQuestions(chapterId: string, previous: string | undefined, count?: number) {
   const pool = questionsForChapter(chapterId);
-  const size = assessmentSize(pool.length);
+  const size = count === undefined ? assessmentSize(pool.length) : Math.min(count, pool.length);
   // A retry always differs from the previous attempt when the pool allows it.
   let ids: string[] = [];
   for (let i = 0; i < 25; i += 1) {
@@ -179,8 +214,10 @@ export function startAssessment(examId: string, subjectId: string, chapterId: st
   if (open) return { ok: true, attempt: open };
 
   const history = attemptHistory(s, examId, chapterId);
-  const questions = pickQuestions(chapterId, history.at(-1)?.questionIds.join());
-  if (questions.length < REMEDIATION_MIN_QUESTIONS) return { ok: false, reason: 'no-questions' };
+  const twins = twinsForChapter(s, examId, chapterId, history.length);
+  // With twins for every mistake, MCQs only top the check up; otherwise the check is MCQs alone.
+  const questions = pickQuestions(chapterId, history.at(-1)?.questionIds.join(), twins ? MCQ_TOP_UP : undefined);
+  if (!twins && questions.length < REMEDIATION_MIN_QUESTIONS) return { ok: false, reason: 'no-questions' };
 
   const existing = progressRecord(s, examId, chapterId);
   const progress: RemediationProgress = existing ?? {
@@ -196,11 +233,12 @@ export function startAssessment(examId: string, subjectId: string, chapterId: st
   const attempt: RemediationAttempt = {
     id: newId('RA'),
     progressId: progress.id,
+    ...(twins ? { twins, responses: {} } : {}),
     questions,
     questionIds: questions.map((q) => q.questionId),
     answers: {},
     score: 0,
-    total: questions.length,
+    total: (twins?.length ?? 0) + questions.length,
     percent: 0,
     passed: false,
     attemptedAt: nowIso(),
@@ -225,16 +263,61 @@ export function setAssessmentAnswer(attemptId: string, questionId: string, optio
   }));
 }
 
+/**
+ * The twin questions for a chapter's mistakes, rotating with each attempt.
+ * Undefined when any mistake in the chapter has no fix check, so the older MCQ-only check is used.
+ */
+function twinsForChapter(s: AppState, examId: string, chapterId: string, attemptNumber: number): CheckTwin[] | undefined {
+  const errors = errorsForChapter(s, examId, chapterId);
+  const checks = errors.map((e) => fixCheckFor(e.id));
+  if (errors.length === 0 || checks.some((c) => !c)) return undefined;
+  return checks.flatMap((c) => twinsForAttempt(c!, attemptNumber).map((t) => ({ twinId: t.id, errorId: c!.errorId })));
+}
+
+export function setTwinResponse(attemptId: string, twinId: string, response: FixResponse): void {
+  updateState((s) => ({
+    ...s,
+    remediationAttempts: s.remediationAttempts.map((a) =>
+      a.id === attemptId && !a.submittedAt ? { ...a, responses: { ...(a.responses ?? {}), [twinId]: response } } : a,
+    ),
+  }));
+}
+
+export const twinScore = (attempt: RemediationAttempt, twinId: string) => {
+  const found = twinById(twinId);
+  return found ? scoreResponse(found.twin, attempt.responses?.[twinId]) : 0;
+};
+
+/** Per mistake: the twins asked and whether at least one shows the mistake is fixed. */
+export function mistakeResults(attempt: RemediationAttempt) {
+  const byError = new Map<string, { twinId: string; score: number }[]>();
+  for (const t of attempt.twins ?? []) {
+    byError.set(t.errorId, [...(byError.get(t.errorId) ?? []), { twinId: t.twinId, score: twinScore(attempt, t.twinId) }]);
+  }
+  return [...byError.entries()].map(([errorId, twins]) => ({ errorId, twins, fixed: twins.some((t) => t.score >= FIXED_AT) }));
+}
+
+export function answeredCount(attempt: RemediationAttempt): number {
+  const twins = (attempt.twins ?? []).filter((t) => {
+    const found = twinById(t.twinId);
+    return found && isAnswered(found.twin, attempt.responses?.[t.twinId]);
+  }).length;
+  return twins + attempt.questionIds.filter((id) => attempt.answers[id]).length;
+}
+
 export function scoreAttempt(attempt: RemediationAttempt): number {
-  return attempt.questionIds.filter(
-    (id) => attempt.answers[id] === questionById(id)?.correctOptionId,
-  ).length;
+  const mcq = attempt.questionIds.filter((id) => attempt.answers[id] === questionById(id)?.correctOptionId).length;
+  const twins = (attempt.twins ?? []).reduce((sum, t) => sum + twinScore(attempt, t.twinId), 0);
+  // Written answers give fractions of a mark; two decimals keep the stored score readable.
+  return Math.round((mcq + twins) * 100) / 100;
 }
 
 export interface SubmitResult {
   attempt: RemediationAttempt;
   subjectCompleted: boolean;
   nextChapterTitle: string | null;
+  /** Learning badges this result unlocked, shown on the result page. */
+  newBadges: Badge[];
 }
 
 /** Marks the chapter on a pass, and pays out once when the last chapter is passed. */
@@ -244,12 +327,13 @@ export function submitAssessment(attemptId: string): SubmitResult | null {
   if (!attempt) return null;
   const progress = s.remediationProgress.find((p) => p.id === attempt.progressId);
   if (!progress) return null;
-  if (!attempt.submittedAt && Object.keys(attempt.answers).length < attempt.total) return null;
+  if (!attempt.submittedAt && answeredCount(attempt) < attempt.total) return null;
 
   if (!attempt.submittedAt) {
     const score = scoreAttempt(attempt);
     const percent = Math.round((score / attempt.total) * 100);
-    const passed = isPass(score, attempt.total);
+    // Passing needs the overall mark and proof that every single mistake is fixed.
+    const passed = isPass(score, attempt.total) && mistakeResults(attempt).every((m) => m.fixed);
     const submittedAt = nowIso();
     updateState((st) => ({
       ...st,
@@ -282,11 +366,13 @@ export function submitAssessment(attemptId: string): SubmitResult | null {
     );
     if (result) pushPopup(result);
   }
+  const newBadges = awardEarnedBadges();
 
   return {
     attempt: attemptById(getState(), attemptId) as RemediationAttempt,
     subjectCompleted: roadmap.isComplete,
     nextChapterTitle: roadmap.current?.chapter.title ?? null,
+    newBadges,
   };
 }
 
@@ -299,4 +385,47 @@ export function activeRoadmaps(s: AppState) {
       roadmap: getRoadmap(s, exam.id, subject.id),
     })),
   );
+}
+
+/** Marks across every roadmap, for the dashboard hero and the nav count. */
+export function remediationTotals(s: AppState) {
+  const all = activeRoadmaps(s);
+  const marksTotal = all.reduce((sum, r) => sum + r.roadmap.marksTotal, 0);
+  const marksLeft = all.reduce((sum, r) => sum + r.roadmap.marksLeft, 0);
+  return {
+    roadmaps: all,
+    marksTotal,
+    marksLeft,
+    marksPercent: marksTotal === 0 ? 0 : Math.round(((marksTotal - marksLeft) / marksTotal) * 100),
+    chaptersLeft: all.reduce((sum, r) => sum + (r.roadmap.total - r.roadmap.completed), 0),
+  };
+}
+
+/** The single best chapter to fix next: the open chapter worth the most marks across all roadmaps. */
+export function nextFix(s: AppState) {
+  return activeRoadmaps(s)
+    .flatMap(({ exam, subject, roadmap }) => (roadmap.current ? [{ exam, subject, node: roadmap.current }] : []))
+    .sort((a, b) => b.node.marks - a.node.marks || b.exam.examDate.localeCompare(a.exam.examDate))[0];
+}
+
+/** Where a chapter still sits on an unfinished roadmap, so other modules can point back to it. */
+export function roadmapSpotForChapter(s: AppState, chapterId: string) {
+  return activeRoadmaps(s)
+    .flatMap(({ exam, subject, roadmap }) =>
+      roadmap.nodes
+        .filter((n) => n.chapter.id === chapterId && n.state !== 'completed')
+        .map((node) => ({ exam, subject, node })),
+    )
+    .sort((a, b) => Number(b.node.state === 'current') - Number(a.node.state === 'current') || b.node.marks - a.node.marks)[0];
+}
+
+/** Chapters still on a roadmap move to the front (syllabus order kept within each group), with their roadmap spot. */
+export function roadmapFirst(s: AppState, list: Chapter[]) {
+  const spots = new Map<string, NonNullable<ReturnType<typeof roadmapSpotForChapter>>>();
+  for (const c of list) {
+    const spot = roadmapSpotForChapter(s, c.id);
+    if (spot) spots.set(c.id, spot);
+  }
+  const chapters = [...list.filter((c) => spots.has(c.id)), ...list.filter((c) => !spots.has(c.id))];
+  return { chapters, spots, anyOnRoadmap: spots.size > 0 };
 }

@@ -1,66 +1,12 @@
 import * as THREE from 'three';
 import type { AvatarConfig } from '../types';
+import { HEROES, type HeroKit } from './heroes';
+import { add, arms, HEAD_R, legs, limb, mat, pelvis, shoePair, sphere, star, torso, UP, type V3 } from './primitives';
 
 /**
  * Builds the whole character from primitives, so every item is a real, swappable
  * 3D mesh with no image assets. The character stands on y = 0 and faces +z.
  */
-
-type V3 = [number, number, number];
-
-const mat = (color: string | number, options: THREE.MeshStandardMaterialParameters = {}) =>
-  new THREE.MeshStandardMaterial({ color, roughness: 0.62, metalness: 0, ...options });
-
-function add(parent: THREE.Object3D, geo: THREE.BufferGeometry, material: THREE.Material, pos: V3 = [0, 0, 0], rot: V3 = [0, 0, 0], scale: V3 = [1, 1, 1]) {
-  const mesh = new THREE.Mesh(geo, material);
-  mesh.position.set(...pos);
-  mesh.rotation.set(...rot);
-  mesh.scale.set(...scale);
-  parent.add(mesh);
-  return mesh;
-}
-
-const sphere = (r: number, w = 32, h = 24) => new THREE.SphereGeometry(r, w, h);
-const UP = new THREE.Vector3(0, 1, 0);
-
-/** A rounded limb between two points. */
-function limb(parent: THREE.Object3D, from: V3, to: V3, radius: number, material: THREE.Material) {
-  const a = new THREE.Vector3(...from);
-  const b = new THREE.Vector3(...to);
-  const dir = b.clone().sub(a);
-  const mesh = new THREE.Mesh(new THREE.CapsuleGeometry(radius, dir.length(), 8, 16), material);
-  mesh.position.copy(a.clone().add(b).multiplyScalar(0.5));
-  mesh.quaternion.setFromUnitVectors(UP, dir.normalize());
-  parent.add(mesh);
-  return mesh;
-}
-
-const SHOULDER: V3 = [0.42, 1.54, 0];
-const ELBOW: V3 = [0.54, 1.26, 0.02];
-const WRIST: V3 = [0.58, 0.98, 0.07];
-const HIP: V3 = [0.17, 0.96, 0];
-const KNEE: V3 = [0.18, 0.56, 0.01];
-const ANKLE: V3 = [0.18, 0.19, 0];
-const mirror = ([x, y, z]: V3): V3 => [-x, y, z];
-
-function arms(body: THREE.Object3D, upper: THREE.Material, lower: THREE.Material, skin: THREE.Material, radius = 0.13) {
-  for (const flip of [(p: V3) => p, mirror]) {
-    limb(body, flip(SHOULDER), flip(ELBOW), radius, upper);
-    limb(body, flip(ELBOW), flip(WRIST), radius * 0.92, lower);
-    add(body, sphere(0.115), skin, flip(WRIST));
-  }
-}
-
-function legs(body: THREE.Object3D, upper: THREE.Material, lower: THREE.Material, radius = 0.15) {
-  for (const flip of [(p: V3) => p, mirror]) {
-    limb(body, flip(HIP), flip(KNEE), radius, upper);
-    limb(body, flip(KNEE), flip(ANKLE), radius * 0.9, lower);
-  }
-}
-
-function torso(body: THREE.Object3D, material: THREE.Material) {
-  return add(body, new THREE.CapsuleGeometry(0.36, 0.44, 10, 24), material, [0, 1.3, 0], [0, 0, 0], [1.08, 1, 0.76]);
-}
 
 /* ---------------- Tops ---------------- */
 
@@ -75,18 +21,6 @@ function hood(body: THREE.Object3D, cloth: THREE.Material, dark: THREE.Material)
   add(body, new THREE.TorusGeometry(0.2, 0.09, 12, 28), cloth, [0, 1.76, -0.08], [1.25, 0, 0], [1.2, 1, 1]);
   add(body, new THREE.BoxGeometry(0.42, 0.2, 0.04), dark, [0, 1.09, 0.32], [0.05, 0, 0]);
   for (const x of [-0.06, 0.06]) add(body, new THREE.CylinderGeometry(0.012, 0.012, 0.24, 8), mat('#ffffff'), [x, 1.58, 0.31]);
-}
-
-function star(body: THREE.Object3D, material: THREE.Material, pos: V3, size: number) {
-  const shape = new THREE.Shape();
-  for (let i = 0; i < 10; i += 1) {
-    const r = i % 2 ? size * 0.45 : size;
-    const a = Math.PI / 2 + (i * Math.PI) / 5;
-    if (i === 0) shape.moveTo(Math.cos(a) * r, Math.sin(a) * r);
-    else shape.lineTo(Math.cos(a) * r, Math.sin(a) * r);
-  }
-  shape.closePath();
-  add(body, new THREE.ExtrudeGeometry(shape, { depth: 0.02, bevelEnabled: false }), material, pos);
 }
 
 const TOPS: Record<string, (b: THREE.Object3D, skin: THREE.Material) => void> = {
@@ -179,10 +113,6 @@ const TOPS: Record<string, (b: THREE.Object3D, skin: THREE.Material) => void> = 
 
 /* ---------------- Bottoms ---------------- */
 
-function pelvis(body: THREE.Object3D, material: THREE.Material) {
-  add(body, sphere(0.36), material, [0, 0.98, 0], [0, 0, 0], [1.02, 0.56, 0.76]);
-}
-
 const BOTTOMS: Record<string, (b: THREE.Object3D, skin: THREE.Material) => void> = {
   'blue-jeans': (b) => {
     const denim = mat('#3f5f8e');
@@ -225,14 +155,6 @@ const BOTTOMS: Record<string, (b: THREE.Object3D, skin: THREE.Material) => void>
 
 /* ---------------- Shoes ---------------- */
 
-function shoePair(body: THREE.Object3D, upper: THREE.Material, sole: THREE.Material, high: number) {
-  for (const s of [-1, 1]) {
-    add(body, sphere(0.18), upper, [s * 0.18, 0.13, 0.08], [0, 0, 0], [0.96, 0.62, 1.42]);
-    add(body, new THREE.CylinderGeometry(0.175, 0.175, 0.05, 28), sole, [s * 0.18, 0.03, 0.08], [0, 0, 0], [0.96, 1, 1.48]);
-    if (high > 0) add(body, new THREE.CylinderGeometry(0.15, 0.16, high, 20), upper, [s * 0.18, 0.15 + high / 2, 0]);
-  }
-}
-
 const SHOES: Record<string, (b: THREE.Object3D) => void> = {
   'white-sneakers': (b) => shoePair(b, mat('#f4f6f9'), mat('#c9d0db'), 0),
   'red-hightops': (b) => shoePair(b, mat('#d4372f'), mat('#f4f6f9'), 0.14),
@@ -241,8 +163,6 @@ const SHOES: Record<string, (b: THREE.Object3D) => void> = {
 };
 
 /* ---------------- Head ---------------- */
-
-const HEAD_R = 0.62;
 
 function hairCap(head: THREE.Object3D, hair: THREE.Material, thetaEnd: number, r = HEAD_R * 1.035) {
   return add(head, new THREE.SphereGeometry(r, 40, 24, 0, Math.PI * 2, 0, thetaEnd), hair, [0, 0.01, -0.05], [-0.42, 0, 0], [1, 1, 0.95]);
@@ -305,14 +225,23 @@ const HAIR: Record<string, (h: THREE.Object3D, m: THREE.Material) => void> = {
   },
 };
 
-function eyes(head: THREE.Object3D, style: string, skin: THREE.Material) {
+function eyes(head: THREE.Object3D, style: string, skin: THREE.Material, irisColor = '#2a1a12') {
   const white = mat('#ffffff', { roughness: 0.3 });
-  const iris = mat('#2a1a12', { roughness: 0.25 });
+  const iris = mat(irisColor, { roughness: 0.25 });
   const shine = mat('#ffffff', { emissive: '#ffffff', emissiveIntensity: 1 });
   for (const s of [-1, 1]) {
     const x = s * 0.235;
     if (style === 'happy') {
       add(head, new THREE.TorusGeometry(0.075, 0.019, 8, 20, Math.PI), iris, [x, 0.02, 0.57], [-0.05, s * 0.34, 0]);
+      continue;
+    }
+    if (style === 'anime') {
+      // Tall, glossy eyes with a coloured iris and two highlights.
+      add(head, sphere(0.13), white, [x, 0.0, 0.52], [0, s * 0.3, 0], [0.85, 1.25, 0.45]);
+      add(head, sphere(0.092), iris, [x - s * 0.006, -0.015, 0.565], [0, 0, 0], [0.9, 1.3, 0.45]);
+      add(head, sphere(0.05), mat('#0b0b10'), [x - s * 0.006, -0.02, 0.59], [0, 0, 0], [0.9, 1.2, 0.4]);
+      add(head, sphere(0.03, 12, 8), shine, [x + 0.03, 0.05, 0.615]);
+      add(head, sphere(0.014, 8, 6), shine, [x - 0.025, -0.07, 0.612]);
       continue;
     }
     const r = style === 'wide' ? 0.115 : 0.095;
@@ -447,9 +376,53 @@ export const BUILDABLE = {
   shoes: Object.keys(SHOES),
   glasses: Object.keys(GLASSES),
   bag: Object.keys(BAGS),
+  hero: Object.keys(HEROES),
 };
 
+/** The head sphere, ears, nose, brows, blush, eyes and mouth. */
+function face(head: THREE.Object3D, skin: THREE.Material, brow: THREE.Material, eyeStyle: string, mouthStyle: string | false, ears: boolean, irisColor?: string) {
+  add(head, sphere(HEAD_R, 48, 36), skin, [0, 0, 0], [0, 0, 0], [1, 0.97, 0.94]);
+  if (ears) for (const s of [-1, 1]) add(head, sphere(0.1), skin, [s * 0.61, -0.02, 0], [0, 0, 0], [0.6, 1, 0.8]);
+  add(head, sphere(0.062), skin, [0, -0.07, 0.6], [0, 0, 0], [1, 0.8, 0.8]);
+  for (const s of [-1, 1]) {
+    add(head, new THREE.CapsuleGeometry(0.018, 0.13, 6, 10), brow, [s * 0.235, 0.17, 0.55], [0, 0, Math.PI / 2 + s * 0.09]);
+    add(head, sphere(0.085, 16, 12), mat('#ff8a7a', { transparent: true, opacity: 0.22 }), [s * 0.34, -0.14, 0.495], [0, 0, 0], [1, 0.62, 0.3]);
+  }
+  eyes(head, eyeStyle, skin, irisColor);
+  if (mouthStyle) mouth(head, mouthStyle);
+}
+
+function headGroup(root: THREE.Object3D, skin: THREE.Material): THREE.Group {
+  add(root, new THREE.CylinderGeometry(0.12, 0.14, 0.24, 20), skin, [0, 1.74, 0]);
+  const head = new THREE.Group();
+  head.position.set(0, 2.3, 0.02);
+  root.add(head);
+  return head;
+}
+
+/** Every hero id, so a data test can prove avatars.json sells exactly these. */
+export const HERO_IDS = Object.keys(HEROES);
+
+function buildHero(config: AvatarConfig, hero: (typeof HEROES)[string]): THREE.Group {
+  const root = new THREE.Group();
+  const skin = mat(config.skin, { roughness: 0.55 });
+  const kit: HeroKit = { skin };
+  hero.body(root, kit);
+  const headSkin = hero.headColor ? mat(hero.headColor, { roughness: 0.5 }) : skin;
+  const hairMat = mat(hero.hairColor ?? config.hairColor, { roughness: 0.5 });
+  const head = headGroup(root, headSkin);
+  face(head, headSkin, hero.hair ? hairMat : mat('#1f1612'), hero.eyes ?? config.eyes, hero.mouth === undefined ? config.mouth : hero.mouth, hero.ears !== false, hero.irisColor);
+  const style = hero.hair === 'own' ? config.hair : hero.hair;
+  if (style) (HAIR[style] ?? HAIR['short-crop'])(head, hairMat);
+  hero.head?.(head, kit);
+  if (hero.scale) root.scale.setScalar(hero.scale);
+  return root;
+}
+
 export function buildAvatar(config: AvatarConfig): THREE.Group {
+  const hero = config.hero ? HEROES[config.hero] : undefined;
+  if (hero) return buildHero(config, hero);
+
   const root = new THREE.Group();
   const skin = mat(config.skin, { roughness: 0.55 });
   const hairMat = mat(config.hairColor, { roughness: 0.5 });
@@ -460,21 +433,8 @@ export function buildAvatar(config: AvatarConfig): THREE.Group {
   if (!isDress) (TOPS[config.top] ?? TOPS['plain-tee'])(root, skin);
   if (config.bag) BAGS[config.bag]?.(root);
 
-  add(root, new THREE.CylinderGeometry(0.12, 0.14, 0.24, 20), skin, [0, 1.74, 0]);
-
-  const head = new THREE.Group();
-  head.position.set(0, 2.3, 0.02);
-  root.add(head);
-
-  add(head, sphere(HEAD_R, 48, 36), skin, [0, 0, 0], [0, 0, 0], [1, 0.97, 0.94]);
-  for (const s of [-1, 1]) add(head, sphere(0.1), skin, [s * 0.61, -0.02, 0], [0, 0, 0], [0.6, 1, 0.8]);
-  add(head, sphere(0.062), skin, [0, -0.07, 0.6], [0, 0, 0], [1, 0.8, 0.8]);
-  for (const s of [-1, 1]) {
-    add(head, new THREE.CapsuleGeometry(0.018, 0.13, 6, 10), hairMat, [s * 0.235, 0.17, 0.55], [0, 0, Math.PI / 2 + s * 0.09]);
-    add(head, sphere(0.085, 16, 12), mat('#ff8a7a', { transparent: true, opacity: 0.22 }), [s * 0.34, -0.14, 0.495], [0, 0, 0], [1, 0.62, 0.3]);
-  }
-  eyes(head, config.eyes, skin);
-  mouth(head, config.mouth);
+  const head = headGroup(root, skin);
+  face(head, skin, hairMat, config.eyes, config.mouth, true);
 
   const hairStyle = config.hat && FLAT_HAIR.has(config.hair) ? 'short-crop' : config.hair;
   if (config.hat !== 'gold-crown' || hairStyle) (HAIR[hairStyle] ?? HAIR['short-crop'])(head, hairMat);

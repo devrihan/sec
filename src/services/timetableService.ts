@@ -2,6 +2,7 @@ import { REMINDER_LEAD_MINUTES } from '../config/rewards';
 import { addDaysKey, combine, daysBetween, parseDateKey, toDateKey } from '../lib/dates';
 import { studentMistake } from '../lib/student-mistakes';
 import { chapterById, examSchedule, exams, holidays, subjectById } from './catalog';
+import { awardEarnedBadges } from './badgeService';
 import { getRoadmapStatusForChapter, myErrors } from './remediationService';
 import { getState, newId, nowIso, updateState, type AppState } from './store';
 import { currentStudent } from './studentService';
@@ -76,6 +77,7 @@ export function deleteSession(id: string): void {
 
 export function toggleSessionDone(id: string): void {
   updateState((s) => ({ ...s, timetable: s.timetable.map((e) => (e.id === id ? { ...e, done: !e.done } : e)) }));
+  awardEarnedBadges();
 }
 
 /** Mock exams are stored as offsets from the seed date, so a demo always has some ahead. */

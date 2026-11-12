@@ -33,10 +33,10 @@ function Label({ x, side, highlight, children }: { x: number; side: 'left' | 'ri
   const room = side === 'right' ? 100 - x : x;
   return (
     <span
-      className={cn('absolute top-1/2 flex max-w-[240px] -translate-y-1/2', side === 'right' ? 'left-full ml-3' : 'right-full mr-3 justify-end text-right')}
-      style={{ width: `calc(${room}cqw - 48px)` }}
+      className={cn('absolute top-1/2 flex max-w-[240px] -translate-y-1/2', side === 'right' ? 'left-full ml-2' : 'right-full mr-2 justify-end text-right')}
+      style={{ width: `calc(${room}cqw - 44px)` }}
     >
-      <span className={cn('grid min-w-0 rounded-xl border bg-card px-3 py-2 shadow-sm', highlight && 'border-[#a5b4fc]')}>{children}</span>
+      <span className={cn('grid min-w-0 rounded-xl border bg-card px-1.5 py-2 shadow-sm wrap-anywhere sm:px-3', highlight && 'border-[#a5b4fc]')}>{children}</span>
     </span>
   );
 }
@@ -44,13 +44,13 @@ function Label({ x, side, highlight, children }: { x: number; side: 'left' | 'ri
 /** A stop on the path, placed by its centre. The label is inside the link, so it opens the chapter too. */
 export function RoadmapNode({ node, x, y, side, to, avatar, onLocked }: Props) {
   const current = node.state === 'current';
-  const errors = `${node.errorCount} ${node.errorCount === 1 ? 'error' : 'errors'}`;
+  const marks = `${node.marks} ${node.marks === 1 ? 'mark' : 'marks'} to win back`;
   const status =
     node.state === 'completed'
       ? `Completed, best ${node.bestScore}%`
       : current
-        ? `Current, ${errors}`
-        : `Locked, ${errors}`;
+        ? `Current, ${marks}`
+        : `Locked, ${marks}`;
   const body = (
     <>
       {current && <span aria-hidden="true" className="road-pulse absolute -inset-1.5 rounded-full border-4 border-[#a5b4fc]" />}
@@ -68,7 +68,7 @@ export function RoadmapNode({ node, x, y, side, to, avatar, onLocked }: Props) {
         </>
       )}
       <Label x={x} side={side} highlight={current}>
-        <strong className={cn('text-[14px] leading-5 font-medium tracking-[-0.084px]', node.state === 'locked' ? 'text-muted-foreground' : 'text-foreground')}>
+        <strong className={cn('text-[13px] leading-5 font-medium tracking-[-0.084px] sm:text-[14px]', node.state === 'locked' ? 'text-muted-foreground' : 'text-foreground')}>
           {node.position}. {node.chapter.title}
         </strong>
         <small className="text-[12px] leading-4 tracking-[-0.072px] text-muted-foreground">{status}</small>

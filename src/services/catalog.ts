@@ -6,6 +6,8 @@ import chaptersJson from '../data/chapters.json';
 import descriptiveJson from '../data/descriptive-questions.json';
 import examScheduleJson from '../data/exam-schedule.json';
 import examsJson from '../data/exams.json';
+import fixChecksJson from '../data/fix-checks.json';
+import mistakeFixesJson from '../data/mistake-fixes.json';
 import holidaysJson from '../data/holidays.json';
 import questionsJson from '../data/questions.json';
 import remediationJson from '../data/remediation.json';
@@ -22,6 +24,8 @@ import type {
   Chapter,
   DescriptiveQuestion,
   Exam,
+  FixCheck,
+  MistakeFix,
   Holiday,
   Question,
   QuizRoom,
@@ -44,6 +48,8 @@ export const descriptiveQuestions = descriptiveJson as DescriptiveQuestion[];
 export const avatars = avatarsJson as Avatar[];
 export const exams = examsJson as Exam[];
 export const studentErrors = errorsJson as StudentError[];
+export const fixChecks = fixChecksJson as FixCheck[];
+export const mistakeFixes = mistakeFixesJson as MistakeFix[];
 export const seedRooms = roomsJson as QuizRoom[];
 export const holidays = holidaysJson as Holiday[];
 export const examSchedule = examScheduleJson;
@@ -69,4 +75,8 @@ export const avatarById = (id: string) => avatars.find((a) => a.id === id);
 export const badgeById = (id: string) => allBadges().find((b) => b.id === id);
 export const questionById = (id: string) => questions.find((q) => q.id === id);
 export const descriptiveById = (id: string) => descriptiveQuestions.find((q) => q.id === id);
+
+/** Records hold no partial credit, so a wrong answer counts as the question's full marks. */
+export const marksLost = (error: StudentError) =>
+  descriptiveById(error.questionId)?.marks ?? questionById(error.questionId)?.marks ?? 0;
 export const seedStudentById = (id: string) => seedStudents.find((s) => s.id === id);

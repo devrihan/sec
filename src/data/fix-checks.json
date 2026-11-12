@@ -1,0 +1,1662 @@
+[
+  {
+    "errorId": "ERR-01",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "ΔTf (K)",
+          "answer": 0.558,
+          "unit": "K"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-01-a",
+        "questionText": "A 0.2 m aqueous solution of NaCl is completely dissociated. Calculate the depression in freezing point. (Kf = 1.86 K kg mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "ΔTf (K)",
+            "answer": 0.744,
+            "unit": "K"
+          }
+        ],
+        "solution": "NaCl gives 2 ions, so i = 2. ΔTf = iKf·m = 2 × 1.86 × 0.2 = 0.744 K."
+      },
+      {
+        "id": "FX-01-b",
+        "questionText": "A 0.05 m aqueous solution of CaCl₂ is completely dissociated. Calculate the depression in freezing point. (Kf = 1.86 K kg mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "ΔTf (K)",
+            "answer": 0.279,
+            "unit": "K"
+          }
+        ],
+        "solution": "CaCl₂ gives 3 ions (Ca²⁺ + 2Cl⁻), so i = 3. ΔTf = 3 × 1.86 × 0.05 = 0.279 K."
+      },
+      {
+        "id": "FX-01-c",
+        "questionText": "A 0.05 m aqueous solution of AlCl₃ is completely dissociated. Calculate the depression in freezing point. (Kf = 1.86 K kg mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "ΔTf (K)",
+            "answer": 0.372,
+            "unit": "K"
+          }
+        ],
+        "solution": "AlCl₃ gives 4 ions (Al³⁺ + 3Cl⁻), so i = 4. ΔTf = 4 × 1.86 × 0.05 = 0.372 K."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-02",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "States Henry's law: the partial pressure of a gas is proportional to its mole fraction in the solution (p = K_H·x)",
+        "At depth, high pressure dissolves more nitrogen in the blood; on rising it forms bubbles (the bends)",
+        "Helium is much less soluble in blood, so diluting air with it reduces this risk"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-02-a",
+        "questionText": "State Henry's law. Why are soft drink bottles sealed under high pressure?",
+        "kind": "written",
+        "keyPoints": [
+          "States Henry's law: partial pressure of a gas ∝ its mole fraction in solution (p = K_H·x)",
+          "High pressure increases the solubility of CO₂ in the drink",
+          "On opening, pressure falls, so dissolved CO₂ escapes as bubbles (fizz)"
+        ],
+        "solution": "Henry's law: p = K_H·x. Bottles are sealed under high CO₂ pressure so more CO₂ dissolves. Opening the bottle lowers the pressure, so the gas comes out of solution as bubbles."
+      },
+      {
+        "id": "FX-02-b",
+        "questionText": "How does temperature affect the solubility of a gas in a liquid? Why are aquatic animals more comfortable in cold water than in warm water?",
+        "kind": "written",
+        "keyPoints": [
+          "Solubility of a gas decreases as temperature rises (K_H increases with temperature)",
+          "Cold water holds more dissolved oxygen, so more oxygen is available to aquatic animals"
+        ],
+        "solution": "Dissolving a gas is exothermic, so solubility falls as temperature rises (K_H increases). Cold water therefore holds more dissolved O₂, which aquatic animals need."
+      },
+      {
+        "id": "FX-02-c",
+        "questionText": "Climbers at high altitudes often feel weak and cannot think clearly (anoxia). Explain using Henry's law.",
+        "kind": "written",
+        "keyPoints": [
+          "At high altitude the partial pressure of oxygen is lower",
+          "By Henry's law less oxygen dissolves in the blood",
+          "Low oxygen in the blood and tissues causes weakness and poor thinking (anoxia)"
+        ],
+        "solution": "Partial pressure of O₂ is low at high altitude. By Henry's law, the amount of O₂ dissolved in blood is proportional to that partial pressure, so blood carries less oxygen, causing anoxia."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-03",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Molar mass (g mol⁻¹)",
+          "answer": 80000,
+          "unit": "g mol⁻¹"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-03-a",
+        "questionText": "1.0 g of a polymer dissolved in 500 mL of solution has an osmotic pressure of 0.00166 bar at 300 K. Calculate its molar mass. (R = 0.083 L bar K⁻¹ mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Molar mass (g mol⁻¹)",
+            "answer": 30000,
+            "unit": "g mol⁻¹"
+          }
+        ],
+        "solution": "V = 500 mL = 0.5 L. M = wRT/(πV) = 1.0 × 0.083 × 300 / (0.00166 × 0.5) = 30000 g mol⁻¹."
+      },
+      {
+        "id": "FX-03-b",
+        "questionText": "0.5 g of a protein in 100 mL of solution has an osmotic pressure of 0.00249 bar at 27 °C. Calculate its molar mass. (R = 0.083 L bar K⁻¹ mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Molar mass (g mol⁻¹)",
+            "answer": 50000,
+            "unit": "g mol⁻¹"
+          }
+        ],
+        "solution": "T = 27 + 273 = 300 K and V = 0.1 L. M = 0.5 × 0.083 × 300 / (0.00249 × 0.1) = 50000 g mol⁻¹."
+      },
+      {
+        "id": "FX-03-c",
+        "questionText": "2.5 g of a polymer in 200 mL of solution has an osmotic pressure of 0.0083 bar at 300 K. Calculate its molar mass. (R = 0.083 L bar K⁻¹ mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Molar mass (g mol⁻¹)",
+            "answer": 37500,
+            "unit": "g mol⁻¹"
+          }
+        ],
+        "solution": "V = 0.2 L. M = 2.5 × 0.083 × 300 / (0.0083 × 0.2) = 37500 g mol⁻¹."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-04",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "E°cell (V)",
+          "answer": 1.56,
+          "unit": "V"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-04-a",
+        "questionText": "Calculate the standard cell potential for Mg + Cu²⁺ → Mg²⁺ + Cu. (E°(Mg²⁺/Mg) = −2.37 V, E°(Cu²⁺/Cu) = +0.34 V)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "E°cell (V)",
+            "answer": 2.71,
+            "unit": "V"
+          }
+        ],
+        "solution": "Mg is oxidised (anode), Cu²⁺ is reduced (cathode). E°cell = E°cathode − E°anode = 0.34 − (−2.37) = +2.71 V."
+      },
+      {
+        "id": "FX-04-b",
+        "questionText": "Calculate the standard cell potential for Fe + 2Ag⁺ → Fe²⁺ + 2Ag. (E°(Fe²⁺/Fe) = −0.44 V, E°(Ag⁺/Ag) = +0.80 V)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "E°cell (V)",
+            "answer": 1.24,
+            "unit": "V"
+          }
+        ],
+        "solution": "Fe is the anode, Ag the cathode. E°cell = 0.80 − (−0.44) = +1.24 V. E° is not doubled for 2Ag⁺."
+      },
+      {
+        "id": "FX-04-c",
+        "questionText": "Calculate E°cell for the cell Ni(s)|Ni²⁺(aq)||Cu²⁺(aq)|Cu(s). (E°(Ni²⁺/Ni) = −0.25 V, E°(Cu²⁺/Cu) = +0.34 V)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "E°cell (V)",
+            "answer": 0.59,
+            "unit": "V"
+          }
+        ],
+        "solution": "The left electrode is the anode. E°cell = E°right − E°left = 0.34 − (−0.25) = +0.59 V."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-05",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Ecell (V)",
+          "answer": 0.37,
+          "unit": "V"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-05-a",
+        "questionText": "Calculate the emf at 298 K of Zn(s)|Zn²⁺(0.01 M)||Ag⁺(0.1 M)|Ag(s). (E°cell = 1.56 V)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Ecell (V)",
+            "answer": 1.56,
+            "unit": "V"
+          }
+        ],
+        "solution": "Zn + 2Ag⁺ → Zn²⁺ + 2Ag, n = 2. Q = [Zn²⁺]/[Ag⁺]² = 0.01/(0.1)² = 1, so log Q = 0 and E = 1.56 V."
+      },
+      {
+        "id": "FX-05-b",
+        "questionText": "Calculate the emf at 298 K of Mg(s)|Mg²⁺(0.001 M)||Cu²⁺(0.0001 M)|Cu(s). (E°cell = 2.71 V)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Ecell (V)",
+            "answer": 2.68,
+            "unit": "V"
+          }
+        ],
+        "solution": "Mg + Cu²⁺ → Mg²⁺ + Cu, n = 2. Q = 0.001/0.0001 = 10. E = 2.71 − (0.059/2) × 1 = 2.68 V."
+      },
+      {
+        "id": "FX-05-c",
+        "questionText": "Calculate the emf at 298 K of Cu(s)|Cu²⁺(0.01 M)||Ag⁺(0.001 M)|Ag(s). (E°cell = 0.46 V)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Ecell (V)",
+            "answer": 0.34,
+            "unit": "V"
+          }
+        ],
+        "solution": "Cu + 2Ag⁺ → Cu²⁺ + 2Ag, n = 2. Q = 0.01/(0.001)² = 10⁴. E = 0.46 − (0.059/2) × 4 = 0.342 V ≈ 0.34 V."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-06",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Λm (S cm² mol⁻¹)",
+          "answer": 125,
+          "unit": "S cm² mol⁻¹"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-06-a",
+        "questionText": "The conductivity of 0.05 M NaCl solution is 0.0055 S cm⁻¹. Calculate its molar conductivity.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Λm (S cm² mol⁻¹)",
+            "answer": 110,
+            "unit": "S cm² mol⁻¹"
+          }
+        ],
+        "solution": "Λm = κ × 1000/C = 0.0055 × 1000/0.05 = 110 S cm² mol⁻¹. The 1000 converts mol L⁻¹ to mol cm⁻³."
+      },
+      {
+        "id": "FX-06-b",
+        "questionText": "The conductivity of 0.001 M KCl solution is 1.47 × 10⁻⁴ S cm⁻¹. Calculate its molar conductivity.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Λm (S cm² mol⁻¹)",
+            "answer": 147,
+            "unit": "S cm² mol⁻¹"
+          }
+        ],
+        "solution": "Λm = 1.47 × 10⁻⁴ × 1000/0.001 = 147 S cm² mol⁻¹."
+      },
+      {
+        "id": "FX-06-c",
+        "questionText": "A 0.1 M solution of an electrolyte has a conductivity of 0.0106 S cm⁻¹. Calculate its molar conductivity.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Λm (S cm² mol⁻¹)",
+            "answer": 106,
+            "unit": "S cm² mol⁻¹"
+          }
+        ],
+        "solution": "Λm = 0.0106 × 1000/0.1 = 106 S cm² mol⁻¹."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-07",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "ΔrG° (kJ mol⁻¹)",
+          "answer": -212.3,
+          "unit": "kJ mol⁻¹"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-07-a",
+        "questionText": "For Mg + Cu²⁺ → Mg²⁺ + Cu, E°cell = 2.71 V. Calculate ΔrG°. (F = 96500 C mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "ΔrG° (kJ mol⁻¹)",
+            "answer": -523.0,
+            "unit": "kJ mol⁻¹"
+          }
+        ],
+        "solution": "Two electrons are transferred, n = 2. ΔrG° = −nFE° = −2 × 96500 × 2.71 = −523030 J mol⁻¹ ≈ −523.0 kJ mol⁻¹."
+      },
+      {
+        "id": "FX-07-b",
+        "questionText": "For Fe + 2Ag⁺ → Fe²⁺ + 2Ag, E°cell = 1.24 V. Calculate ΔrG°. (F = 96500 C mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "ΔrG° (kJ mol⁻¹)",
+            "answer": -239.3,
+            "unit": "kJ mol⁻¹"
+          }
+        ],
+        "solution": "Fe → Fe²⁺ releases 2 electrons, so n = 2. ΔrG° = −2 × 96500 × 1.24 = −239320 J mol⁻¹ ≈ −239.3 kJ mol⁻¹."
+      },
+      {
+        "id": "FX-07-c",
+        "questionText": "For 2Al + 3Cu²⁺ → 2Al³⁺ + 3Cu, E°cell = 2.00 V. Calculate ΔrG°. (F = 96500 C mol⁻¹)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "ΔrG° (kJ mol⁻¹)",
+            "answer": -1158,
+            "unit": "kJ mol⁻¹"
+          }
+        ],
+        "solution": "2 Al atoms each lose 3 electrons, so n = 6. ΔrG° = −6 × 96500 × 2.00 = −1158000 J mol⁻¹ = −1158 kJ mol⁻¹."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-08",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "t½ (s)",
+          "answer": 300,
+          "unit": "s"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-08-a",
+        "questionText": "A first order reaction has k = 6.93 × 10⁻³ min⁻¹. Calculate its half-life.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "t½ (min)",
+            "answer": 100,
+            "unit": "min"
+          }
+        ],
+        "solution": "For first order, t½ = 0.693/k = 0.693/(6.93 × 10⁻³) = 100 min."
+      },
+      {
+        "id": "FX-08-b",
+        "questionText": "A first order reaction has k = 1.386 × 10⁻² s⁻¹. Calculate its half-life.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "t½ (s)",
+            "answer": 50,
+            "unit": "s"
+          }
+        ],
+        "solution": "t½ = 0.693/k = 0.693/0.01386 = 50 s."
+      },
+      {
+        "id": "FX-08-c",
+        "questionText": "The rate constant of a first order decomposition is 0.0231 h⁻¹. Calculate its half-life.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "t½ (h)",
+            "answer": 30,
+            "unit": "h"
+          }
+        ],
+        "solution": "t½ = 0.693/0.0231 = 30 h. (2.303 appears in the integrated rate law, not in t½ = 0.693/k.)"
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-09",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Overall order = 2 + 1 = 3",
+        "Units of k = (mol L⁻¹)¹⁻ⁿ s⁻¹ = L² mol⁻² s⁻¹"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-09-a",
+        "questionText": "For rate = k[A]^½[B], give the overall order and the units of k.",
+        "kind": "written",
+        "keyPoints": [
+          "Overall order = ½ + 1 = 3/2",
+          "Units of k = mol^(−½) L^(½) s⁻¹"
+        ],
+        "solution": "Order = 3/2. Units: (mol L⁻¹)^(1 − 3/2) s⁻¹ = (mol L⁻¹)^(−½) s⁻¹ = mol^(−½) L^(½) s⁻¹."
+      },
+      {
+        "id": "FX-09-b",
+        "questionText": "For a zero order reaction, rate = k. Give the units of k.",
+        "kind": "written",
+        "keyPoints": [
+          "Overall order = 0",
+          "Units of k = mol L⁻¹ s⁻¹ (same as the rate)"
+        ],
+        "solution": "For n = 0, units = (mol L⁻¹)^(1 − 0) s⁻¹ = mol L⁻¹ s⁻¹."
+      },
+      {
+        "id": "FX-09-c",
+        "questionText": "For rate = k[A][B], give the overall order and the units of k.",
+        "kind": "written",
+        "keyPoints": [
+          "Overall order = 1 + 1 = 2",
+          "Units of k = L mol⁻¹ s⁻¹"
+        ],
+        "solution": "Order = 2. Units = (mol L⁻¹)^(1 − 2) s⁻¹ = L mol⁻¹ s⁻¹."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-10",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "μ (BM)",
+          "answer": 5.92,
+          "unit": "BM"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-10-a",
+        "questionText": "Calculate the spin-only magnetic moment of Fe²⁺. (Z of Fe = 26)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "μ (BM)",
+            "answer": 4.9,
+            "unit": "BM"
+          }
+        ],
+        "solution": "Fe is 3d⁶4s². Fe²⁺ loses the two 4s electrons first: 3d⁶, 4 unpaired. μ = √(4 × 6) = √24 = 4.90 BM."
+      },
+      {
+        "id": "FX-10-b",
+        "questionText": "Calculate the spin-only magnetic moment of Cr³⁺. (Z of Cr = 24)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "μ (BM)",
+            "answer": 3.87,
+            "unit": "BM"
+          }
+        ],
+        "solution": "Cr is 3d⁵4s¹. Cr³⁺ loses 4s¹ and two 3d electrons: 3d³, 3 unpaired. μ = √15 = 3.87 BM."
+      },
+      {
+        "id": "FX-10-c",
+        "questionText": "Calculate the spin-only magnetic moment of Cu²⁺. (Z of Cu = 29)",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "μ (BM)",
+            "answer": 1.73,
+            "unit": "BM"
+          }
+        ],
+        "solution": "Cu is 3d¹⁰4s¹. Cu²⁺ is 3d⁹ with 1 unpaired electron. μ = √3 = 1.73 BM."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-11",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Cr²⁺ → Cr³⁺ gives d³, a stable half-filled t₂g level, so Cr²⁺ readily loses an electron (reducing)",
+        "Mn³⁺ → Mn²⁺ gives d⁵, a stable half-filled configuration, so Mn³⁺ readily gains an electron (oxidising)"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-11-a",
+        "questionText": "Why is Mn²⁺ much more resistant to oxidation than Fe²⁺?",
+        "kind": "written",
+        "keyPoints": [
+          "Mn²⁺ is 3d⁵, an extra-stable half-filled configuration, so removing an electron is hard",
+          "Fe²⁺ is 3d⁶; losing one electron gives Fe³⁺ (3d⁵), which is stable, so Fe²⁺ is easily oxidised"
+        ],
+        "solution": "Mn²⁺ (3d⁵) is already half-filled and stable. Fe²⁺ (3d⁶) becomes the stable half-filled 3d⁵ on oxidation, so it oxidises easily."
+      },
+      {
+        "id": "FX-11-b",
+        "questionText": "E°(Mn³⁺/Mn²⁺) = +1.57 V is much more positive than E°(Fe³⁺/Fe²⁺) = +0.77 V. Explain.",
+        "kind": "written",
+        "keyPoints": [
+          "Mn³⁺ → Mn²⁺ produces the stable half-filled d⁵ configuration, so Mn³⁺ is very easily reduced (large positive E°)",
+          "Fe³⁺ is already d⁵; reducing it to Fe²⁺ (d⁶) loses that stability, so the value is smaller"
+        ],
+        "solution": "Reduction of Mn³⁺ (d⁴) gives stable Mn²⁺ (d⁵), so it is strongly favoured. Reduction of Fe³⁺ (d⁵) destroys a half-filled shell, so it is less favoured."
+      },
+      {
+        "id": "FX-11-c",
+        "questionText": "Why is E°(Cr³⁺/Cr²⁺) negative (−0.41 V)?",
+        "kind": "written",
+        "keyPoints": [
+          "Cr³⁺ has the stable half-filled t₂g³ configuration, so it is not easily reduced",
+          "Cr²⁺ readily loses an electron to reach this stable state, so the couple has a negative E°"
+        ],
+        "solution": "Cr³⁺ (t₂g³) is stable, so Cr³⁺ resists reduction and Cr²⁺ is a good reducing agent. Hence E°(Cr³⁺/Cr²⁺) is negative."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-12",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Ligand named 'cyanido' with the prefix hexa-",
+        "Anionic complex named 'ferrate' with oxidation state (III): potassium hexacyanidoferrate(III)"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-12-a",
+        "questionText": "Write the IUPAC name of K₄[Fe(CN)₆].",
+        "kind": "written",
+        "keyPoints": [
+          "Ligand named 'hexacyanido'",
+          "Anionic complex 'ferrate' with oxidation state (II): potassium hexacyanidoferrate(II)"
+        ],
+        "solution": "Fe is +2 (4 × 1 + x + 6 × (−1) = 0). Name: potassium hexacyanidoferrate(II)."
+      },
+      {
+        "id": "FX-12-b",
+        "questionText": "Write the IUPAC name of [Co(NH₃)₆]Cl₃.",
+        "kind": "written",
+        "keyPoints": [
+          "Ligand named 'hexaammine'",
+          "Cationic complex keeps the metal name 'cobalt' with (III): hexaamminecobalt(III) chloride"
+        ],
+        "solution": "The complex ion is a cation, so the metal keeps its name. Co is +3. Name: hexaamminecobalt(III) chloride."
+      },
+      {
+        "id": "FX-12-c",
+        "questionText": "Write the IUPAC name of K₂[PtCl₆].",
+        "kind": "written",
+        "keyPoints": [
+          "Ligand named 'hexachlorido'",
+          "Anionic complex 'platinate' with oxidation state (IV): potassium hexachloridoplatinate(IV)"
+        ],
+        "solution": "Pt is +4 (2 + x − 6 = 0). The complex is an anion, so -ate is used. Name: potassium hexachloridoplatinate(IV)."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-13",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "In [Ni(CO)₄], Ni is 0; strong-field CO pairs the electrons (3d¹⁰), sp³, no unpaired electrons, so it is diamagnetic",
+        "In [NiCl₄]²⁻, Ni²⁺ is 3d⁸; weak-field Cl⁻ cannot force pairing, leaving 2 unpaired electrons (sp³), so it is paramagnetic"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-13-a",
+        "questionText": "[Fe(CN)₆]³⁻ is weakly paramagnetic while [FeF₆]³⁻ is strongly paramagnetic. Explain.",
+        "kind": "written",
+        "keyPoints": [
+          "Fe³⁺ is 3d⁵ in both complexes",
+          "Strong-field CN⁻ forces pairing: inner orbital d²sp³, 1 unpaired electron (weakly paramagnetic)",
+          "Weak-field F⁻ does not: outer orbital sp³d², 5 unpaired electrons (strongly paramagnetic)"
+        ],
+        "solution": "Fe³⁺ (3d⁵). With CN⁻, electrons pair in t₂g (t₂g⁵), d²sp³, one unpaired electron. With F⁻ there is no pairing, sp³d², five unpaired electrons."
+      },
+      {
+        "id": "FX-13-b",
+        "questionText": "[Co(NH₃)₆]³⁺ is diamagnetic but [CoF₆]³⁻ is paramagnetic. Explain.",
+        "kind": "written",
+        "keyPoints": [
+          "Co³⁺ is 3d⁶ in both",
+          "NH₃ is strong field here: all six electrons pair (t₂g⁶), d²sp³, no unpaired electrons, so diamagnetic",
+          "F⁻ is weak field: 4 unpaired electrons, sp³d², so paramagnetic"
+        ],
+        "solution": "Co³⁺ (3d⁶). NH₃ causes pairing: t₂g⁶eg⁰, inner orbital d²sp³, diamagnetic. F⁻ does not: t₂g⁴eg², four unpaired electrons, outer orbital sp³d²."
+      },
+      {
+        "id": "FX-13-c",
+        "questionText": "[Ni(CN)₄]²⁻ is diamagnetic and square planar, while [NiCl₄]²⁻ is paramagnetic and tetrahedral. Explain.",
+        "kind": "written",
+        "keyPoints": [
+          "Ni²⁺ is 3d⁸ in both",
+          "Strong-field CN⁻ pairs the electrons, freeing one 3d orbital: dsp², square planar, no unpaired electrons",
+          "Weak-field Cl⁻ cannot pair them: 2 unpaired electrons, sp³, tetrahedral"
+        ],
+        "solution": "Ni²⁺ (3d⁸). CN⁻ pairs the two unpaired electrons, so one 3d orbital joins dsp² hybridisation (square planar, diamagnetic). Cl⁻ cannot, so sp³ (tetrahedral) with two unpaired electrons."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-14",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Correct order: (CH₃)₃CBr < (CH₃)₂CHBr < CH₃CH₂Br < CH₃Br",
+        "Reason: SN2 needs backside attack, so steric hindrance (not carbocation stability) decides the order"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-14-a",
+        "questionText": "Arrange 1-bromobutane, 2-bromobutane and 2-bromo-2-methylpropane in increasing order of SN2 reactivity.",
+        "kind": "written",
+        "keyPoints": [
+          "2-bromo-2-methylpropane < 2-bromobutane < 1-bromobutane",
+          "Reason: more alkyl groups around the reacting carbon block backside attack (steric hindrance)"
+        ],
+        "solution": "3° < 2° < 1° for SN2, because bulky groups hinder the nucleophile approaching from the back."
+      },
+      {
+        "id": "FX-14-b",
+        "questionText": "Arrange 1-bromobutane, 2-bromobutane and 2-bromo-2-methylpropane in increasing order of SN1 reactivity.",
+        "kind": "written",
+        "keyPoints": [
+          "1-bromobutane < 2-bromobutane < 2-bromo-2-methylpropane",
+          "Reason: SN1 goes through a carbocation, and a 3° carbocation is the most stable"
+        ],
+        "solution": "For SN1 the order reverses: 1° < 2° < 3°, because the rate depends on carbocation stability. Compare with SN2, where steric hindrance decides."
+      },
+      {
+        "id": "FX-14-c",
+        "questionText": "Which reacts faster by SN2 with OH⁻: CH₃CH₂CH₂Br or (CH₃)₂CHCH₂Br? Give the reason.",
+        "kind": "written",
+        "keyPoints": [
+          "CH₃CH₂CH₂Br reacts faster",
+          "Both are primary, but branching next to the reacting carbon in (CH₃)₂CHCH₂Br increases steric hindrance to backside attack"
+        ],
+        "solution": "CH₃CH₂CH₂Br. Both are 1° halides, but the branched one has a bulky isopropyl group next to the C–Br carbon, which hinders the nucleophile."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-15",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Both have the same molar mass (C₂H₆O), so mass is not the reason",
+        "Ethanol forms intermolecular hydrogen bonds through its –OH group; methoxymethane cannot hydrogen bond with itself"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-15-a",
+        "questionText": "Propan-1-ol (M = 60) boils at 370 K but butane (M = 58) boils at 273 K. Explain.",
+        "kind": "written",
+        "keyPoints": [
+          "Their molar masses are almost the same, so mass does not explain the difference",
+          "Propan-1-ol molecules are held by intermolecular hydrogen bonds through –OH; butane has only weak van der Waals forces"
+        ],
+        "solution": "Similar masses, very different forces: hydrogen bonding in propan-1-ol needs much more energy to break than the dispersion forces in butane."
+      },
+      {
+        "id": "FX-15-b",
+        "questionText": "Arrange butane, methoxyethane and propan-1-ol in increasing order of boiling point, with a reason.",
+        "kind": "written",
+        "keyPoints": [
+          "Butane < methoxyethane < propan-1-ol",
+          "Methoxyethane is polar (dipole–dipole) but cannot H-bond with itself; propan-1-ol forms intermolecular hydrogen bonds"
+        ],
+        "solution": "All have M ≈ 58–60. Butane: dispersion only. Methoxyethane: dipole–dipole. Propan-1-ol: hydrogen bonding, so it boils highest."
+      },
+      {
+        "id": "FX-15-c",
+        "questionText": "o-Nitrophenol is steam volatile but p-nitrophenol is not. Explain.",
+        "kind": "written",
+        "keyPoints": [
+          "o-Nitrophenol has intramolecular hydrogen bonding, so its molecules do not associate",
+          "p-Nitrophenol forms intermolecular hydrogen bonds, so molecules associate and it is less volatile"
+        ],
+        "solution": "In the ortho isomer the –OH bonds to the neighbouring –NO₂ inside the same molecule. In the para isomer they are too far apart, so molecules bond to each other."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-16",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Benzaldehyde has no α-hydrogen, so it undergoes the Cannizzaro reaction (not aldol)",
+        "Products: benzyl alcohol (C₆H₅CH₂OH) and sodium benzoate (C₆H₅COONa)"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-16-a",
+        "questionText": "Write the products when formaldehyde (HCHO) is treated with concentrated NaOH.",
+        "kind": "written",
+        "keyPoints": [
+          "No α-hydrogen, so Cannizzaro reaction",
+          "Products: methanol (CH₃OH) and sodium formate (HCOONa)"
+        ],
+        "solution": "2HCHO + conc. NaOH → CH₃OH + HCOONa. One molecule is reduced, the other oxidised."
+      },
+      {
+        "id": "FX-16-b",
+        "questionText": "Which of ethanal, methanal and benzaldehyde undergo aldol condensation and which undergo the Cannizzaro reaction? Give a reason.",
+        "kind": "written",
+        "keyPoints": [
+          "Ethanal has α-hydrogens, so it undergoes aldol condensation",
+          "Methanal and benzaldehyde have no α-hydrogen, so they undergo the Cannizzaro reaction"
+        ],
+        "solution": "Aldol needs an α-hydrogen to form an enolate. Without one, concentrated alkali causes the Cannizzaro reaction instead."
+      },
+      {
+        "id": "FX-16-c",
+        "questionText": "What happens when ethanal is treated with dilute NaOH?",
+        "kind": "written",
+        "keyPoints": [
+          "Ethanal has α-hydrogens, so aldol condensation occurs",
+          "Product is 3-hydroxybutanal (aldol), which on heating gives but-2-enal"
+        ],
+        "solution": "2CH₃CHO → (dil. NaOH) CH₃CH(OH)CH₂CHO (3-hydroxybutanal) → (heat, −H₂O) CH₃CH=CHCHO (but-2-enal)."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-17",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "The carbonyl group is strongly electron-withdrawing",
+        "The conjugate base (enolate ion) is stabilised by resonance"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-17-a",
+        "questionText": "Why are the α-hydrogens of propanone acidic, while the hydrogens of propane are not?",
+        "kind": "written",
+        "keyPoints": [
+          "The C=O group withdraws electrons from the α-carbon",
+          "The enolate ion formed is resonance stabilised; propane has no such group or stabilisation"
+        ],
+        "solution": "In propanone the carbonyl pulls electron density and the resulting enolate spreads its charge onto oxygen by resonance. Propane has neither feature."
+      },
+      {
+        "id": "FX-17-b",
+        "questionText": "Why are carboxylic acids more acidic than alcohols?",
+        "kind": "written",
+        "keyPoints": [
+          "The carboxylate ion is stabilised by resonance: the negative charge is shared equally by two oxygen atoms",
+          "The alkoxide ion has no resonance stabilisation (and alkyl groups push electrons onto it)"
+        ],
+        "solution": "RCOO⁻ has two equivalent resonance structures, so it is a stable conjugate base. RO⁻ has its charge on one oxygen only."
+      },
+      {
+        "id": "FX-17-c",
+        "questionText": "Why is phenol more acidic than ethanol?",
+        "kind": "written",
+        "keyPoints": [
+          "The phenoxide ion is stabilised by resonance (charge delocalised into the ring)",
+          "The ethoxide ion has no resonance, and the ethyl group is electron-donating, which destabilises it"
+        ],
+        "solution": "A more stable conjugate base means a stronger acid. Phenoxide is resonance stabilised; ethoxide is not."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-18",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Aniline is a Lewis base and reacts with the Lewis acid catalyst AlCl₃ to form a salt",
+        "The nitrogen then becomes positive, which strongly deactivates the ring, so the reaction fails"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-18-a",
+        "questionText": "Why does direct nitration of aniline give a large amount of m-nitroaniline, though –NH₂ is o/p-directing?",
+        "kind": "written",
+        "keyPoints": [
+          "In the strongly acidic nitrating mixture, aniline is protonated to the anilinium ion (–NH₃⁺)",
+          "–NH₃⁺ is deactivating and meta-directing, so a lot of meta product forms"
+        ],
+        "solution": "Basic –NH₂ takes a proton from the acid. The anilinium ion directs to the meta position, giving about 47% m-nitroaniline."
+      },
+      {
+        "id": "FX-18-b",
+        "questionText": "Why is the –NH₂ group of aniline acetylated before nitration?",
+        "kind": "written",
+        "keyPoints": [
+          "Acetylation lowers the activating effect and stops –NH₂ reacting with the acid (protonation) or being oxidised",
+          "The acetanilide then gives mainly the p-nitro product, which is hydrolysed back to p-nitroaniline"
+        ],
+        "solution": "The lone pair of N in acetanilide is shared with the C=O group, so it is less basic and less activating. Nitration becomes controlled and mainly para."
+      },
+      {
+        "id": "FX-18-c",
+        "questionText": "Why does aniline dissolve in dilute hydrochloric acid?",
+        "kind": "written",
+        "keyPoints": [
+          "The –NH₂ nitrogen has a lone pair, so aniline is a base",
+          "It accepts H⁺ to form anilinium chloride, a water-soluble salt"
+        ],
+        "solution": "C₆H₅NH₂ + HCl → C₆H₅NH₃⁺Cl⁻. The ionic salt dissolves in water."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-19",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Bromine water is a mild oxidising agent that oxidises only the –CHO group to –COOH",
+        "Product is gluconic acid, HOCH₂(CHOH)₄COOH"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-19-a",
+        "questionText": "What happens when glucose is oxidised with nitric acid?",
+        "kind": "written",
+        "keyPoints": [
+          "Nitric acid is a strong oxidant: it oxidises both the –CHO and the terminal –CH₂OH to –COOH",
+          "Product is saccharic (glucaric) acid, HOOC(CHOH)₄COOH"
+        ],
+        "solution": "Compare with bromine water, which only oxidises –CHO (gluconic acid). HNO₃ oxidises both ends."
+      },
+      {
+        "id": "FX-19-b",
+        "questionText": "What does the reaction of glucose with bromine water tell us about its structure?",
+        "kind": "written",
+        "keyPoints": [
+          "A mild oxidant converts glucose to gluconic acid without losing carbon",
+          "So the carbonyl group in glucose is an aldehyde (–CHO) group"
+        ],
+        "solution": "Only aldehydes are oxidised by bromine water. Getting gluconic acid with the same six carbons shows glucose has a –CHO group."
+      },
+      {
+        "id": "FX-19-c",
+        "questionText": "What happens when glucose is treated with Tollens’ reagent?",
+        "kind": "written",
+        "keyPoints": [
+          "The –CHO group is oxidised to –COOH (gluconic acid / gluconate)",
+          "Ag⁺ is reduced to metallic silver, giving a silver mirror"
+        ],
+        "solution": "Glucose is a reducing sugar because of its aldehyde group. It reduces Tollens’ reagent to a silver mirror and is itself oxidised to gluconic acid."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-20",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Correct conclusion: R is not transitive",
+        "Gives a valid counterexample, e.g. (3, −2) ∈ R and (−2, 1) ∈ R but (3, 1) ∉ R"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-20-a",
+        "questionText": "Check whether R = {(a, b) : a ≤ b³} on R is transitive.",
+        "kind": "written",
+        "keyPoints": [
+          "Correct conclusion: not transitive",
+          "Valid counterexample, e.g. (3, 3/2) ∈ R and (3/2, 6/5) ∈ R but (3, 6/5) ∉ R"
+        ],
+        "solution": "3 ≤ (3/2)³ = 27/8 and 3/2 ≤ (6/5)³ = 216/125, but 3 > (6/5)³ = 1.728. So R is not transitive."
+      },
+      {
+        "id": "FX-20-b",
+        "questionText": "Check whether R = {(a, b) : b = a + 1} on {1, 2, 3, 4, 5, 6} is transitive.",
+        "kind": "written",
+        "keyPoints": [
+          "Correct conclusion: not transitive",
+          "Valid counterexample, e.g. (1, 2) ∈ R and (2, 3) ∈ R but (1, 3) ∉ R"
+        ],
+        "solution": "(1, 2) and (2, 3) are in R, but 3 ≠ 1 + 1, so (1, 3) ∉ R."
+      },
+      {
+        "id": "FX-20-c",
+        "questionText": "Check whether R = {(a, b) : a − b is divisible by 3} on Z is transitive.",
+        "kind": "written",
+        "keyPoints": [
+          "Correct conclusion: transitive",
+          "Proof: a − b = 3k and b − c = 3m give a − c = 3(k + m), so (a, c) ∈ R"
+        ],
+        "solution": "Adding the two conditions: a − c = (a − b) + (b − c) = 3(k + m), divisible by 3. A general proof is needed; examples alone do not prove transitivity."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-21",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "One-one: f(x₁) = f(x₂) ⇒ 4x₁ + 3 = 4x₂ + 3 ⇒ x₁ = x₂",
+        "Onto: for any y ∈ R, x = (y − 3)/4 ∈ R and f(x) = y",
+        "Conclusion: f is one-one and onto (bijective)"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-21-a",
+        "questionText": "Show that f: R → R, f(x) = 3 − 4x is one-one and onto.",
+        "kind": "written",
+        "keyPoints": [
+          "One-one: 3 − 4x₁ = 3 − 4x₂ ⇒ x₁ = x₂",
+          "Onto: for any y ∈ R, x = (3 − y)/4 ∈ R and f(x) = y",
+          "Conclusion: f is bijective"
+        ],
+        "solution": "One-one from cancelling. Onto by solving y = 3 − 4x for x and checking x is real. Both parts must be shown."
+      },
+      {
+        "id": "FX-21-b",
+        "questionText": "Show that f: R → R, f(x) = 2x − 7 is a bijection.",
+        "kind": "written",
+        "keyPoints": [
+          "One-one: 2x₁ − 7 = 2x₂ − 7 ⇒ x₁ = x₂",
+          "Onto: for any y ∈ R, x = (y + 7)/2 ∈ R and f(x) = y",
+          "Conclusion: f is bijective"
+        ],
+        "solution": "Show one-one and onto separately. A graph or \"it is a straight line\" is not a proof."
+      },
+      {
+        "id": "FX-21-c",
+        "questionText": "Is f: N → N, f(x) = 2x one-one? Is it onto? Justify.",
+        "kind": "written",
+        "keyPoints": [
+          "One-one: 2x₁ = 2x₂ ⇒ x₁ = x₂",
+          "Not onto: e.g. y = 3 has no x ∈ N with 2x = 3 (odd numbers have no pre-image)"
+        ],
+        "solution": "One-one but not onto. The onto step must check that x lies in the domain N, and x = 3/2 does not."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-22",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Row 1, column 1",
+          "answer": 4,
+          "unit": ""
+        },
+        {
+          "label": "Row 1, column 2",
+          "answer": 5,
+          "unit": ""
+        },
+        {
+          "label": "Row 2, column 1",
+          "answer": 0,
+          "unit": ""
+        },
+        {
+          "label": "Row 2, column 2",
+          "answer": 9,
+          "unit": ""
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-22-a",
+        "questionText": "If A = [1 2; 3 4] (rows separated by ;), find A².",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Row 1, column 1",
+            "answer": 7,
+            "unit": ""
+          },
+          {
+            "label": "Row 1, column 2",
+            "answer": 10,
+            "unit": ""
+          },
+          {
+            "label": "Row 2, column 1",
+            "answer": 15,
+            "unit": ""
+          },
+          {
+            "label": "Row 2, column 2",
+            "answer": 22,
+            "unit": ""
+          }
+        ],
+        "solution": "A² = A·A = [1·1 + 2·3, 1·2 + 2·4; 3·1 + 4·3, 3·2 + 4·4] = [7 10; 15 22]. Multiply rows by columns; never square each entry."
+      },
+      {
+        "id": "FX-22-b",
+        "questionText": "If A = [3 −1; 2 0] (rows separated by ;), find A².",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Row 1, column 1",
+            "answer": 7,
+            "unit": ""
+          },
+          {
+            "label": "Row 1, column 2",
+            "answer": -3,
+            "unit": ""
+          },
+          {
+            "label": "Row 2, column 1",
+            "answer": 6,
+            "unit": ""
+          },
+          {
+            "label": "Row 2, column 2",
+            "answer": -2,
+            "unit": ""
+          }
+        ],
+        "solution": "A² = [3·3 + (−1)·2, 3·(−1) + (−1)·0; 2·3 + 0·2, 2·(−1) + 0·0] = [7 −3; 6 −2]."
+      },
+      {
+        "id": "FX-22-c",
+        "questionText": "If A = [0 1; 1 1] (rows separated by ;), find A².",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Row 1, column 1",
+            "answer": 1,
+            "unit": ""
+          },
+          {
+            "label": "Row 1, column 2",
+            "answer": 1,
+            "unit": ""
+          },
+          {
+            "label": "Row 2, column 1",
+            "answer": 1,
+            "unit": ""
+          },
+          {
+            "label": "Row 2, column 2",
+            "answer": 2,
+            "unit": ""
+          }
+        ],
+        "solution": "A² = [0·0 + 1·1, 0·1 + 1·1; 1·0 + 1·1, 1·1 + 1·1] = [1 1; 1 2]."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-23",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "(AB)′ = B′A′: the transpose of a product reverses the order"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-23-a",
+        "questionText": "Write (ABC)′ in terms of A′, B′ and C′.",
+        "kind": "written",
+        "keyPoints": [
+          "(ABC)′ = C′B′A′ (the order reverses)"
+        ],
+        "solution": "(ABC)′ = ((AB)C)′ = C′(AB)′ = C′B′A′."
+      },
+      {
+        "id": "FX-23-b",
+        "questionText": "If A is a symmetric matrix, show that B′AB is symmetric (B is a square matrix of the same order).",
+        "kind": "written",
+        "keyPoints": [
+          "Uses the reversal rule: (B′AB)′ = B′A′(B′)′",
+          "Uses A′ = A and (B′)′ = B to get (B′AB)′ = B′AB"
+        ],
+        "solution": "(B′AB)′ = B′A′(B′)′ = B′AB, since A′ = A. So B′AB is symmetric."
+      },
+      {
+        "id": "FX-23-c",
+        "questionText": "A is of order 3 × 2 and B is of order 2 × 3. Is (AB)′ = A′B′ defined and equal? Write the correct expression.",
+        "kind": "written",
+        "keyPoints": [
+          "A′B′ is (2 × 3)(3 × 2) = 2 × 2, but (AB)′ is 3 × 3, so they cannot be equal",
+          "Correct: (AB)′ = B′A′, which is (3 × 2)(2 × 3) = 3 × 3"
+        ],
+        "solution": "AB is 3 × 3, so (AB)′ is 3 × 3. B′A′ is also 3 × 3 and equals (AB)′. A′B′ has the wrong order."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-24",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "|3A|",
+          "answer": 135,
+          "unit": ""
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-24-a",
+        "questionText": "A is a square matrix of order 2 with |A| = 4. Find |5A|.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "|5A|",
+            "answer": 100,
+            "unit": ""
+          }
+        ],
+        "solution": "|kA| = kⁿ|A| for order n. Here n = 2: |5A| = 5² × 4 = 100."
+      },
+      {
+        "id": "FX-24-b",
+        "questionText": "A is a square matrix of order 3 with |A| = −2. Find |2A|.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "|2A|",
+            "answer": -16,
+            "unit": ""
+          }
+        ],
+        "solution": "|2A| = 2³ × (−2) = −16."
+      },
+      {
+        "id": "FX-24-c",
+        "questionText": "A is a square matrix of order 3 with |A| = 3. Find |−A|.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "|−A|",
+            "answer": -3,
+            "unit": ""
+          }
+        ],
+        "solution": "|−A| = (−1)³|A| = −3. For odd order the sign changes."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-25",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "A₁₂",
+          "answer": 46,
+          "unit": ""
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-25-a",
+        "questionText": "Find the cofactor of a₂₁ in [1 2 3; 4 5 6; 7 8 10] (rows separated by ;).",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "A₂₁",
+            "answer": 4,
+            "unit": ""
+          }
+        ],
+        "solution": "M₂₁ = |2 3; 8 10| = 20 − 24 = −4. A₂₁ = (−1)²⁺¹ × (−4) = 4."
+      },
+      {
+        "id": "FX-25-b",
+        "questionText": "Find the cofactor of a₂₃ in [2 1 3; 4 −1 0; 5 3 1] (rows separated by ;).",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "A₂₃",
+            "answer": -1,
+            "unit": ""
+          }
+        ],
+        "solution": "M₂₃ = |2 1; 5 3| = 6 − 5 = 1. A₂₃ = (−1)²⁺³ × 1 = −1."
+      },
+      {
+        "id": "FX-25-c",
+        "questionText": "Find the cofactor of a₃₂ in [1 0 2; 3 4 1; 2 5 6] (rows separated by ;).",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "A₃₂",
+            "answer": 5,
+            "unit": ""
+          }
+        ],
+        "solution": "M₃₂ = |1 2; 3 1| = 1 − 6 = −5. A₃₂ = (−1)³⁺² × (−5) = 5."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-26",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "Total flux through the closed cube is q/ε₀ (Gauss's law)",
+        "By symmetry the 6 faces share it equally, so one face gets q/(6ε₀)"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-26-a",
+        "questionText": "A point charge at the centre of a cube gives a total flux of 1.2 × 10³ N m² C⁻¹ through the cube. Find the flux through one face.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Flux through one face (N m² C⁻¹)",
+            "answer": 200,
+            "unit": "N m² C⁻¹"
+          }
+        ],
+        "solution": "The six faces are identical and symmetric about the charge, so each gets 1.2 × 10³ / 6 = 200 N m² C⁻¹."
+      },
+      {
+        "id": "FX-26-b",
+        "questionText": "A charge q is placed at one corner of a cube. Find the electric flux through the whole cube.",
+        "kind": "written",
+        "keyPoints": [
+          "Imagine 8 identical cubes around the corner, which together enclose q symmetrically (total flux q/ε₀)",
+          "So this one cube gets q/(8ε₀)"
+        ],
+        "solution": "Eight cubes meet at a corner. By symmetry each receives one eighth of q/ε₀, i.e. q/(8ε₀)."
+      },
+      {
+        "id": "FX-26-c",
+        "questionText": "A charge q is at the centre of a sphere of radius R. How does the flux through the sphere change if R is doubled?",
+        "kind": "written",
+        "keyPoints": [
+          "No change",
+          "Flux depends only on the enclosed charge: Φ = q/ε₀ (Gauss's law), not on the size of the surface"
+        ],
+        "solution": "The enclosed charge is unchanged, so the flux stays q/ε₀."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-27",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Force (N)",
+          "answer": 0.6,
+          "unit": "N"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-27-a",
+        "questionText": "Find the force between charges of 4 μC and 5 μC placed 20 cm apart in air.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Force (N)",
+            "answer": 4.5,
+            "unit": "N"
+          }
+        ],
+        "solution": "Convert first: 4 × 10⁻⁶ C, 5 × 10⁻⁶ C, r = 0.2 m. F = 9 × 10⁹ × 20 × 10⁻¹² / 0.04 = 4.5 N."
+      },
+      {
+        "id": "FX-27-b",
+        "questionText": "Find the force between charges of 1 μC and 8 μC placed 40 cm apart in air.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Force (N)",
+            "answer": 0.45,
+            "unit": "N"
+          }
+        ],
+        "solution": "F = 9 × 10⁹ × (1 × 10⁻⁶)(8 × 10⁻⁶) / (0.4)² = 0.072/0.16 = 0.45 N."
+      },
+      {
+        "id": "FX-27-c",
+        "questionText": "Find the force between charges of 3 nC and 6 nC placed 3 cm apart in air.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Force (N)",
+            "answer": 0.00018,
+            "unit": "N"
+          }
+        ],
+        "solution": "nC = 10⁻⁹ C and r = 0.03 m. F = 9 × 10⁹ × 18 × 10⁻¹⁸ / (9 × 10⁻⁴) = 1.8 × 10⁻⁴ N."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-28",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Energy (J)",
+          "answer": 0.01,
+          "unit": "J"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-28-a",
+        "questionText": "A 4 μF capacitor is charged to 200 V and the battery is removed. A dielectric of K = 2 then fills the gap. Find the new stored energy.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Energy (J)",
+            "answer": 0.04,
+            "unit": "J"
+          }
+        ],
+        "solution": "U₀ = ½CV² = 0.08 J. Battery removed, so Q is fixed and C becomes KC: U = Q²/(2KC) = U₀/K = 0.04 J."
+      },
+      {
+        "id": "FX-28-b",
+        "questionText": "A 2 μF capacitor is connected to a 100 V battery, which stays connected while a dielectric of K = 4 fills the gap. Find the new stored energy.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Energy (J)",
+            "answer": 0.04,
+            "unit": "J"
+          }
+        ],
+        "solution": "Battery connected, so V is fixed. C becomes KC: U = ½KCV² = K × U₀ = 4 × 0.01 = 0.04 J."
+      },
+      {
+        "id": "FX-28-c",
+        "questionText": "A 10 μF capacitor is charged to 50 V and isolated. A dielectric of K = 5 is then inserted. Find the new stored energy.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Energy (J)",
+            "answer": 0.0025,
+            "unit": "J"
+          }
+        ],
+        "solution": "U₀ = ½ × 10 × 10⁻⁶ × 2500 = 0.0125 J. Isolated means Q is fixed, so U = U₀/K = 0.0025 J."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-29",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Potential (V)",
+          "answer": 0,
+          "unit": "V"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-29-a",
+        "questionText": "Charges of +3 nC and −1 nC are 20 cm apart. Find the electric potential at the midpoint.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Potential (V)",
+            "answer": 180,
+            "unit": "V"
+          }
+        ],
+        "solution": "Potential is a scalar with sign. r = 0.1 m. V = 9 × 10⁹ × (3 − 1) × 10⁻⁹ / 0.1 = 180 V."
+      },
+      {
+        "id": "FX-29-b",
+        "questionText": "Charges of +2 nC and +2 nC are 10 cm apart. Find the electric potential at the midpoint.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Potential (V)",
+            "answer": 720,
+            "unit": "V"
+          }
+        ],
+        "solution": "Both are positive, so the potentials add: 360 + 360 = 720 V."
+      },
+      {
+        "id": "FX-29-c",
+        "questionText": "Charges of −5 nC and +2 nC are 6 cm apart. Find the electric potential at the midpoint.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Potential (V)",
+            "answer": -900,
+            "unit": "V"
+          }
+        ],
+        "solution": "r = 0.03 m. V = 9 × 10⁹ × (−5 + 2) × 10⁻⁹ / 0.03 = −900 V."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-30",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Equivalent resistance (Ω)",
+          "answer": 0.5,
+          "unit": "Ω"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-30-a",
+        "questionText": "A wire of resistance 12 Ω is cut into 3 equal parts and the parts are joined in parallel. Find the equivalent resistance.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Equivalent resistance (Ω)",
+            "answer": 1.33,
+            "unit": "Ω"
+          }
+        ],
+        "solution": "Each part is 12/3 = 4 Ω. Three equal 4 Ω resistors in parallel: 4/3 ≈ 1.33 Ω."
+      },
+      {
+        "id": "FX-30-b",
+        "questionText": "A wire of resistance 18 Ω is cut into 2 equal parts and the parts are joined in parallel. Find the equivalent resistance.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Equivalent resistance (Ω)",
+            "answer": 4.5,
+            "unit": "Ω"
+          }
+        ],
+        "solution": "Each part is 9 Ω. Two in parallel: 9/2 = 4.5 Ω."
+      },
+      {
+        "id": "FX-30-c",
+        "questionText": "A wire of resistance 20 Ω is cut into 5 equal parts and the parts are joined in parallel. Find the equivalent resistance.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Equivalent resistance (Ω)",
+            "answer": 0.8,
+            "unit": "Ω"
+          }
+        ],
+        "solution": "Each part is 4 Ω. Five in parallel: 4/5 = 0.8 Ω. Cutting into n parts and joining in parallel gives R/n²."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-31",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Terminal voltage (V)",
+          "answer": 14,
+          "unit": "V"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-31-a",
+        "questionText": "A 6 V battery of internal resistance 0.5 Ω is being charged with a current of 2 A. Find its terminal voltage.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Terminal voltage (V)",
+            "answer": 7,
+            "unit": "V"
+          }
+        ],
+        "solution": "While charging, current is pushed in against the emf: V = ε + Ir = 6 + 2 × 0.5 = 7 V."
+      },
+      {
+        "id": "FX-31-b",
+        "questionText": "A 9 V battery of internal resistance 1 Ω supplies 0.5 A to an external circuit. Find its terminal voltage.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Terminal voltage (V)",
+            "answer": 8.5,
+            "unit": "V"
+          }
+        ],
+        "solution": "While discharging, V = ε − Ir = 9 − 0.5 = 8.5 V. Compare with charging, where Ir is added."
+      },
+      {
+        "id": "FX-31-c",
+        "questionText": "A 24 V battery of internal resistance 0.4 Ω is being charged with a current of 5 A. Find its terminal voltage.",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Terminal voltage (V)",
+            "answer": 26,
+            "unit": "V"
+          }
+        ],
+        "solution": "Charging: V = ε + Ir = 24 + 5 × 0.4 = 26 V."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-32",
+    "retry": {
+      "kind": "written",
+      "keyPoints": [
+        "E = V/l, so doubling l at constant V halves the electric field",
+        "v_d = eEτ/m ∝ E, so the drift speed becomes half"
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-32-a",
+        "questionText": "The potential difference across a conductor is doubled, keeping everything else the same. How does the drift speed change?",
+        "kind": "written",
+        "keyPoints": [
+          "E = V/l doubles",
+          "v_d = eEτ/m ∝ E, so the drift speed doubles"
+        ],
+        "solution": "Doubling V doubles E, and drift speed is proportional to E."
+      },
+      {
+        "id": "FX-32-b",
+        "questionText": "The cross-sectional area of a wire is doubled while the potential difference across it is kept constant. How does the drift speed change?",
+        "kind": "written",
+        "keyPoints": [
+          "E = V/l does not depend on the area, so E is unchanged",
+          "So v_d = eEτ/m is unchanged (the current doubles instead)"
+        ],
+        "solution": "v_d depends on E, which depends on V and l only. A larger area carries more current at the same drift speed."
+      },
+      {
+        "id": "FX-32-c",
+        "questionText": "The temperature of a metal wire rises while the potential difference across it is kept constant. How does the drift speed change?",
+        "kind": "written",
+        "keyPoints": [
+          "Electrons collide more often, so the relaxation time τ decreases",
+          "v_d = eEτ/m, so the drift speed decreases"
+        ],
+        "solution": "E is unchanged, but τ falls with temperature, so v_d falls (resistance rises)."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-33",
+    "retry": {
+      "kind": "numeric",
+      "parts": [
+        {
+          "label": "Image distance v (cm, with sign)",
+          "answer": -30,
+          "unit": "cm"
+        }
+      ]
+    },
+    "twins": [
+      {
+        "id": "FX-33-a",
+        "questionText": "An object is placed 30 cm in front of a concave mirror of focal length 20 cm. Find the image distance v (with sign).",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Image distance v (cm, with sign)",
+            "answer": -60,
+            "unit": "cm"
+          }
+        ],
+        "solution": "u = −30 cm, f = −20 cm. 1/v = 1/f − 1/u = −1/20 + 1/30 = −1/60, so v = −60 cm: real, inverted, in front of the mirror."
+      },
+      {
+        "id": "FX-33-b",
+        "questionText": "An object is placed 20 cm in front of a convex mirror of focal length 15 cm. Find the image distance v (with sign).",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Image distance v (cm, with sign)",
+            "answer": 8.57,
+            "unit": "cm"
+          }
+        ],
+        "solution": "u = −20 cm, f = +15 cm (convex). 1/v = 1/15 + 1/20 = 7/60, so v = +8.57 cm: virtual, erect, behind the mirror."
+      },
+      {
+        "id": "FX-33-c",
+        "questionText": "An object is placed 5 cm in front of a concave mirror of focal length 10 cm. Find the image distance v (with sign).",
+        "kind": "numeric",
+        "parts": [
+          {
+            "label": "Image distance v (cm, with sign)",
+            "answer": 10,
+            "unit": "cm"
+          }
+        ],
+        "solution": "u = −5 cm, f = −10 cm. 1/v = −1/10 + 1/5 = 1/10, so v = +10 cm: virtual, erect, behind the mirror (object inside f)."
+      }
+    ]
+  }
+]

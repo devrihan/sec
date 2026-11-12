@@ -1,6 +1,7 @@
 /* Domain entities, following SRS 9.1. */
 
-export type AvatarSlot = 'hair' | 'hat' | 'top' | 'bottom' | 'shoes' | 'glasses' | 'bag';
+/** 'hero' is a full character that replaces the student's own build while it is on. */
+export type AvatarSlot = 'hair' | 'hat' | 'top' | 'bottom' | 'shoes' | 'glasses' | 'bag' | 'hero';
 
 /** Everything needed to rebuild a student's 3D character. */
 export interface AvatarConfig {
@@ -15,6 +16,8 @@ export interface AvatarConfig {
   shoes: string;
   glasses: string | null;
   bag: string | null;
+  /** A hero avatar worn over everything else. Optional so older saves still load. */
+  hero?: string | null;
 }
 
 export interface Student {
@@ -66,6 +69,16 @@ export interface VideoResource {
   videoUrl: string;
   thumbnailUrl: string;
   duration: string | null;
+  /** Video length, needed to place concepts on the timeline rail. */
+  lengthSeconds?: number;
+  /** Where each concept starts, taken from the chapter list in the video's YouTube description. */
+  timeline?: VideoConcept[];
+}
+
+export interface VideoConcept {
+  /** Seconds from the start of the video. */
+  time: number;
+  label: string;
 }
 
 export type SnippetType = 'concept' | 'definition' | 'formula' | 'reaction' | 'ncert';
@@ -161,6 +174,7 @@ export type TransactionType =
   | 'OPENING_BALANCE'
   | 'QUIZ_REWARD'
   | 'MULTIPLAYER_REWARD'
+  | 'TEAM_BATTLE_REWARD'
   | 'HINT_PURCHASE'
   | 'AVATAR_PURCHASE'
   | 'REMEDIATION_REWARD'
@@ -190,7 +204,14 @@ export interface Badge {
   /** Null for optional achievement badges. Filled from config for threshold badges. */
   threshold: number | null;
   imageUrl: string;
+  /** How to earn it. */
   description: string;
+  /** Why it matters, shown when the badge is opened. */
+  meaning: string;
+  group: 'fix' | 'practice' | 'milestone';
+  tier: 'bronze' | 'silver' | 'gold' | 'legendary';
+  /** Names what the progress counts, for badges with more than one step. */
+  unit?: string;
 }
 
 export interface StudentBadge {
@@ -207,6 +228,8 @@ export interface Avatar {
   price: number;
   isAvailable: boolean;
   description: string;
+  /** Heroes only: which collection it belongs to, from HERO_SERIES. */
+  series?: string;
 }
 
 export interface StudentAvatar {
@@ -298,12 +321,117 @@ export interface AssessmentQuestion {
   optionIds: string[];
 }
 
+/** How a re-asked or twin question is marked. */
+export interface NumericPart {
+  label: string;
+  answer: number;
+  unit: string;
+}
+
+export type FixMarking =
+  /** Typed numbers, marked automatically with a small rounding tolerance (never on the sign). */
+  | { kind: 'numeric'; parts: NumericPart[] }
+  /** Free text, self-marked by ticking the marking points it covers. */
+  | { kind: 'written'; keyPoints: string[] };
+
+export type TwinQuestion = FixMarking & {
+  id: string;
+  questionText: string;
+  /** Worked answer shown after marking. */
+  solution: string;
+};
+
+/** For one recorded exam mistake: how to re-ask it, and twin questions on the same concept and format. */
+export interface FixCheck {
+  errorId: string;
+  retry: FixMarking;
+  twins: TwinQuestion[];
+}
+
+/** A student's answer to a numeric or written item. */
+export interface FixResponse {
+  /** Numeric: one entry per part. */
+  values?: string[];
+  /** Written: what the student wrote. */
+  text?: string;
+  /** Written: indexes of the marking points the student says they covered. */
+  ticked?: number[];
+  /** Written: the student has compared with the marking points, so the item is answered. */
+  marked?: boolean;
+  /** Indexes of "before you submit" checklist items ticked, for sign and unit slips. */
+  checked?: number[];
+}
+
+export interface FormulaCard {
+  id: string;
+  front: string;
+  back: string;
+}
+
+export interface SlipDrill {
+  id: string;
+  /** A worked line that may hide the same kind of slip. */
+  working: string;
+  correct: boolean;
+  explanation: string;
+}
+
+export interface SchemeStep {
+  step: string;
+  marks: number;
+  /** Whether the student's exam answer covered this step. */
+  inExam: boolean;
+}
+
+/** The fix route for one recorded mistake; which parts it has depends on the kind of mistake. */
+export interface MistakeFix {
+  errorId: string;
+  /** Conceptual: where to re-learn it. */
+  concept?: { videoTime: number | null; snippetIds: string[] };
+  /** Formula recall: cards reviewed on a spaced schedule. */
+  formulaCards?: FormulaCard[];
+  /** Sign or unit slip: a before-you-submit checklist and spot-the-slip drills. */
+  checklist?: string[];
+  drills?: SlipDrill[];
+  /** Incomplete answer: the step-by-step marking scheme. */
+  scheme?: SchemeStep[];
+}
+
+/** Spaced-repetition state of one formula card. */
+export interface FormulaReview {
+  /** 0 = new or forgotten; each "got it" moves it up a box and spaces the next review further out. */
+  box: number;
+  /** Date key (YYYY-MM-DD) the card is next due. */
+  due: string;
+  reviewedAt: string;
+}
+
+/** The re-ask of an original exam question, done before the answer is shown. */
+export interface MistakeRetry {
+  errorId: string;
+  /** null when the student chose to see the answer without trying. */
+  score: number | null;
+  response: FixResponse | null;
+  at: string;
+}
+
+export interface CheckTwin {
+  twinId: string;
+  errorId: string;
+}
+
 export interface RemediationAttempt {
   id: string;
   progressId: string;
+  /** Twin questions for each mistake, asked first. Missing on attempts made before fix checks existed. */
+  twins?: CheckTwin[];
+  /** Answers to the twin questions, by twin id. */
+  responses?: Record<string, FixResponse>;
+  /** MCQ top-up (or, for chapters without fix data, the whole check). */
   questions: AssessmentQuestion[];
   questionIds: string[];
   answers: Record<string, string>;
+  /** Can be fractional: written answers earn partial credit per marking point. */
   score: number;
   total: number;
   percent: number;
@@ -367,4 +495,86 @@ export interface TransactionResult {
   previousRank: number;
   newRank: number;
   newBadges: Badge[];
+}
+
+/* Team Battle: two teams of three answer the same questions together. */
+
+export type BattleStatus = 'forming' | 'countdown' | 'in_progress' | 'finished' | 'closed';
+export type BattleTeamId = 'A' | 'B';
+export type BattleLifeline = 'fifty' | 'time';
+
+export interface BattleMember {
+  studentId: string;
+  ready: boolean;
+}
+
+export interface BattleTeam {
+  id: BattleTeamId;
+  code: string;
+  name: string;
+  /** Index into the emblem list: the team's colour and icon. */
+  emblem: number;
+  leaderId: string;
+  members: BattleMember[];
+  /** Simulated friends still to arrive, in order. */
+  pendingStudentIds: string[];
+  lifelinesUsed: BattleLifeline[];
+}
+
+/** What a team agreed on for one question. Null option means the timer ran out. */
+export interface BattleTeamAnswer {
+  questionId: string;
+  optionId: string | null;
+  correct: boolean;
+  marks: number;
+  secondsUsed: number;
+  /** Each member's first pick, for the participation summary. */
+  firstPicks: Record<string, string>;
+}
+
+/** Live state of the question on screen. */
+export interface BattleRound {
+  index: number;
+  startedAt: number;
+  /** Per team, since a +30s lifeline extends only that team's clock. */
+  endsAt: Record<BattleTeamId, number>;
+  /** Current pick per member of each team. */
+  votes: Record<BattleTeamId, Record<string, string>>;
+  firstPicks: Record<BattleTeamId, Record<string, string>>;
+  locked: Record<BattleTeamId, boolean>;
+  /** Options removed by a 50:50, per team. */
+  hidden: Record<BattleTeamId, string[]>;
+  /** Simulated actions due, in ms timestamps. */
+  simAt: Record<string, number>;
+  /** How often each simulated teammate has been asked to change their pick. */
+  sways: Record<string, number>;
+  /** Set when the round is over and the answer is on screen. */
+  revealUntil: number | null;
+}
+
+export interface TeamBattle {
+  id: string;
+  status: BattleStatus;
+  subjectId: string;
+  class: number;
+  questionIds: string[];
+  teams: Record<BattleTeamId, BattleTeam>;
+  /** Which team the student on this device belongs to. */
+  homeTeam: BattleTeamId;
+  nextSimEventAt: number | null;
+  countdownEndsAt: number | null;
+  round: BattleRound | null;
+  answers: Record<BattleTeamId, BattleTeamAnswer[]>;
+  createdAt: string;
+  finishedAt: string | null;
+}
+
+/** One message on a team's private channel. Stored per team, never in a shared list. */
+export interface TeamMessage {
+  id: string;
+  senderId: string;
+  text: string;
+  /** Quick reactions render as chips. */
+  kind: 'text' | 'reaction' | 'system';
+  at: number;
 }

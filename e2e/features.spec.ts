@@ -294,6 +294,21 @@ for (const width of [375, 768]) {
   });
 }
 
+test('The badge case shows earned and locked badges, and opens a badge to explain it', async ({ page }) => {
+  await page.goto('/profile');
+  await expect(page.locator('[data-badge=first-fix]')).toHaveAttribute('data-earned', 'true');
+  const locked = page.locator('[data-badge=mark-hunter]');
+  await expect(locked).toHaveAttribute('data-earned', 'false');
+  await expect(locked).toContainText('6 / 10 marks');
+  await locked.getByRole('button').click();
+  const detail = page.getByTestId('badge-detail');
+  await expect(detail).toContainText('Mark Hunter');
+  await expect(detail.getByTestId('badge-rarity')).toHaveText('No one in your section has this yet');
+  await page.keyboard.press('Escape');
+  const broken = await page.locator('[data-testid=profile-badges] img').evaluateAll((list) => list.filter((img) => (img as HTMLImageElement).naturalWidth === 0).length);
+  expect(broken).toBe(0);
+});
+
 test('Dark mode is off by default, and stays on through a refresh and a demo reset', async ({ page }) => {
   const html = page.locator('html');
   const toggle = page.getByTestId('theme-toggle');

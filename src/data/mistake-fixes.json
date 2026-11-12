@@ -1,0 +1,577 @@
+[
+  {
+    "errorId": "ERR-01",
+    "concept": {
+      "videoTime": 10543,
+      "snippetIds": [
+        "REV-c12-chem-01-04"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-02",
+    "scheme": [
+      {
+        "step": "States Henry's law: partial pressure ∝ mole fraction in solution (p = K_H·x)",
+        "marks": 1,
+        "inExam": false
+      },
+      {
+        "step": "Explains the bends: nitrogen dissolved at high pressure forms bubbles in the blood on rising",
+        "marks": 0.5,
+        "inExam": false
+      },
+      {
+        "step": "Helium is much less soluble in blood, so it lowers the risk",
+        "marks": 0.5,
+        "inExam": false
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-03",
+    "checklist": [
+      "Convert every quantity to the units the formula needs before calculating",
+      "Write the unit next to the final answer",
+      "Volume in L with R = 0.083 L bar K⁻¹ mol⁻¹ (250 mL = 0.25 L), temperature in K"
+    ],
+    "drills": [
+      {
+        "id": "DR-03-1",
+        "working": "1 g in 100 mL, π = 0.00249 bar, 300 K: M = 1 × 0.083 × 300 / (0.00249 × 100)",
+        "correct": false,
+        "explanation": "V must be 0.1 L, not 100."
+      },
+      {
+        "id": "DR-03-2",
+        "working": "At 27 °C: πV = nRT with T = 27",
+        "correct": false,
+        "explanation": "T must be in kelvin: 27 + 273 = 300 K."
+      },
+      {
+        "id": "DR-03-3",
+        "working": "V = 500 mL = 0.5 L, T = 300 K, then M = wRT/(πV)",
+        "correct": true,
+        "explanation": "Right: every unit matches R."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-04",
+    "checklist": [
+      "Write the formula with its signs before putting any numbers in",
+      "Ask: does the sign of my answer make physical sense?",
+      "E°cell = E°cathode − E°anode, and the cathode has the higher reduction potential"
+    ],
+    "drills": [
+      {
+        "id": "DR-04-1",
+        "working": "Zn|Zn²⁺||Cu²⁺|Cu: E°cell = E°cathode − E°anode = 0.34 − (−0.76) = +1.10 V",
+        "correct": true,
+        "explanation": "Right: cathode minus anode, with the sign of −0.76 kept."
+      },
+      {
+        "id": "DR-04-2",
+        "working": "Mg|Mg²⁺||Ag⁺|Ag: E°cell = −2.37 − 0.80 = −3.17 V",
+        "correct": false,
+        "explanation": "Anode minus cathode was used. E°cell = 0.80 − (−2.37) = +3.17 V."
+      },
+      {
+        "id": "DR-04-3",
+        "working": "Cu + 2Ag⁺ → Cu²⁺ + 2Ag: E°cell = 2 × 0.80 − 0.34 = 1.26 V",
+        "correct": false,
+        "explanation": "E° is never multiplied by the coefficient. E°cell = 0.80 − 0.34 = 0.46 V."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-05",
+    "formulaCards": [
+      {
+        "id": "FC-05-1",
+        "front": "Nernst equation for a cell at 298 K",
+        "back": "E = E° − (0.059/n) log Q"
+      },
+      {
+        "id": "FC-05-2",
+        "front": "Reaction quotient Q for Cu + 2Ag⁺ → Cu²⁺ + 2Ag",
+        "back": "Q = [Cu²⁺]/[Ag⁺]². Each concentration is raised to its coefficient; pure solids are left out."
+      },
+      {
+        "id": "FC-05-3",
+        "front": "Link between E°cell and K at 298 K",
+        "back": "log K = nE°cell/0.059"
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-06",
+    "checklist": [
+      "Convert every quantity to the units the formula needs before calculating",
+      "Write the unit next to the final answer",
+      "Λm = κ × 1000/C when κ is in S cm⁻¹ and C in mol L⁻¹"
+    ],
+    "drills": [
+      {
+        "id": "DR-06-1",
+        "working": "κ = 0.02 S cm⁻¹, C = 0.1 M: Λm = 0.02/0.1 = 0.2 S cm² mol⁻¹",
+        "correct": false,
+        "explanation": "The 1000 is missing: Λm = 0.02 × 1000/0.1 = 200 S cm² mol⁻¹."
+      },
+      {
+        "id": "DR-06-2",
+        "working": "κ = 0.0129 S cm⁻¹, C = 0.1 M: Λm = 0.0129 × 1000/0.1 = 129 S cm² mol⁻¹",
+        "correct": true,
+        "explanation": "Right."
+      },
+      {
+        "id": "DR-06-3",
+        "working": "Λm = 125, written as 125 S cm⁻¹",
+        "correct": false,
+        "explanation": "That is the unit of κ. Λm is in S cm² mol⁻¹."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-07",
+    "concept": {
+      "videoTime": 5949,
+      "snippetIds": [
+        "REV-c12-chem-02-04",
+        "REV-c12-chem-02-01"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-08",
+    "formulaCards": [
+      {
+        "id": "FC-08-1",
+        "front": "Half-life of a first order reaction",
+        "back": "t½ = 0.693/k (it does not depend on [A]₀)"
+      },
+      {
+        "id": "FC-08-2",
+        "front": "Integrated rate law for a first order reaction",
+        "back": "k = (2.303/t) log([A]₀/[A])"
+      },
+      {
+        "id": "FC-08-3",
+        "front": "Half-life of a zero order reaction",
+        "back": "t½ = [A]₀/2k"
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-09",
+    "checklist": [
+      "Convert every quantity to the units the formula needs before calculating",
+      "Write the unit next to the final answer",
+      "Units of k = (mol L⁻¹)¹⁻ⁿ s⁻¹: find the overall order n first"
+    ],
+    "drills": [
+      {
+        "id": "DR-09-1",
+        "working": "rate = k[A]: k is in s⁻¹",
+        "correct": true,
+        "explanation": "Right: n = 1."
+      },
+      {
+        "id": "DR-09-2",
+        "working": "rate = k[A]²: k is in mol L⁻¹ s⁻¹",
+        "correct": false,
+        "explanation": "n = 2, so k is in L mol⁻¹ s⁻¹."
+      },
+      {
+        "id": "DR-09-3",
+        "working": "rate = k[A][B]²: order 3, k in L² mol⁻² s⁻¹",
+        "correct": true,
+        "explanation": "Right."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-10",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-chem-04-02",
+        "REV-c12-chem-04-04"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-11",
+    "scheme": [
+      {
+        "step": "Cr²⁺ → Cr³⁺ gives d³, a stable half-filled t₂g level, so Cr²⁺ is reducing",
+        "marks": 1,
+        "inExam": false
+      },
+      {
+        "step": "Mn³⁺ → Mn²⁺ gives stable half-filled d⁵, so Mn³⁺ is oxidising",
+        "marks": 1,
+        "inExam": false
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-12",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-chem-05-01"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-13",
+    "scheme": [
+      {
+        "step": "[Ni(CO)₄]: Ni is 0; strong-field CO pairs the electrons to give 3d¹⁰, sp³",
+        "marks": 1,
+        "inExam": false
+      },
+      {
+        "step": "So it has no unpaired electrons and is diamagnetic",
+        "marks": 0.5,
+        "inExam": false
+      },
+      {
+        "step": "[NiCl₄]²⁻: Ni²⁺ is 3d⁸ and weak-field Cl⁻ does not pair the electrons, sp³",
+        "marks": 1,
+        "inExam": true
+      },
+      {
+        "step": "So it has two unpaired electrons and is paramagnetic",
+        "marks": 0.5,
+        "inExam": true
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-14",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-chem-06-01"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-15",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": []
+    }
+  },
+  {
+    "errorId": "ERR-16",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-chem-08-02"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-17",
+    "scheme": [
+      {
+        "step": "The C=O group is strongly electron-withdrawing",
+        "marks": 1,
+        "inExam": true
+      },
+      {
+        "step": "The conjugate base (enolate ion) is stabilised by resonance",
+        "marks": 1,
+        "inExam": false
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-18",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-chem-09-04"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-19",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-chem-10-02"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-20",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-math-01-01"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-21",
+    "scheme": [
+      {
+        "step": "One-one: f(x₁) = f(x₂) ⇒ x₁ = x₂",
+        "marks": 1,
+        "inExam": true
+      },
+      {
+        "step": "Onto: for any y ∈ R, x = (y − 3)/4 ∈ R and f(x) = y",
+        "marks": 1.5,
+        "inExam": false
+      },
+      {
+        "step": "Conclusion: one-one and onto, so f is bijective",
+        "marks": 0.5,
+        "inExam": false
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-22",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-math-03-02"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-23",
+    "formulaCards": [
+      {
+        "id": "FC-23-1",
+        "front": "Transpose of a product: (AB)′ = ?",
+        "back": "B′A′ (the order reverses)"
+      },
+      {
+        "id": "FC-23-2",
+        "front": "Inverse of a product: (AB)⁻¹ = ?",
+        "back": "B⁻¹A⁻¹ (the order reverses)"
+      },
+      {
+        "id": "FC-23-3",
+        "front": "(A′)′ = ? and (kA)′ = ?",
+        "back": "(A′)′ = A and (kA)′ = kA′"
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-24",
+    "formulaCards": [
+      {
+        "id": "FC-24-1",
+        "front": "|kA| for a square matrix A of order n",
+        "back": "kⁿ|A|"
+      },
+      {
+        "id": "FC-24-2",
+        "front": "|A′| = ?",
+        "back": "|A′| = |A|"
+      },
+      {
+        "id": "FC-24-3",
+        "front": "|AB| = ?",
+        "back": "|AB| = |A||B|"
+      },
+      {
+        "id": "FC-24-4",
+        "front": "|adj A| for A of order n",
+        "back": "|A|ⁿ⁻¹"
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-25",
+    "checklist": [
+      "Write the formula with its signs before putting any numbers in",
+      "Ask: does the sign of my answer make physical sense?",
+      "Cofactor Aᵢⱼ = (−1)ⁱ⁺ʲ Mᵢⱼ: apply the sign after finding the minor"
+    ],
+    "drills": [
+      {
+        "id": "DR-25-1",
+        "working": "In [3 1; 2 4], A₁₁ = (−1)² × 4 = 4",
+        "correct": true,
+        "explanation": "Right: 1 + 1 is even, so the sign stays +."
+      },
+      {
+        "id": "DR-25-2",
+        "working": "M₁₂ = 5, so A₁₂ = 5",
+        "correct": false,
+        "explanation": "1 + 2 is odd, so A₁₂ = (−1)³ × 5 = −5."
+      },
+      {
+        "id": "DR-25-3",
+        "working": "M₂₁ = −2, so A₂₁ = (−1)³ × (−2) = 2",
+        "correct": true,
+        "explanation": "Right: the odd position flips −2 to +2."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-26",
+    "concept": {
+      "videoTime": 6678,
+      "snippetIds": [
+        "REV-c12-phys-01-03",
+        "REV-c12-phys-01-04"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-27",
+    "checklist": [
+      "Convert every quantity to the units the formula needs before calculating",
+      "Write the unit next to the final answer",
+      "Convert μC to × 10⁻⁶ C, nC to × 10⁻⁹ C, and cm to m before using k = 9 × 10⁹"
+    ],
+    "drills": [
+      {
+        "id": "DR-27-1",
+        "working": "1 μC and 2 μC, 10 cm apart: F = 9 × 10⁹ × 1 × 2 / 10²",
+        "correct": false,
+        "explanation": "Use C and m: F = 9 × 10⁹ × (1 × 10⁻⁶)(2 × 10⁻⁶)/(0.1)² = 1.8 N."
+      },
+      {
+        "id": "DR-27-2",
+        "working": "q = 5 μC = 5 × 10⁻⁶ C and r = 20 cm = 0.2 m",
+        "correct": true,
+        "explanation": "Right."
+      },
+      {
+        "id": "DR-27-3",
+        "working": "q = 3 nC written as 3 × 10⁻⁶ C",
+        "correct": false,
+        "explanation": "nano is 10⁻⁹: 3 nC = 3 × 10⁻⁹ C."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-28",
+    "concept": {
+      "videoTime": null,
+      "snippetIds": [
+        "REV-c12-phys-02-04",
+        "REV-c12-phys-02-05"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-29",
+    "checklist": [
+      "Write the formula with its signs before putting any numbers in",
+      "Ask: does the sign of my answer make physical sense?",
+      "Potential is a scalar: keep the sign of each charge when adding"
+    ],
+    "drills": [
+      {
+        "id": "DR-29-1",
+        "working": "+4 nC and −4 nC, each 0.1 m from P: V = 360 + 360 = 720 V",
+        "correct": false,
+        "explanation": "The −4 nC charge gives −360 V, so V = 0."
+      },
+      {
+        "id": "DR-29-2",
+        "working": "+3 nC and −1 nC, each 0.1 m from P: V = 270 − 90 = 180 V",
+        "correct": true,
+        "explanation": "Right: each term keeps its own sign."
+      },
+      {
+        "id": "DR-29-3",
+        "working": "Two +2 nC charges, each 0.05 m from P: V = 360 + 360 = 720 V",
+        "correct": true,
+        "explanation": "Right: both positive, so they add."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-30",
+    "scheme": [
+      {
+        "step": "Each part has resistance 8/4 = 2 Ω",
+        "marks": 1,
+        "inExam": true
+      },
+      {
+        "step": "Four 2 Ω parts in parallel: 2/4 = 0.5 Ω",
+        "marks": 1,
+        "inExam": false
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-31",
+    "checklist": [
+      "Write the formula with its signs before putting any numbers in",
+      "Ask: does the sign of my answer make physical sense?",
+      "Charging: V = ε + Ir. Discharging: V = ε − Ir"
+    ],
+    "drills": [
+      {
+        "id": "DR-31-1",
+        "working": "12 V battery, r = 1 Ω, being charged at 2 A: V = 12 − 2 = 10 V",
+        "correct": false,
+        "explanation": "While charging, current is pushed in: V = 12 + 2 = 14 V."
+      },
+      {
+        "id": "DR-31-2",
+        "working": "9 V battery, r = 0.5 Ω, supplying 2 A: V = 9 − 1 = 8 V",
+        "correct": true,
+        "explanation": "Right: discharging, so subtract Ir."
+      },
+      {
+        "id": "DR-31-3",
+        "working": "6 V battery, r = 0.2 Ω, being charged at 5 A: V = 6 + 1 = 7 V",
+        "correct": true,
+        "explanation": "Right: charging, so add Ir."
+      }
+    ]
+  },
+  {
+    "errorId": "ERR-32",
+    "concept": {
+      "videoTime": 1618,
+      "snippetIds": [
+        "REV-c12-phys-03-01"
+      ]
+    }
+  },
+  {
+    "errorId": "ERR-33",
+    "checklist": [
+      "Write the formula with its signs before putting any numbers in",
+      "Ask: does the sign of my answer make physical sense?",
+      "New Cartesian signs: u is negative; f is negative for concave, positive for convex"
+    ],
+    "drills": [
+      {
+        "id": "DR-33-1",
+        "working": "Concave mirror, f = 10 cm, object 20 cm away: 1/v = 1/10 − 1/20, so v = +20 cm",
+        "correct": false,
+        "explanation": "Signs were dropped. u = −20, f = −10: 1/v = −1/10 + 1/20 = −1/20, so v = −20 cm (real)."
+      },
+      {
+        "id": "DR-33-2",
+        "working": "Convex mirror, f = +20 cm, u = −20 cm: 1/v = 1/20 + 1/20, so v = +10 cm",
+        "correct": true,
+        "explanation": "Right: virtual image behind the mirror."
+      },
+      {
+        "id": "DR-33-3",
+        "working": "Concave mirror, f = −15 cm, u = −10 cm: 1/v = −1/15 + 1/10 = 1/30, so v = +30 cm",
+        "correct": true,
+        "explanation": "Right: object inside f gives a virtual image."
+      }
+    ]
+  }
+]

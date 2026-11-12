@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { buildAvatar, disposeAvatar } from './buildAvatar';
+import { animateAvatar } from './heroes';
 import type { AvatarCrop } from './options';
 import type { AvatarConfig } from '../types';
 
@@ -53,4 +54,4 @@ export class SnapshotRenderer {
   }
 }
 
-export { THREE, buildAvatar, disposeAvatar };
+export { THREE, animateAvatar, buildAvatar, disposeAvatar };

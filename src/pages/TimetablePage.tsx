@@ -38,7 +38,7 @@ import {
 } from '../services/timetableService';
 import type { TimetableEntry } from '../types';
 
-const SEGMENT = 'flex-none rounded-[4px] px-3 py-1.5 text-[14px] leading-5 font-medium tracking-[-0.084px] text-muted-foreground data-[state=active]:bg-white data-[state=active]:text-foreground data-[state=active]:shadow-[0px_1px_1px_rgba(0,0,0,0.05)]';
+const SEGMENT = 'flex-none rounded-[4px] px-3 py-1.5 text-[14px] leading-5 font-medium tracking-[-0.084px] text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-[0px_1px_1px_rgba(0,0,0,0.05)]';
 const RAIL_TITLE = 'text-[18px] leading-7 font-medium tracking-[-0.108px] text-foreground';
 const RAIL_CARD = 'rounded-xl border bg-card p-4 shadow-sm';
 
@@ -47,7 +47,7 @@ function SessionRow({ entry, onEdit, onReschedule }: { entry: TimetableEntry; on
   const subject = subjectById(entry.subjectId)?.name;
   const chapter = chapterById(entry.chapterId)?.title;
   return (
-    <li className={cn('flex flex-wrap items-center gap-3 rounded-lg border bg-white px-3 py-2', entry.done && 'bg-muted/40')} data-testid="session-row" data-done={entry.done}>
+    <li className={cn('flex flex-wrap items-center gap-3 rounded-lg border bg-background px-3 py-2', entry.done && 'bg-muted/40')} data-testid="session-row" data-done={entry.done}>
       <div className="min-w-0 flex-1">
         <p className="text-[12px] leading-4 tracking-[-0.072px] text-muted-foreground tabular-nums">{formatTime(entry.startTime)} – {formatTime(entry.endTime)}</p>
         <p className={cn('text-[14px] leading-5 font-medium tracking-[-0.084px] text-foreground', entry.done && 'line-through')}>{subject} – {chapter}</p>
@@ -82,8 +82,8 @@ function DayBlock({ state, date, today, onAdd, onEdit, onReschedule }: { state: 
         {date === today && <Badge variant="secondary">Today</Badge>}
       </div>
       <div className="min-w-0 flex-1 space-y-1.5">
-        {holiday && <p className="rounded-md bg-[#EAF4EE] px-3 py-1 text-[14px] leading-5 text-[#008138]">{holiday.name}</p>}
-        {exams.map((e) => <p key={e.id} className="rounded-md bg-[#fff0f0] px-3 py-1 text-[14px] leading-5 text-[#e60000]">{e.subjectName} exam, {formatTime(e.startTime)}</p>)}
+        {holiday && <p className="rounded-md bg-good-tint px-3 py-1 text-[14px] leading-5 text-good-strong">{holiday.name}</p>}
+        {exams.map((e) => <p key={e.id} className="rounded-md bg-bad-soft px-3 py-1 text-[14px] leading-5 text-bad">{e.subjectName} exam, {formatTime(e.startTime)}</p>)}
         {sessions.length > 0 && (
           <ul className="space-y-1.5">
             {sessions.map((s) => <SessionRow key={s.id} entry={s} onEdit={() => onEdit(s)} onReschedule={() => onReschedule(s)} />)}
@@ -103,7 +103,7 @@ function MonthGrid({ state, month, today, selected, onSelect }: { state: AppStat
   const days = monthGrid(month.getFullYear(), month.getMonth());
   return (
     <div data-testid="month-grid">
-      <div className="grid grid-cols-7 border-b border-sidebar-border bg-green-50">
+      <div className="grid grid-cols-7 border-b border-sidebar-border bg-table-head">
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => <p key={d} className="px-2 py-2 text-center text-[12px] leading-4 font-medium tracking-[-0.072px] text-foreground">{d}</p>)}
       </div>
       <div className="grid grid-cols-7">
@@ -125,14 +125,14 @@ function MonthGrid({ state, month, today, selected, onSelect }: { state: AppStat
               aria-pressed={selected === key}
               className={cn(
                 'flex min-h-[74px] min-w-0 flex-col gap-0.5 border-r border-b border-sidebar-border p-1.5 text-left outline-none hover:bg-muted/30 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&:nth-child(7n)]:border-r-0',
-                !inMonth && 'bg-stone-50 text-muted-foreground',
-                holiday && inMonth && 'bg-[#EAF4EE]',
+                !inMonth && 'bg-canvas text-muted-foreground',
+                holiday && inMonth && 'bg-good-tint',
                 selected === key && 'ring-2 ring-primary ring-inset',
               )}
             >
               <span className={cn('text-[12px] leading-4 font-medium tabular-nums', key === today && 'flex size-5 items-center justify-center rounded-full bg-primary text-primary-foreground')}>{d.getDate()}</span>
-              {holiday && <span className="truncate text-[10px] leading-3 text-[#008138]">{holiday.name}</span>}
-              {exam && <span className="truncate text-[10px] leading-3 text-[#e60000]">{exam.subjectName} exam</span>}
+              {holiday && <span className="truncate text-[10px] leading-3 text-good-strong">{holiday.name}</span>}
+              {exam && <span className="truncate text-[10px] leading-3 text-bad">{exam.subjectName} exam</span>}
               {count > 0 && <span className="truncate text-[10px] leading-3 text-muted-foreground">{count} {count === 1 ? 'session' : 'sessions'}</span>}
             </button>
           );
@@ -213,7 +213,7 @@ export function TimetablePage() {
       {notice && <Notice testId="timetable-notice">{notice}</Notice>}
 
       <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
-        <section className="min-w-0 overflow-hidden rounded-xl border border-sidebar-border bg-white">
+        <section className="min-w-0 overflow-hidden rounded-xl border border-sidebar-border bg-background">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-sidebar-border px-4 py-3">
             <div className="flex items-center gap-1">
               <Button variant="outline" size="icon-sm" aria-label={`Previous ${view}`} data-testid="timetable-prev" onClick={() => move(-1)}><ChevronLeft className="size-4" /></Button>

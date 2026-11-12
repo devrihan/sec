@@ -1,4 +1,5 @@
 import { FLASHCARD_QUESTION_COUNT } from '../config/rewards';
+import { awardEarnedBadges } from './badgeService';
 import { chapterById, questionById } from './catalog';
 import { awardQuizReward } from './pointsService';
 import { questionsForChapter, shuffled } from './questionService';
@@ -113,7 +114,7 @@ export function completeQuiz(attemptId: string): QuizAttempt | null {
       title,
     );
     patchAttempt(attemptId, (a) => ({ ...a, rewardClaimed: true }));
-    if (result) pushPopup(result);
+    if (result) pushPopup({ ...result, newBadges: [...result.newBadges, ...awardEarnedBadges()] });
   }
   return attemptById(getState(), attemptId) ?? null;
 }

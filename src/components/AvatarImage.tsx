@@ -41,5 +41,5 @@ export function AvatarImage({
     return <span className={cn(shared, 'flex items-center justify-center text-muted-foreground')}><UserRound className="size-1/2" /></span>;
   }
   if (!current.url) return <Skeleton className={shared} />;
-  return <img src={current.url} alt={alt} className={shared} data-avatar={config.top} data-testid={testId} />;
+  return <img src={current.url} alt={alt} className={shared} data-avatar={config.top} data-hero={config.hero ?? undefined} data-testid={testId} />;
 }
